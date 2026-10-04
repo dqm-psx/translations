@@ -1,0 +1,13 @@
+{
+  "name": "dqm-psx-translations",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Standalone DQM translation comparison with local browser checks",
+  "scripts": {
+    "test": "npm run test:browser",
+    "test:browser": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.0"
+  }
+}

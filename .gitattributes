@@ -1,0 +1,5 @@
+# Preserve the captured downloads and their recorded hashes on every platform.
+index.html -text whitespace=cr-at-eol linguist-generated=true
+comparison-data.json -text whitespace=cr-at-eol linguist-generated=true
+coverage-report.json -text whitespace=cr-at-eol linguist-generated=true
+DQM-translation-comparison.md -text whitespace=cr-at-eol linguist-generated=true

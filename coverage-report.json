@@ -1,0 +1,3747 @@
+{
+  "revision": "057877498252bac5cb42d35a1cb29286ecbec8f9",
+  "generated_at": "2026-09-28T21:39:45.432656-07:00",
+  "source_records": 10005,
+  "leaf_records": 10085,
+  "included_rows": 9956,
+  "excluded_rows": 129,
+  "catalogs": [
+    {
+      "catalog": "dialogue/main/0000_1999.json",
+      "source_records": 2000,
+      "leaf_records": 2000,
+      "included": 1997,
+      "excluded": 3
+    },
+    {
+      "catalog": "dialogue/main/2000_3999.json",
+      "source_records": 2000,
+      "leaf_records": 2000,
+      "included": 2000,
+      "excluded": 0
+    },
+    {
+      "catalog": "dialogue/main/4000_6131.json",
+      "source_records": 2132,
+      "leaf_records": 2132,
+      "included": 2131,
+      "excluded": 1
+    },
+    {
+      "catalog": "dialogue/extra.json",
+      "source_records": 122,
+      "leaf_records": 122,
+      "included": 120,
+      "excluded": 2
+    },
+    {
+      "catalog": "dialogue/church.json",
+      "source_records": 21,
+      "leaf_records": 21,
+      "included": 21,
+      "excluded": 0
+    },
+    {
+      "catalog": "dialogue/medal_appraisal.json",
+      "source_records": 26,
+      "leaf_records": 26,
+      "included": 25,
+      "excluded": 1
+    },
+    {
+      "catalog": "dialogue/services.json",
+      "source_records": 366,
+      "leaf_records": 366,
+      "included": 366,
+      "excluded": 0
+    },
+    {
+      "catalog": "dialogue/recruitment.json",
+      "source_records": 34,
+      "leaf_records": 34,
+      "included": 29,
+      "excluded": 5
+    },
+    {
+      "catalog": "text/system.json",
+      "source_records": 954,
+      "leaf_records": 954,
+      "included": 899,
+      "excluded": 55
+    },
+    {
+      "catalog": "text/executable.json",
+      "source_records": 708,
+      "leaf_records": 708,
+      "included": 675,
+      "excluded": 33
+    },
+    {
+      "catalog": "text/static.json",
+      "source_records": 350,
+      "leaf_records": 350,
+      "included": 350,
+      "excluded": 0
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "source_records": 51,
+      "leaf_records": 51,
+      "included": 37,
+      "excluded": 14
+    },
+    {
+      "catalog": "text/location_titles.json",
+      "source_records": 145,
+      "leaf_records": 145,
+      "included": 145,
+      "excluded": 0
+    },
+    {
+      "catalog": "text/monster_captions.json",
+      "source_records": 312,
+      "leaf_records": 312,
+      "included": 312,
+      "excluded": 0
+    },
+    {
+      "catalog": "menus/general.json",
+      "source_records": 719,
+      "leaf_records": 719,
+      "included": 704,
+      "excluded": 15
+    },
+    {
+      "catalog": "menus/keyboard.json",
+      "source_records": 2,
+      "leaf_records": 2,
+      "included": 2,
+      "excluded": 0
+    },
+    {
+      "catalog": "menus/mobile.json",
+      "source_records": 2,
+      "leaf_records": 2,
+      "included": 2,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/appraisal_certificate_art.json",
+      "source_records": 5,
+      "leaf_records": 5,
+      "included": 5,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/boss_names.json",
+      "source_records": 19,
+      "leaf_records": 19,
+      "included": 19,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/gift_names.json",
+      "source_records": 3,
+      "leaf_records": 3,
+      "included": 3,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/library_detail_art.json",
+      "source_records": 2,
+      "leaf_records": 2,
+      "included": 2,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/item_headers.json",
+      "source_records": 1,
+      "leaf_records": 5,
+      "included": 5,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/hidden_text.json",
+      "source_records": 1,
+      "leaf_records": 5,
+      "included": 5,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/hidden_movement.json",
+      "source_records": 1,
+      "leaf_records": 1,
+      "included": 1,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/library_book_layout.json",
+      "source_records": 1,
+      "leaf_records": 11,
+      "included": 11,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/shop_menu_layout.json",
+      "source_records": 1,
+      "leaf_records": 11,
+      "included": 11,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/battle_party_tactics.json",
+      "source_records": 1,
+      "leaf_records": 1,
+      "included": 1,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/information_menu.json",
+      "source_records": 1,
+      "leaf_records": 1,
+      "included": 1,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/opening_menu_layout.json",
+      "source_records": 2,
+      "leaf_records": 2,
+      "included": 2,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/regular_item_stacks.json",
+      "source_records": 1,
+      "leaf_records": 1,
+      "included": 1,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/bank_item_stacks.json",
+      "source_records": 8,
+      "leaf_records": 8,
+      "included": 8,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/portal_gem.json",
+      "source_records": 3,
+      "leaf_records": 3,
+      "included": 3,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/portal_gem_quest.json",
+      "source_records": 9,
+      "leaf_records": 9,
+      "included": 9,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/starter_name.json",
+      "source_records": 1,
+      "leaf_records": 1,
+      "included": 1,
+      "excluded": 0
+    },
+    {
+      "catalog": "patches/special_floor_colosseum.json",
+      "source_records": 1,
+      "leaf_records": 53,
+      "included": 53,
+      "excluded": 0
+    }
+  ],
+  "exclusions": [
+    {
+      "catalog": "dialogue/main/0000_1999.json",
+      "id": "s000d8000_0008",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "s000d8000_0008",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "dialogue/main/0000_1999.json",
+      "id": "s003d6000_1b46",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "s003d6000_1b46",
+        "japanese": "<VOICE_42><END>",
+        "translations": {
+          "current": {
+            "english": "<VOICE_42><END>"
+          },
+          "gameboy": {
+            "english": "<VOICE_42><END>"
+          },
+          "delocalized": {
+            "english": "<VOICE_42><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "dialogue/main/0000_1999.json",
+      "id": "s00419800_2236",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "s00419800_2236",
+        "japanese": "<WAIT><END>",
+        "translations": {
+          "current": {
+            "english": "<WAIT><END>"
+          },
+          "gameboy": {
+            "english": "<WAIT><END>"
+          },
+          "delocalized": {
+            "english": "<WAIT><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "dialogue/main/4000_6131.json",
+      "id": "s0afae000_096c",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "s0afae000_096c",
+        "japanese": "<VOICE_41><END>",
+        "translations": {
+          "current": {
+            "english": "<VOICE_41><END>"
+          },
+          "gameboy": {
+            "english": "<VOICE_41><END>"
+          },
+          "delocalized": {
+            "english": "<VOICE_41><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "dialogue/extra.json",
+      "id": "s000e9000_0c91",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "s000e9000_0c91",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "dialogue/extra.json",
+      "id": "s000e9000_0e92",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "s000e9000_0e92",
+        "japanese": "<VOICE_42><END>",
+        "translations": {
+          "current": {
+            "english": "<VOICE_42><END>"
+          },
+          "gameboy": {
+            "english": "<VOICE_42><END>"
+          },
+          "delocalized": {
+            "english": "<VOICE_42><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "dialogue/medal_appraisal.json",
+      "id": "medal_0aadc0_0000",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "medal_0aadc0_0000",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "dialogue/recruitment.json",
+      "id": "a104_0000",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "a104_0000",
+        "japanese": "<END>",
+        "controls": [
+          "<END>"
+        ],
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "dialogue/recruitment.json",
+      "id": "a104_01ff",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "a104_01ff",
+        "japanese": "<END>",
+        "controls": [
+          "<END>"
+        ],
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "dialogue/recruitment.json",
+      "id": "a104_022a",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "a104_022a",
+        "japanese": "<END>",
+        "controls": [
+          "<END>"
+        ],
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "dialogue/recruitment.json",
+      "id": "a104_024f",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "a104_024f",
+        "japanese": "<END>",
+        "controls": [
+          "<END>"
+        ],
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "dialogue/recruitment.json",
+      "id": "a104_0250",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "a104_0250",
+        "japanese": "<END>",
+        "controls": [
+          "<END>"
+        ],
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0000",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0000",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e00d2",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e00d2",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e00d3",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e00d3",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e01b5",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e01b5",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e01b6",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e01b6",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0292",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0292",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0293",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0293",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0353",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0353",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0354",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0354",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e040f",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e040f",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0410",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0410",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e04c8",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e04c8",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e04c9",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e04c9",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0595",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0595",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0596",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0596",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0654",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0654",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0655",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0655",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0742",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0742",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0743",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0743",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0824",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0824",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0825",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0825",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0900",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0900",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0b12",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0b12",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e0c0f",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0c0f",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>",
+            "english_short": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e10bd",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e10bd",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>",
+            "english_short": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e10be",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e10be",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>",
+            "english_short": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1103",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1103",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>",
+            "english_short": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1104",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1104",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>",
+            "english_short": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1105",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1105",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>",
+            "english_short": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1106",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1106",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>",
+            "english_short": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1107",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1107",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>",
+            "english_short": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1108",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1108",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>",
+            "english_short": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1236",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1236",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e12e2",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e12e2",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e12e3",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e12e3",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>",
+            "english_short": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1310",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1310",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>",
+            "english_short": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e13af",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e13af",
+        "japanese": "\n<END>",
+        "translations": {
+          "current": {
+            "english": "<LINE><END>"
+          },
+          "gameboy": {
+            "english": "<LINE><END>"
+          },
+          "delocalized": {
+            "english": "<LINE><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e13b1",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e13b1",
+        "japanese": "<CLEAR><END>",
+        "translations": {
+          "current": {
+            "english": "<CLEAR><END>"
+          },
+          "gameboy": {
+            "english": "<CLEAR><END>"
+          },
+          "delocalized": {
+            "english": "<CLEAR><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e13b3",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e13b3",
+        "japanese": "<CLEAR_EXTRA_ROW><END>",
+        "translations": {
+          "current": {
+            "english": "<CLEAR_EXTRA_ROW><END>"
+          },
+          "gameboy": {
+            "english": "<CLEAR_EXTRA_ROW><END>"
+          },
+          "delocalized": {
+            "english": "<CLEAR_EXTRA_ROW><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e13b5",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e13b5",
+        "japanese": "<WAIT><END>",
+        "translations": {
+          "current": {
+            "english": "<WAIT><END>"
+          },
+          "gameboy": {
+            "english": "<WAIT><END>"
+          },
+          "delocalized": {
+            "english": "<WAIT><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e13b7",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e13b7",
+        "japanese": "<PROMPT><WAIT>\n<END>",
+        "translations": {
+          "current": {
+            "english": "<PROMPT><WAIT><LINE><END>"
+          },
+          "gameboy": {
+            "english": "<PROMPT><WAIT><LINE><END>"
+          },
+          "delocalized": {
+            "english": "<PROMPT><WAIT><LINE><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e147f",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e147f",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e163d",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e163d",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e163e",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e163e",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e163f",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e163f",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1640",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1640",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1641",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1641",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1642",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1642",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1643",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1643",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1644",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1644",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1645",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1645",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1646",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1646",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1693",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1693",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>",
+            "english_short": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1694",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1694",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>",
+            "english_short": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>",
+            "english_short": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/system.json",
+      "id": "e1695",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e1695",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e09fc74_0000",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e09fc74_0000",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e09fc74_0001",
+      "path": [],
+      "reason": "No translation wording (preserved source metadata)",
+      "raw": {
+        "id": "e09fc74_0001",
+        "japanese": "系具持使死何起砕捨投天読聞与冒険 書記録置水浮手渡回復体毒消呪生返 増血肉身毛怖話心気馬目賢合理的頭 方知恵食少口顔見指示配去効果辺様 子性別井当買物分特技移動中足感金 宝吹終帰入隠穴鑑定装備場所抜差止 初期化了失敗空番新上続電源切牧送 受取込壊並相育成箱開戻本棚貼紙文 字立札戸前墓石板以世界強今日泊屋 教会神向誰星降来統仲間待予他用連 預匹静名大必要真残念思作行考同証 姉祝福士店売客欲景度現在寄付冗談 主地精霊呼不調格闘出試集挑戦自弱 応援楽次参加優勝賞品交換早整仕一 休命変許時熱言始決直下修極礼弟道 兄最高野山荷旅事責任引舎冬眠全部<END>",
+        "preserve_source": true,
+        "translations": {
+          "current": {},
+          "gameboy": {},
+          "delocalized": {}
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e09fc74_042d",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e09fc74_042d",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e09fc74_0446",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e09fc74_0446",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e09fc74_0447",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e09fc74_0447",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e09fc74_0817",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e09fc74_0817",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e09fc74_15ed",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e09fc74_15ed",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_0000",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_0000",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_0077",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_0077",
+        "japanese": "<SOUND:7E><END>",
+        "translations": {
+          "current": {
+            "english": "<SOUND:7E><END>"
+          },
+          "gameboy": {
+            "english": "<SOUND:7E><END>"
+          },
+          "delocalized": {
+            "english": "<SOUND:7E><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_007a",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_007a",
+        "japanese": "<SOUND:63><END>",
+        "translations": {
+          "current": {
+            "english": "<SOUND:63><END>"
+          },
+          "gameboy": {
+            "english": "<SOUND:63><END>"
+          },
+          "delocalized": {
+            "english": "<SOUND:63><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_007d",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_007d",
+        "japanese": "<SOUND:64><END>",
+        "translations": {
+          "current": {
+            "english": "<SOUND:64><END>"
+          },
+          "gameboy": {
+            "english": "<SOUND:64><END>"
+          },
+          "delocalized": {
+            "english": "<SOUND:64><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_0092",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_0092",
+        "japanese": "<CLEAR><END>",
+        "translations": {
+          "current": {
+            "english": "<CLEAR><END>"
+          },
+          "gameboy": {
+            "english": "<CLEAR><END>"
+          },
+          "delocalized": {
+            "english": "<CLEAR><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_0094",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_0094",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_02c3",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_02c3",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_0820",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_0820",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_0fce",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_0fce",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1563",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1563",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1701",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1701",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1815",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1815",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_186e",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_186e",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_186f",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_186f",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1870",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1870",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1871",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1871",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1872",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1872",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1902",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1902",
+        "japanese": "<WAIT><END>",
+        "translations": {
+          "current": {
+            "english": "<WAIT><END>"
+          },
+          "gameboy": {
+            "english": "<WAIT><END>"
+          },
+          "delocalized": {
+            "english": "<WAIT><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1913",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1913",
+        "japanese": "<PROMPT><WAIT><END>",
+        "translations": {
+          "current": {
+            "english": "<PROMPT><WAIT><END>"
+          },
+          "gameboy": {
+            "english": "<PROMPT><WAIT><END>"
+          },
+          "delocalized": {
+            "english": "<PROMPT><WAIT><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1916",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1916",
+        "japanese": "<PROMPT><WAIT><END>",
+        "translations": {
+          "current": {
+            "english": "<PROMPT><WAIT><END>"
+          },
+          "gameboy": {
+            "english": "<PROMPT><WAIT><END>"
+          },
+          "delocalized": {
+            "english": "<PROMPT><WAIT><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1973",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1973",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1977",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1977",
+        "japanese": "<PROMPT><WAIT><END>",
+        "translations": {
+          "current": {
+            "english": "<PROMPT><WAIT><END>"
+          },
+          "gameboy": {
+            "english": "<PROMPT><WAIT><END>"
+          },
+          "delocalized": {
+            "english": "<PROMPT><WAIT><END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1a3b",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1a3b",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1e11",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1e11",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1e25",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1e25",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/executable.json",
+      "id": "e0af718_1e69",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0af718_1e69",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_0007",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_0007",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_0008",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_0008",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_0053",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_0053",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_0054",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_0054",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_00cc",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_00cc",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_00cd",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_00cd",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_00ce",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_00ce",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_00cf",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_00cf",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_00f5",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_00f5",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_00f6",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_00f6",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_00f7",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_00f7",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_00f8",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_00f8",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_0199",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_0199",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "text/static_pools.json",
+      "id": "e0affe4_019a",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "e0affe4_019a",
+        "japanese": "<END>",
+        "translations": {
+          "current": {
+            "english": "<END>"
+          },
+          "gameboy": {
+            "english": "<END>"
+          },
+          "delocalized": {
+            "english": "<END>"
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_exe_08b120",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_exe_08b120",
+        "japanese_lines": [
+          " "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              " "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_exe_08c1f0",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_exe_08c1f0",
+        "japanese_lines": [
+          " "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              " "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_exe_093c8c",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_exe_093c8c",
+        "japanese_lines": [
+          " "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              " "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_exe_093cb4",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_exe_093cb4",
+        "japanese_lines": [
+          " "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              " "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_exe_093d44",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_exe_093d44",
+        "japanese_lines": [
+          "      ",
+          "             ",
+          "      ",
+          "             "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              "      ",
+              "             ",
+              "      ",
+              "             "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              "      ",
+              "             ",
+              "      ",
+              "             "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              "      ",
+              "             ",
+              "      ",
+              "             "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_exe_093d98",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_exe_093d98",
+        "japanese_lines": [
+          "               "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              "               "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              "               "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              "               "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_exe_093ee8",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_exe_093ee8",
+        "japanese_lines": [
+          " ",
+          "   ",
+          " ",
+          " ",
+          "   ",
+          " ",
+          " ",
+          "   ",
+          " ",
+          " ",
+          "   ",
+          " ",
+          " ",
+          "   ",
+          " "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              " ",
+              "   ",
+              " ",
+              " ",
+              "   ",
+              " ",
+              " ",
+              "   ",
+              " ",
+              " ",
+              "   ",
+              " ",
+              " ",
+              "   ",
+              " "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              " ",
+              "   ",
+              " ",
+              " ",
+              "   ",
+              " ",
+              " ",
+              "   ",
+              " ",
+              " ",
+              "   ",
+              " ",
+              " ",
+              "   ",
+              " "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              " ",
+              "   ",
+              " ",
+              " ",
+              "   ",
+              " ",
+              " ",
+              "   ",
+              " ",
+              " ",
+              "   ",
+              " ",
+              " ",
+              "   ",
+              " "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_exe_0942c4",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_exe_0942c4",
+        "japanese_lines": [
+          "   ",
+          "   ",
+          "   ",
+          "   ",
+          "   ",
+          "   "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              "   ",
+              "   ",
+              "   ",
+              "   ",
+              "   ",
+              "   "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              "   ",
+              "   ",
+              "   ",
+              "   ",
+              "   ",
+              "   "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              "   ",
+              "   ",
+              "   ",
+              "   ",
+              "   ",
+              "   "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_exe_09430c",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_exe_09430c",
+        "japanese_lines": [
+          " "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              " "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_exe_094398",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_exe_094398",
+        "japanese_lines": [
+          " "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              " "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_exe_0944a4",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_exe_0944a4",
+        "japanese_lines": [
+          " "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              " "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_exe_0944cc",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_exe_0944cc",
+        "japanese_lines": [
+          " "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              " "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_a5498_022e30",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_a5498_022e30",
+        "japanese_lines": [
+          "              ",
+          "              ",
+          "              ",
+          "              "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              "              ",
+              "              ",
+              "              ",
+              "              "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              "              ",
+              "              ",
+              "              ",
+              "              "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              "              ",
+              "              ",
+              "              ",
+              "              "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_a5574_012cec",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_a5574_012cec",
+        "japanese_lines": [
+          " "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              " "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "catalog": "menus/general.json",
+      "id": "m_a5698_00e8b0",
+      "path": [],
+      "reason": "Empty or presentation-control-only slot",
+      "raw": {
+        "id": "m_a5698_00e8b0",
+        "japanese_lines": [
+          " "
+        ],
+        "translations": {
+          "current": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "gameboy": {
+            "english_lines": [
+              " "
+            ]
+          },
+          "delocalized": {
+            "english_lines": [
+              " "
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "dialogue/main/0000_1999.json": "412da98b851d06baa4fa5c848d3b54dd494e2130512bbd3d3099cfdb15aebb45",
+    "dialogue/main/2000_3999.json": "29ad1e9dc6a8cda413ca5a5732e72f387ec5c5f7cd13d50555e128fbce7a1d7b",
+    "dialogue/main/4000_6131.json": "dcf3a81eeb11144a1583a12c91ce094331b1c8bf662da068bd0846a634107aa1",
+    "dialogue/extra.json": "766a6d104e732b1fe725a085e4e71b96959f9dd41f3a615b49fa7981e23f1db3",
+    "dialogue/church.json": "56050d15becb04877498459a29b70fcdcafa48cf92b5b7e40237f6986426de87",
+    "dialogue/medal_appraisal.json": "cdf66cc5a4756fa3dc7e4f4ad85ff19fd13de43b4b64d0a17935a31ebc1bfbdf",
+    "dialogue/services.json": "5bbf17183cf7ae42a35e033e917cc1458b77cd4c0fd94e8c44869aeb2b4bdd9f",
+    "dialogue/recruitment.json": "1a234574497e1d6ad26d8401ca28021846bc756fd2358ca22f268331b7ea60b8",
+    "text/system.json": "3cb637dd85bc22562f79338f62173095a03b63f3c261e9fd5a992a22976ef713",
+    "text/executable.json": "b94fbde8097553dbcdae5d032350f38869d28c5325cb564471025ad7df03d5cd",
+    "text/static.json": "0a6c4aff1c4d5e6b69a96f3ad6bf0b807b0c9231be2875b7bf1b6368b1cd4135",
+    "text/static_pools.json": "5b034788e342e1a0359526545611c3f0ad4dda122080733346ddad4d9c220d44",
+    "text/location_titles.json": "eb17e3a63d922721e41a6d21a77f70987ab9c6d5f92a9581ab49eda87ae31b07",
+    "text/monster_captions.json": "81361d7d18b260925c9fd5ef48d609f9e717f1003c0700f397188af2c794848d",
+    "menus/general.json": "c03459fe407a8089953e5aabddb800235e6274f4b0421fa9fbdb260f73a3bb26",
+    "menus/keyboard.json": "52ea8ca299013b03e4dc1ec10f856ef18fd4123f3ffc13d7a4ad599dea7c6188",
+    "menus/mobile.json": "9a575e3b6b7831aa7826938972dfe65a77ce7e77b0a614c33a10e85dcaa230f3",
+    "patches/appraisal_certificate_art.json": "2488cd47d6d115e5212cf84afc95612496a1d4e3cdae516c9e77492427b476c7",
+    "patches/boss_names.json": "b9f36e7c47e11b157070ec3bba81541ade9c1d08588bf72ea9d70731de0a94d3",
+    "patches/gift_names.json": "d3a34b1f000aea7b6f1bd1e784d48007f9068eb244973406750cf96d648ae904",
+    "patches/library_detail_art.json": "a266af81ebd9c0394dcf73d7796083ff296bff5f4c8f196945057240015769c7",
+    "patches/item_headers.json": "631665ee3261980f946ba3b158318edd807a505ab66da764bd8e58633e2f0c95",
+    "patches/hidden_text.json": "68ec916db47bd0e39c0a1b97c5734c02d9176c2a9545768dd902827cbf3d38a4",
+    "patches/hidden_movement.json": "84834da649a9977834db25c48354dd14b21c1e4fbd18d3e5ea80d9aac7d08178",
+    "patches/library_book_layout.json": "2dd3345003916c472560a081d89befbcff1baf6378602ec1d3a0359479653b4e",
+    "patches/shop_menu_layout.json": "827600ec03f98bc0fe788c9c7f613c59238edf7bd8439ca24280dd58b935b681",
+    "patches/battle_party_tactics.json": "695f4badd96b176f88124f99fef111e43def134f3afed2bc68b163e4fe107083",
+    "patches/information_menu.json": "da4cb1b40ff4f01bb0e74770d3104724a11becd3320944bcc4ddbbb125fd8481",
+    "patches/opening_menu_layout.json": "6532d696597e563d08108d11add4c302393dea3be2f195a84b594a05f73c2384",
+    "patches/regular_item_stacks.json": "7af2a23b7f3d49878e650b0569d0ba12aaac0c7d4727f903eea850c6c5aed69d",
+    "patches/bank_item_stacks.json": "a5893840fe3d0aa20ad2de19f779a0b0d250105f85b2de9436da6be6db1b5604",
+    "patches/portal_gem.json": "4af9f4e8fa673862e200ee1a7279ced3600fb8a4c4c7a77221bd8dfd1e69ce6b",
+    "patches/portal_gem_quest.json": "249d04efedd748500dbcd2db5be6d2ba81eb14f500af7a95a193a6724a7d6229",
+    "patches/starter_name.json": "6a8153ddf20d9aefeed5a1e10031178b0fef7e59a77a3968b81c395bc5b71c38",
+    "patches/special_floor_colosseum.json": "4e362312c0061191b5508d25afe202eebdca9f42f0a1fe1c4b5fd51f1532c07e"
+  },
+  "label_counts": {
+    "Dialogue": 6758,
+    "Location names": 299,
+    "Town names": 40,
+    "Arena jokes": 11,
+    "Initial": 1,
+    "Rank G cleared": 1,
+    "Rank F cleared": 1,
+    "Rank E cleared": 1,
+    "Rank D cleared / Battle Rex defeated": 1,
+    "Rank C cleared": 1,
+    "Rank B cleared": 1,
+    "Rank A cleared": 1,
+    "Rank S cleared": 1,
+    "Durran defeated": 1,
+    "Post-ending opening seen": 1,
+    "Supplemental dialogue": 120,
+    "Church services": 21,
+    "Medal appraisal": 25,
+    "Services": 366,
+    "Recruitment": 29,
+    "Source preserved": 1,
+    "Monster names": 326,
+    "Slime family": 27,
+    "Dragon family": 31,
+    "Beast family": 32,
+    "Bird family": 27,
+    "Plant family": 27,
+    "Bug family": 26,
+    "Demon family": 30,
+    "Zombie family": 27,
+    "Material family": 32,
+    "Water family": 32,
+    "???? family": 35,
+    "Monster families": 11,
+    "Item names": 226,
+    "Items": 93,
+    "Skills and spells": 237,
+    "Personalities": 27,
+    "Tactics": 5,
+    "Stats": 9,
+    "Item-use labels": 13,
+    "Battle labels": 6,
+    "Sex labels": 2,
+    "Directions": 8,
+    "Generated key modifiers": 32,
+    "Generated key themes": 86,
+    "Fixed keys": 14,
+    "Gate names": 31,
+    "Executable text": 675,
+    "Fixed labels": 350,
+    "World names": 9,
+    "Key ending": 1,
+    "Fixed text pools": 37,
+    "Saved location titles": 145,
+    "Descriptions": 312,
+    "Monster library captions": 312,
+    "Menus": 756,
+    "Name entry": 2,
+    "Mobile/password": 2,
+    "Feature text": 118,
+    "Appraisal certificate art": 5,
+    "Boss nicknames": 15,
+    "Gift monster names": 8,
+    "Library detail art": 2,
+    "Item headers": 5,
+    "Hidden text": 5,
+    "Hidden movement": 1,
+    "Player names": 1,
+    "Library book layout": 11,
+    "Shop menu layout": 11,
+    "Battle party tactics": 1,
+    "Information menu": 1,
+    "Opening menu layout": 2,
+    "Regular item stacks": 1,
+    "Bank item stacks": 8,
+    "Portal gem": 3,
+    "Portal gem quest": 9,
+    "Starter nickname": 1,
+    "Special floor colosseum": 53
+  },
+  "gbc": {
+    "source_package": "DQM_Additional_Text_Extracts",
+    "sources": {
+      "dqm1": {
+        "title": "Dragon Quest Monsters — Terry no Wonderland (Japan)",
+        "file": "DQM1_Japanese/strings.jsonl",
+        "rom_sha256": "2f2081e6907ae0ac5d171ceb977b5367fc6c5842b0eb73528733a7fa1e42d55b",
+        "source_file_sha256": "45658da5893fd3ba15ce16cba05c984323268a9a3c490f1fe2f2ab86ad722bda",
+        "verified_record_spans": 5724
+      },
+      "dqm2_ruka": {
+        "title": "Dragon Quest Monsters 2 — Ruka no Tabidachi (Japan)",
+        "file": "DQM2_Ruka_Japanese/strings.jsonl",
+        "rom_sha256": "90517f73231e52fe3ef733e369b8a3464996e785803fdb583398d40689760ab7",
+        "source_file_sha256": "db97e297baa63890de5e992293f00c2bc4d126d1bd3834d170e6f4b1509639a8",
+        "verified_record_spans": 6739
+      },
+      "dqm2_iru": {
+        "title": "Dragon Quest Monsters 2 — Iru no Bouken (Japan)",
+        "file": "DQM2_Iru_Japanese/strings.jsonl",
+        "rom_sha256": "1916208828ce85763d7ca03821eb17cec1a51d55cd80a36bd30a3ea653396a39",
+        "source_file_sha256": "97afcca072b2f9983f9466d881e5197115aebdaefececc3dd9450aa9186d279d",
+        "verified_record_spans": 6739
+      }
+    },
+    "coverage": {
+      "rows": 9956,
+      "dqm1": {
+        "not_verified": 6971,
+        "verified": 2778,
+        "not_applicable": 207
+      },
+      "dqm2": {
+        "verified": 3576,
+        "not_verified": 6295,
+        "not_applicable": 85
+      },
+      "by_catalog": {
+        "dialogue/main/0000_1999.json": {
+          "rows": 1997,
+          "dqm1": {
+            "not_verified": 1788,
+            "verified": 209
+          },
+          "dqm2": {
+            "verified": 1035,
+            "not_verified": 962
+          }
+        },
+        "dialogue/main/2000_3999.json": {
+          "rows": 2000,
+          "dqm1": {
+            "not_verified": 2000
+          },
+          "dqm2": {
+            "not_verified": 1434,
+            "verified": 566
+          }
+        },
+        "dialogue/main/4000_6131.json": {
+          "rows": 2131,
+          "dqm1": {
+            "not_verified": 595,
+            "verified": 1536
+          },
+          "dqm2": {
+            "verified": 18,
+            "not_verified": 2102,
+            "not_applicable": 11
+          }
+        },
+        "dialogue/extra.json": {
+          "rows": 120,
+          "dqm1": {
+            "not_verified": 105,
+            "verified": 15
+          },
+          "dqm2": {
+            "not_verified": 112,
+            "verified": 8
+          }
+        },
+        "dialogue/church.json": {
+          "rows": 21,
+          "dqm1": {
+            "not_verified": 19,
+            "verified": 2
+          },
+          "dqm2": {
+            "verified": 19,
+            "not_verified": 2
+          }
+        },
+        "dialogue/medal_appraisal.json": {
+          "rows": 25,
+          "dqm1": {
+            "verified": 11,
+            "not_verified": 14
+          },
+          "dqm2": {
+            "not_verified": 15,
+            "verified": 10
+          }
+        },
+        "dialogue/services.json": {
+          "rows": 366,
+          "dqm1": {
+            "verified": 83,
+            "not_verified": 283
+          },
+          "dqm2": {
+            "not_verified": 253,
+            "verified": 113
+          }
+        },
+        "dialogue/recruitment.json": {
+          "rows": 29,
+          "dqm1": {
+            "not_verified": 13,
+            "verified": 16
+          },
+          "dqm2": {
+            "verified": 9,
+            "not_verified": 20
+          }
+        },
+        "text/system.json": {
+          "rows": 899,
+          "dqm1": {
+            "verified": 470,
+            "not_verified": 297,
+            "not_applicable": 132
+          },
+          "dqm2": {
+            "verified": 640,
+            "not_verified": 259
+          }
+        },
+        "text/executable.json": {
+          "rows": 675,
+          "dqm1": {
+            "not_verified": 347,
+            "verified": 328
+          },
+          "dqm2": {
+            "not_verified": 512,
+            "verified": 163
+          }
+        },
+        "text/static.json": {
+          "rows": 350,
+          "dqm1": {
+            "not_verified": 349,
+            "not_applicable": 1
+          },
+          "dqm2": {
+            "not_verified": 45,
+            "verified": 305
+          }
+        },
+        "text/static_pools.json": {
+          "rows": 37,
+          "dqm1": {
+            "not_verified": 10,
+            "verified": 27
+          },
+          "dqm2": {
+            "not_verified": 37
+          }
+        },
+        "text/location_titles.json": {
+          "rows": 145,
+          "dqm1": {
+            "not_verified": 119,
+            "verified": 26
+          },
+          "dqm2": {
+            "verified": 75,
+            "not_verified": 70
+          }
+        },
+        "text/monster_captions.json": {
+          "rows": 312,
+          "dqm1": {
+            "not_verified": 312
+          },
+          "dqm2": {
+            "verified": 312
+          }
+        },
+        "menus/general.json": {
+          "rows": 704,
+          "dqm1": {
+            "not_verified": 667,
+            "verified": 37
+          },
+          "dqm2": {
+            "not_verified": 406,
+            "verified": 298
+          }
+        },
+        "menus/keyboard.json": {
+          "rows": 2,
+          "dqm1": {
+            "not_verified": 2
+          },
+          "dqm2": {
+            "not_verified": 2
+          }
+        },
+        "menus/mobile.json": {
+          "rows": 2,
+          "dqm1": {
+            "not_verified": 2
+          },
+          "dqm2": {
+            "not_verified": 2
+          }
+        },
+        "patches/appraisal_certificate_art.json": {
+          "rows": 5,
+          "dqm1": {
+            "not_verified": 5
+          },
+          "dqm2": {
+            "not_verified": 5
+          }
+        },
+        "patches/boss_names.json": {
+          "rows": 19,
+          "dqm1": {
+            "verified": 17,
+            "not_verified": 2
+          },
+          "dqm2": {
+            "not_verified": 17,
+            "verified": 2
+          }
+        },
+        "patches/gift_names.json": {
+          "rows": 3,
+          "dqm1": {
+            "not_verified": 3
+          },
+          "dqm2": {
+            "verified": 3
+          }
+        },
+        "patches/library_detail_art.json": {
+          "rows": 2,
+          "dqm1": {
+            "not_verified": 2
+          },
+          "dqm2": {
+            "not_verified": 2
+          }
+        },
+        "patches/item_headers.json": {
+          "rows": 5,
+          "dqm1": {
+            "not_verified": 5
+          },
+          "dqm2": {
+            "not_verified": 5
+          }
+        },
+        "patches/hidden_text.json": {
+          "rows": 5,
+          "dqm1": {
+            "not_verified": 5
+          },
+          "dqm2": {
+            "not_verified": 5
+          }
+        },
+        "patches/hidden_movement.json": {
+          "rows": 1,
+          "dqm1": {
+            "not_verified": 1
+          },
+          "dqm2": {
+            "not_verified": 1
+          }
+        },
+        "patches/library_book_layout.json": {
+          "rows": 11,
+          "dqm1": {
+            "not_verified": 11
+          },
+          "dqm2": {
+            "not_verified": 11
+          }
+        },
+        "patches/shop_menu_layout.json": {
+          "rows": 11,
+          "dqm1": {
+            "not_verified": 11
+          },
+          "dqm2": {
+            "not_verified": 11
+          }
+        },
+        "patches/battle_party_tactics.json": {
+          "rows": 1,
+          "dqm1": {
+            "not_verified": 1
+          },
+          "dqm2": {
+            "not_verified": 1
+          }
+        },
+        "patches/information_menu.json": {
+          "rows": 1,
+          "dqm1": {
+            "not_verified": 1
+          },
+          "dqm2": {
+            "not_verified": 1
+          }
+        },
+        "patches/opening_menu_layout.json": {
+          "rows": 2,
+          "dqm1": {
+            "not_verified": 2
+          },
+          "dqm2": {
+            "not_verified": 2
+          }
+        },
+        "patches/regular_item_stacks.json": {
+          "rows": 1,
+          "dqm1": {
+            "not_applicable": 1
+          },
+          "dqm2": {
+            "not_applicable": 1
+          }
+        },
+        "patches/bank_item_stacks.json": {
+          "rows": 8,
+          "dqm1": {
+            "not_applicable": 8
+          },
+          "dqm2": {
+            "not_applicable": 8
+          }
+        },
+        "patches/portal_gem.json": {
+          "rows": 3,
+          "dqm1": {
+            "not_applicable": 3
+          },
+          "dqm2": {
+            "not_applicable": 3
+          }
+        },
+        "patches/portal_gem_quest.json": {
+          "rows": 9,
+          "dqm1": {
+            "not_applicable": 9
+          },
+          "dqm2": {
+            "not_applicable": 9
+          }
+        },
+        "patches/starter_name.json": {
+          "rows": 1,
+          "dqm1": {
+            "verified": 1
+          },
+          "dqm2": {
+            "not_verified": 1
+          }
+        },
+        "patches/special_floor_colosseum.json": {
+          "rows": 53,
+          "dqm1": {
+            "not_applicable": 53
+          },
+          "dqm2": {
+            "not_applicable": 53
+          }
+        }
+      }
+    },
+    "policy": [
+      "Japanese extract record spans are verified against the manifest's original ROM hashes before use.",
+      "Reviewed correspondences use both catalog path and source ID; duplicate IDs in different catalogs remain distinct.",
+      "Several source passages may support one PSX adaptation. Original wording, controls and adaptation notes remain in row details.",
+      "Exact wording only supplements matching name catalogs; unrelated dialogue scenes are never joined by text similarity.",
+      "Ruka and Iru wording remains separate when different. A single verified edition is labelled explicitly.",
+      "Not verified means the counterpart is unestablished, not that it is absent from the original game."
+    ]
+  }
+}
