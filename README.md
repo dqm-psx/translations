@@ -8,6 +8,13 @@ project alongside Japanese PS1, verified Japanese Game Boy Color, Current,
 Game Boy, and Delocalized wording. Search all text, combine labels, show English
 differences, and sort the complete selection before viewing 100 rows per page.
 
+Open **Columns** below the label filters to choose which of the nine columns
+to display. **PSX / Current / Game Boy** selects the three main comparison
+columns; **Show all columns** restores the full table. At least one column stays
+visible, and your selection is remembered in this browser. Search still includes
+hidden columns, and hiding Suggestions preserves your drafts. Printing uses the
+selected columns.
+
 Suggestions are drafts saved only in this browser. Export suggestions to back
 them up or share them; import an existing export to move them to this site.
 Nothing is submitted to GitHub or the translation project. Drafts saved in a
@@ -17,7 +24,8 @@ first. Existing row IDs and version-1 suggestion exports are preserved.
 The **Theme** buttons offer **System**, **Light**, and **Dark**. System follows
 your device's appearance, including changes while the page is open. Your choice
 is remembered in this browser; when storage is unavailable it applies for the
-current visit. Printed tables use the light palette.
+current visit. Dark mode uses the guide's charcoal and teal palette. Printed
+tables use the light palette.
 
 ## Open or host
 
@@ -42,7 +50,8 @@ revision `057877498252bac5cb42d35a1cb29286ecbec8f9` (clean working tree).
 This is a preserved snapshot, not a live feed of translation changes.
 
 The standalone HTML is renamed to `index.html`, has a link back to the guide,
-and includes a theme picker and dark palette. Its embedded comparison data and
+and includes a theme picker, dark palette, and the original guide's column
+controls adapted for standalone storage. Its embedded comparison data and
 comparison/suggestion logic are unchanged. The three companion
 downloads retain their original bytes. `source-manifest.json` records the
 original and published SHA-256 hashes. No ROMs, disc images, or executables are
@@ -50,7 +59,7 @@ included.
 
 To refresh, export all four matching artifacts together from the source project,
 decompress the HTML and JSON if stored as `.gz`, preserve the guide link and
-theme controls, and update the manifest. Preserve row keys so saved suggestion
+theme and column controls, and update the manifest. Preserve row keys so saved suggestion
 exports remain usable.
 
 ## Test
