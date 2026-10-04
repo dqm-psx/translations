@@ -12,7 +12,8 @@
     "Matched the dark palette to dqm-psx/guide: charcoal page and panels, light text, muted gray text, and teal accents.",
     "Added per-entry GitHub issue drafts with full source context and a long-text copy fallback; moved existing JSON backup/restore controls into a collapsed section. Original comparison data and local suggestion storage are unchanged.",
     "Extended comparison focus handling to defer search/suggestion-sort redraws while a submission button or copy dialog is active, preserving click and keyboard activation.",
-    "Added the PSX Japanese / Current / Game Boy / Suggestions column preset and made it the default when no valid column preference is saved, preserving existing saved selections."
+    "Added the PSX Japanese / Current / Game Boy / Suggestions column preset and made it the default when no valid column preference is saved, preserving existing saved selections.",
+    "Marked the Game Boy and Delocalized display cells for s00434000_0222, s00434000_0249, and s00434000_0271 as Not verified after source review found retained project wording without established donor counterparts. Updated the embedded comparison, JSON and Markdown together; preserved raw source records, Current text, row keys, snapshot revision, and Japanese coverage evidence."
   ],
   "original_sha256": {
     "DQM-translation-comparison.html": "8cd80690f72909d4bffa4fe482cc94453e5120cd14b95f5341b7c70543dee646",
@@ -21,9 +22,9 @@
     "comparison-data.json": "1a8bd7004dc7b3f64b984124433cc6f27f15ca85c9bfd320e0716f3c9e38a992"
   },
   "published_sha256": {
-    "index.html": "febd360c97b590fdcd81131a7fdbee913eb5c9d0e113c32c5e065ace62b123f4",
-    "DQM-translation-comparison.md": "99d08fe6fcfdfdbfb9fc8db4369f8e404ba4ccc7a6437ac96f042d693e3178eb",
+    "index.html": "e960fa2d6634e698604061c0dd91533d0e47b90a9425e33b8b62cfc37269eadb",
+    "DQM-translation-comparison.md": "e6af3547c59480103c6135e7bb8540d47f2e569fc3855adb9b2caa16146c52ea",
     "coverage-report.json": "122557f3c9042b4aff52cbe1203e2062f3c5038fcd073140953d4671ec0f338e",
-    "comparison-data.json": "1a8bd7004dc7b3f64b984124433cc6f27f15ca85c9bfd320e0716f3c9e38a992"
+    "comparison-data.json": "155580fdc714535efd90efdd63e45108039ac349ad1c5f4d3d3e20054e32baff"
   }
 }
