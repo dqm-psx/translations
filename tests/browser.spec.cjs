@@ -154,7 +154,7 @@ for (const protocol of ['file', 'http']) {
       const manifest = JSON.parse(await readFile(path.join(root, 'source-manifest.json'), 'utf8'));
       for (const [filename, hash] of Object.entries(manifest.published_sha256)) {
         expect(digest(await readFile(path.join(root, filename)))).toBe(hash);
-        if (filename === 'coverage-report.json') expect(hash).toBe(manifest.original_sha256[filename]);
+        if (filename !== 'index.html') expect(hash).toBe(manifest.original_sha256[filename]);
       }
       await page.getByText('Sources and coverage', { exact: true }).click();
       const companions = [
