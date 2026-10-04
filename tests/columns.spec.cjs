@@ -7,6 +7,7 @@ const root = path.resolve(__dirname, '..');
 const storageKey = 'dqm-translations:columns:v1';
 const columns = ['labels', 'japanese_psx', 'japanese_gbc_dqm1', 'japanese_gbc_dqm2', 'current', 'current_menu', 'gameboy', 'delocalized', 'suggestion'];
 const comparison = ['japanese_psx', 'current', 'gameboy'];
+const suggestions = [...comparison, 'suggestion'];
 const test = base.extend({
   siteServer: [async ({}, use) => {
     const server = await startServer(root);
@@ -45,6 +46,9 @@ for (const protocol of ['http', 'file']) {
   test(`${protocol}: custom column choices persist across reloads and keep the remaining table aligned`, async ({ page, siteServer }) => {
     const url = protocol === 'file' ? pathToFileURL(path.join(root, 'index.html')).href : siteServer.url;
     await openComparison(page, url);
+    await expectColumns(page, suggestions);
+    await openPicker(page);
+    await page.locator('#all-columns').click();
     await expectColumns(page, columns);
     const fullWidth = await page.locator('#comparison-table').evaluate(table => table.getBoundingClientRect().width);
     await openPicker(page);
@@ -78,6 +82,10 @@ test('presets and keyboard controls keep at least one column visible', async ({ 
   await expect(page.locator('#column-picker')).toHaveAttribute('open', '');
   await page.getByRole('button', { name: 'PSX / Current / Game Boy', exact: true }).click();
   await expectColumns(page, comparison);
+  await page.getByRole('button', { name: 'PSX Japanese / Current / Game Boy / Suggestions', exact: true }).click();
+  await expectColumns(page, suggestions);
+  await page.locator('#comparison-columns').click();
+  await expectColumns(page, comparison);
   await page.locator('input[data-column="japanese_psx"]').uncheck();
   await page.locator('input[data-column="gameboy"]').uncheck();
   await expectColumns(page, ['current']);
@@ -91,6 +99,8 @@ test('presets and keyboard controls keep at least one column visible', async ({ 
   await page.keyboard.press('Escape');
   await expect(page.locator('#column-picker')).not.toHaveAttribute('open', '');
   await expect(page.locator('#column-summary')).toBeFocused();
+  await page.reload();
+  await expectColumns(page, columns);
 });
 
 test('hidden columns stay hidden through filtering, sorting and paging, while suggestions remain searchable and saved', async ({ page, siteServer }) => {
@@ -121,21 +131,22 @@ test('hidden columns stay hidden through filtering, sorting and paging, while su
   await page.locator('#clear-filters').click();
   await page.locator('#source-order').click();
   await openPicker(page);
-  await page.locator('#all-columns').click();
-  await expectColumns(page, columns);
+  await page.locator('#suggestion-columns').click();
+  await expectColumns(page, suggestions);
   await expect(input).toHaveValue(draft);
   await page.reload();
+  await expectColumns(page, suggestions);
   await expect(input).toHaveValue(draft);
 });
 
-test('corrupt preferences fall back to all columns and blocked storage does not prevent selection', async ({ page, siteServer }) => {
+test('corrupt preferences fall back to the suggestion preset and blocked storage does not prevent selection', async ({ page, siteServer }) => {
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   await openComparison(page, siteServer.url);
   for (const saved of ['{bad json', '[]', '["unknown-column"]']) {
     await page.evaluate(({ key, saved }) => localStorage.setItem(key, saved), { key: storageKey, saved });
     await page.reload();
-    await expectColumns(page, columns);
+    await expectColumns(page, suggestions);
   }
   await page.addInitScript(() => {
     Object.defineProperty(window, 'localStorage', {
@@ -143,7 +154,7 @@ test('corrupt preferences fall back to all columns and blocked storage does not 
     });
   });
   await page.reload();
-  await expectColumns(page, columns);
+  await expectColumns(page, suggestions);
   await openPicker(page);
   await page.locator('#comparison-columns').click();
   await expectColumns(page, comparison);
@@ -158,19 +169,20 @@ test('column controls fit a dark mobile screen and printing preserves the chosen
   await openComparison(page, siteServer.url);
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await openPicker(page);
-  for (const control of await page.locator('#column-picker input[data-column], #comparison-columns, #all-columns').all()) {
+  for (const control of await page.locator('#column-picker input[data-column], #suggestion-columns, #comparison-columns, #all-columns').all()) {
     await expect(control).toBeVisible();
     const bounds = await control.boundingBox();
     expect(bounds.x).toBeGreaterThanOrEqual(0);
     expect(bounds.x + bounds.width).toBeLessThanOrEqual(391);
   }
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(391);
-  await page.locator('#comparison-columns').click();
-  await expectColumns(page, comparison);
+  await page.locator('#all-columns').click();
+  await page.locator('#suggestion-columns').click();
+  await expectColumns(page, suggestions);
   await page.emulateMedia({ media: 'print' });
   await expect(page.locator('#column-picker')).toBeHidden();
-  await expectColumns(page, comparison);
+  await expectColumns(page, suggestions);
   await page.emulateMedia({ media: 'screen' });
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
-  await expectColumns(page, comparison);
+  await expectColumns(page, suggestions);
 });
