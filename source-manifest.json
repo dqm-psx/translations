@@ -9,7 +9,9 @@
     "Renamed the standalone HTML to index.html and added a link back to the guide.",
     "Added a persistent System/Light/Dark theme picker and screen-only dark palette; original comparison data and logic are unchanged.",
     "Ported selectable columns and the PSX / Current / Game Boy preset from guide/runtime/frame.js at source repository commit 0ee1916ef0b9fba559a8a3eaec1073caed16ad3d, using standalone browser storage and theme colors.",
-    "Matched the dark palette to dqm-psx/guide: charcoal page and panels, light text, muted gray text, and teal accents."
+    "Matched the dark palette to dqm-psx/guide: charcoal page and panels, light text, muted gray text, and teal accents.",
+    "Added per-entry GitHub issue drafts with full source context and a long-text copy fallback; moved existing JSON backup/restore controls into a collapsed section. Original comparison data and local suggestion storage are unchanged.",
+    "Extended comparison focus handling to defer search/suggestion-sort redraws while a submission button or copy dialog is active, preserving click and keyboard activation."
   ],
   "original_sha256": {
     "DQM-translation-comparison.html": "8cd80690f72909d4bffa4fe482cc94453e5120cd14b95f5341b7c70543dee646",
@@ -18,7 +20,7 @@
     "comparison-data.json": "1a8bd7004dc7b3f64b984124433cc6f27f15ca85c9bfd320e0716f3c9e38a992"
   },
   "published_sha256": {
-    "index.html": "d9911bf1336050bd28393ef3c97f40f96ccb3e2f30fad48b621efb1cb70df77b",
+    "index.html": "8e7245d9d9fe4b27d69cb1792cb69b290c8ef7f03522b54c2032ece87a10016f",
     "DQM-translation-comparison.md": "99d08fe6fcfdfdbfb9fc8db4369f8e404ba4ccc7a6437ac96f042d693e3178eb",
     "coverage-report.json": "122557f3c9042b4aff52cbe1203e2062f3c5038fcd073140953d4671ec0f338e",
     "comparison-data.json": "1a8bd7004dc7b3f64b984124433cc6f27f15ca85c9bfd320e0716f3c9e38a992"

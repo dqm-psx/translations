@@ -124,6 +124,7 @@ for (const protocol of ['file', 'http']) {
       await page.reload();
       await expect(input).toHaveValue(suggestion);
 
+      await page.locator('#suggestion-backups > summary').click();
       const downloadPromise = page.waitForEvent('download');
       await page.locator('#export-suggestions').click();
       const download = await downloadPromise;
@@ -138,6 +139,7 @@ for (const protocol of ['file', 'http']) {
       await input.fill('');
       await page.reload();
       await expect(input).toHaveValue('');
+      await page.locator('#suggestion-backups > summary').click();
       await page.locator('#import-suggestions').setInputFiles(backupPath);
       await expect(page.locator('#suggestions-status')).toContainText('Imported 1;');
       await expect(input).toHaveValue(suggestion);
@@ -200,7 +202,8 @@ for (const protocol of ['file', 'http']) {
     test('keeps controls usable on a narrow screen and scrolls to suggestions', async ({ page }) => {
       await page.setViewportSize({ width: 390, height: 844 });
       await expect(page.locator('#search')).toBeVisible();
-      await expect(page.locator('#export-suggestions')).toBeVisible();
+      await expect(page.locator('#suggestion-backups > summary')).toBeVisible();
+      await expect(page.locator('#export-suggestions')).toBeHidden();
       const dimensions = await page.evaluate(() => ({
         viewport: window.innerWidth,
         document: document.documentElement.scrollWidth,

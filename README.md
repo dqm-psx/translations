@@ -15,11 +15,23 @@ visible, and your selection is remembered in this browser. Search still includes
 hidden columns, and hiding Suggestions preserves your drafts. Printing uses the
 selected columns.
 
-Suggestions are drafts saved only in this browser. Export suggestions to back
-them up or share them; import an existing export to move them to this site.
-Nothing is submitted to GitHub or the translation project. Drafts saved in a
-different file or website do not automatically move here, so export them there
-first. Existing row IDs and version-1 suggestion exports are preserved.
+Write a draft in an entry's **Suggestions** column, then choose **Submit on
+GitHub**. This opens a prefilled issue for you to review, add your reasoning,
+and submit with your GitHub account. Issues are public. Each report includes
+the suggested wording, current English, Japanese text, exact row key, catalog,
+and snapshot revision so maintainers can identify the entry. Opening GitHub
+does not submit the issue or clear your draft.
+
+For long reports, the page offers **Copy issue text** and **Open GitHub**;
+paste the full text into the issue body before submitting. If browser clipboard
+access is unavailable, the text is selected for manual copying. No suggestion
+is shortened. Submission uses GitHub's issue composer, with no site backend,
+embedded credentials, or automatic issue processing.
+
+Drafts still save in this browser. Open **Backup / restore drafts** to export
+a JSON backup or import an existing export. Drafts saved in a different file
+or website do not automatically move here, so export them there first.
+Existing row IDs and version-1 suggestion exports are preserved.
 
 The **Theme** buttons offer **System**, **Light**, and **Dark**. System follows
 your device's appearance, including changes while the page is open. Your choice
@@ -50,17 +62,19 @@ revision `057877498252bac5cb42d35a1cb29286ecbec8f9` (clean working tree).
 This is a preserved snapshot, not a live feed of translation changes.
 
 The standalone HTML is renamed to `index.html`, has a link back to the guide,
-and includes a theme picker, dark palette, and the original guide's column
-controls adapted for standalone storage. Its embedded comparison data and
-comparison/suggestion logic are unchanged. The three companion
+and includes a theme picker, dark palette, the original guide's column
+controls adapted for standalone storage, and a GitHub issue submission layer.
+Its embedded comparison data and local suggestion storage module are unchanged.
+Comparison focus handling also keeps row actions available while a search or
+suggestion sort waits to refresh. The three companion
 downloads retain their original bytes. `source-manifest.json` records the
 original and published SHA-256 hashes. No ROMs, disc images, or executables are
 included.
 
 To refresh, export all four matching artifacts together from the source project,
 decompress the HTML and JSON if stored as `.gz`, preserve the guide link and
-theme and column controls, and update the manifest. Preserve row keys so saved suggestion
-exports remain usable.
+theme, column, and GitHub submission controls, and update the manifest.
+Preserve row keys so saved suggestion exports remain usable.
 
 ## Test
 
@@ -71,5 +85,7 @@ npm test
 ```
 
 Tests exercise the standalone file and a static server mounted at `/translations/`,
-including filtering, sorting, pagination, suggestion backups, and download links.
+including filtering, sorting, pagination, suggestion backups, download links,
+and issue composer links with Unicode and long-text fallbacks. Tests intercept
+GitHub navigation and never create real issues.
 Test dependencies are not needed to use the page.
