@@ -14,6 +14,11 @@ Nothing is submitted to GitHub or the translation project. Drafts saved in a
 different file or website do not automatically move here, so export them there
 first. Existing row IDs and version-1 suggestion exports are preserved.
 
+The **Theme** buttons offer **System**, **Light**, and **Dark**. System follows
+your device's appearance, including changes while the page is open. Your choice
+is remembered in this browser; when storage is unavailable it applies for the
+current visit. Printed tables use the light palette.
+
 ## Open or host
 
 Open `index.html` directly, or serve the repository with any static HTTP server.
@@ -36,15 +41,17 @@ The wording snapshot was generated on September 28, 2026, from translation
 revision `057877498252bac5cb42d35a1cb29286ecbec8f9` (clean working tree).
 This is a preserved snapshot, not a live feed of translation changes.
 
-The standalone HTML is renamed to `index.html` and has a link back to the guide.
-Its embedded comparison data and scripts are unchanged. The three companion
+The standalone HTML is renamed to `index.html`, has a link back to the guide,
+and includes a theme picker and dark palette. Its embedded comparison data and
+comparison/suggestion logic are unchanged. The three companion
 downloads retain their original bytes. `source-manifest.json` records the
 original and published SHA-256 hashes. No ROMs, disc images, or executables are
 included.
 
 To refresh, export all four matching artifacts together from the source project,
-decompress the HTML and JSON if stored as `.gz`, apply the same guide link, and
-update the manifest. Preserve row keys so saved suggestion exports remain usable.
+decompress the HTML and JSON if stored as `.gz`, preserve the guide link and
+theme controls, and update the manifest. Preserve row keys so saved suggestion
+exports remain usable.
 
 ## Test
 
