@@ -65,12 +65,22 @@ This is a preserved snapshot, not a live feed of translation changes.
 The standalone HTML is renamed to `index.html`, has a link back to the guide,
 and includes a theme picker, dark palette, the original guide's column
 controls adapted for standalone storage, and a GitHub issue submission layer.
-Its embedded comparison data and local suggestion storage module are unchanged.
-Comparison focus handling also keeps row actions available while a search or
+Its local suggestion storage module is unchanged. Comparison focus handling
+also keeps row actions available while a search or
 suggestion sort waits to refresh. The three companion
-downloads retain their original bytes. `source-manifest.json` records the
-original and published SHA-256 hashes. No ROMs, disc images, or executables are
+downloads preserve the source snapshot, with reviewed display corrections applied
+to the HTML, JSON, and Markdown together. The coverage report retains its original
+bytes. `source-manifest.json` records the original and published SHA-256 hashes
+and the changes between them. No ROMs, disc images, or executables are
 included.
+
+The Game Boy and Delocalized cells for `s00434000_0222`, `s00434000_0249`, and
+`s00434000_0271` now display **Not verified**. These entries contained retained
+project wording without established donor counterparts. Their raw source records
+remain available under **Source & codes** and in `comparison-data.json`; Current
+wording, row keys, and the original snapshot revision are preserved. Not verified
+does not establish that a passage is absent from the original game. Preserve
+these review corrections when refreshing until donor counterparts are verified.
 
 To refresh, export all four matching artifacts together from the source project,
 decompress the HTML and JSON if stored as `.gz`, preserve the guide link and
