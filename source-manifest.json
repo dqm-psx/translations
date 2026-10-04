@@ -6,7 +6,8 @@
   "generated_at": "2026-09-28T21:39:45.432656-07:00",
   "row_count": 9956,
   "changes": [
-    "Renamed the standalone HTML to index.html and added a link back to the guide."
+    "Renamed the standalone HTML to index.html and added a link back to the guide.",
+    "Added a persistent System/Light/Dark theme picker and screen-only dark palette; original comparison data and logic are unchanged."
   ],
   "original_sha256": {
     "DQM-translation-comparison.html": "8cd80690f72909d4bffa4fe482cc94453e5120cd14b95f5341b7c70543dee646",
@@ -15,7 +16,7 @@
     "comparison-data.json": "1a8bd7004dc7b3f64b984124433cc6f27f15ca85c9bfd320e0716f3c9e38a992"
   },
   "published_sha256": {
-    "index.html": "7fadc26e7093fa02ecdf70ff2e6bf4d36a9734872b88a7e80e5cc72b8f3de624",
+    "index.html": "7204f07f489f2238ec5b3f4fd8ea196f0219da7cb44b40b1bb8758d734eba952",
     "DQM-translation-comparison.md": "99d08fe6fcfdfdbfb9fc8db4369f8e404ba4ccc7a6437ac96f042d693e3178eb",
     "coverage-report.json": "122557f3c9042b4aff52cbe1203e2062f3c5038fcd073140953d4671ec0f338e",
     "comparison-data.json": "1a8bd7004dc7b3f64b984124433cc6f27f15ca85c9bfd320e0716f3c9e38a992"
