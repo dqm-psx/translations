@@ -8,12 +8,13 @@ project alongside Japanese PS1, verified Japanese Game Boy Color, Current,
 Game Boy, and Delocalized wording. Search all text, combine labels, show English
 differences, and sort the complete selection before viewing 100 rows per page.
 
-Open **Columns** below the label filters to choose which of the nine columns
-to display. **PSX / Current / Game Boy** selects the three main comparison
-columns; **Show all columns** restores the full table. At least one column stays
-visible, and your selection is remembered in this browser. Search still includes
-hidden columns, and hiding Suggestions preserves your drafts. Printing uses the
-selected columns.
+The default view shows **PSX Japanese / Current / Game Boy / Suggestions**.
+Open **Columns** below the label filters to select that preset or choose any of
+the nine columns. **PSX / Current / Game Boy** selects the three main comparison
+columns; **Show all columns** restores the full table. Existing saved selections
+take precedence over the default. At least one column stays visible, and your
+selection is remembered in this browser. Search still includes hidden columns,
+and hiding Suggestions preserves your drafts. Printing uses the selected columns.
 
 Write a draft in an entry's **Suggestions** column, then choose **Submit on
 GitHub**. This opens a prefilled issue for you to review, add your reasoning,
