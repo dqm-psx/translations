@@ -1,0 +1,340 @@
+{
+  "source_repository": "https://github.com/phakic/dqm1",
+  "source_revision": "a57b93caf4791701fe62cd703065edbedfc44554",
+  "source_pr": "https://github.com/phakic/dqm1/pull/63",
+  "row": {
+    "table": "patches/gift_names.json",
+    "id": "machiko.nickname",
+    "source_id": "machiko.nickname",
+    "catalog": "patches/gift_names.json",
+    "path": [],
+    "labels": [
+      "Gift monster names"
+    ],
+    "note": "Machiko / May / Maci's Living Statue / StoneMan gift for clearing Rank A. The PSX nickname is ビート; the Japanese GBC counterpart is ピート, localized as Pete in both English GBC editions. The gift reuses the existing owner row dialogue_full_4000_6131.json:s0adf7000_0c40. The Vibecoded wording remains Beat.",
+    "japanese_psx": "ビート",
+    "japanese_status": "recorded",
+    "raw": {
+      "japanese": "ビート",
+      "translations": {
+        "current": "Pete",
+        "gameboy": "Pete",
+        "delocalized": "Pete",
+        "vibecoded": "Beat"
+      },
+      "native_metadata": {
+        "archive_index": 5661,
+        "archive_offset": 182415360,
+        "original_size": 194160,
+        "source_japanese": "ビート",
+        "source_metadata": "src/tools/machiko_gift_name.py",
+        "kind": "native_immediate_name_stores",
+        "helper_local_offset": 83556,
+        "helper_end_local_offset": 84064,
+        "helper_address_hex": "0x800FF674",
+        "helper_sha256": "2ad40af2b873f41f06748dc3da8271c75351102b2c42d801ba6a9beefa5ee49e",
+        "event_local_offset": 9277,
+        "source_event_hex": "0474f60f8034aa",
+        "source_field_hex": "ce27a3ffffff",
+        "native_name_field_bytes": 6,
+        "menu_cells": 5,
+        "owner_row_key": "dialogue_full_4000_6131.json:s0adf7000_0c40",
+        "owner_source_japanese": "マチコ",
+        "owner_display_names": {
+          "current": "Machi",
+          "gameboy": "May",
+          "delocalized": "Maci",
+          "vibecoded": "Machi"
+        },
+        "note": "The event calls the native constructor, then sets gift flag AA. Six-byte owner and nickname fields are initialized by immediate stores; the patch changes name initialization only and preserves stats, skills, event behavior, and saved monsters."
+      }
+    },
+    "current": "Pete",
+    "current_menu": "Pete",
+    "gameboy": "Pete",
+    "gameboy_menu": "Pete",
+    "delocalized": "Pete",
+    "delocalized_menu": "Pete",
+    "limit": 5,
+    "different": false,
+    "key": "patches/gift_names.json:machiko.nickname",
+    "gbc_details": {
+      "variants": [
+        {
+          "text": "ピート",
+          "games": [
+            "dqm1"
+          ],
+          "sources": [
+            {
+              "game": "dqm1",
+              "file": "DQM1_Japanese/strings.jsonl",
+              "record_id": "jp_dqm1_050752",
+              "offset_hex": "0x050752",
+              "category": "character_and_monster_nickname_fields",
+              "text": "ピート",
+              "annotated_text": "ピート<END>",
+              "references": [
+                {
+                  "fixed_table_offset": 329122,
+                  "index": 54,
+                  "stride": 8
+                }
+              ],
+              "method": "project-reviewed-native-name",
+              "reviewed_method": "GBC preset 0x013A selects StoneMan and copies the May/Pete owner and nickname pair; PSX Rank A reward uses the corresponding Machiko statue constructor."
+            }
+          ]
+        }
+      ],
+      "game_status": {
+        "dqm1": {
+          "status": "verified",
+          "note": "Reviewed native preset, species, owner, and nickname correspondence; Japanese GBC uses ピート while PSX uses ビート."
+        },
+        "dqm2": {
+          "status": "not_verified",
+          "note": "No corresponding Japanese passage has been established; absence from the game has not been proved."
+        }
+      },
+      "supporting_sources": [],
+      "note": "The Game Boy and Delocalized source records both spell the assigned nickname Pete. This is the statue gift, distinct from the earlier May/Zee breeding pair."
+    },
+    "japanese_gbc_dqm1": "ピート",
+    "japanese_gbc_dqm2": "Not verified",
+    "source_repository": "https://github.com/phakic/dqm1",
+    "source_revision": "a57b93caf4791701fe62cd703065edbedfc44554",
+    "source_pr": "https://github.com/phakic/dqm1/pull/63"
+  },
+  "evidence": {
+    "psx": {
+      "translation_catalog": "src/translations/patches/gift_names.json",
+      "translation_entry": "machiko.nickname",
+      "native_patch": "src/tools/machiko_gift_name.py",
+      "owner_catalog": "src/translations/dialogue/main/4000_6131.json",
+      "owner_entry": "s0adf7000_0c40",
+      "name_source_hex": "ce27a3ffffff",
+      "name_source_text": "ビート"
+    },
+    "gbc": {
+      "english_rom_sha256": "137a9bd2b0ab83f0547f12560b1bc5392e5412514645d18ac7d79c607902cc01",
+      "preset_id_hex": "0x013A",
+      "template_offset_hex": "0x052AC7",
+      "template_source_hex": "c5000000282c017800c800f0005a00aa00fa3232c82e3270ff",
+      "species_index": 197,
+      "species_record": "DWM1_1061CD",
+      "species_name": "StoneMan",
+      "selector_offset_hex": "0x050441",
+      "selector_source_hex": "fe3aca4145",
+      "copy_helper_offset_hex": "0x050541",
+      "copy_helper_source_hex": "21cdca114a470608cd824721c2ca1152470608cd8247c9",
+      "proof": "Template 0x013A selects species 0xC5 (StoneMan). The name dispatcher tests 0x3A and jumps to the helper at ROM 0x050541. That helper copies eight bytes from owner 0x05074A to CACD, then eight bytes from nickname 0x050752 to CAC2. The two source strings are May and Pete.",
+      "records": {
+        "japanese": {
+          "jp_dqm1_05074A": {
+            "annotated_text": "マチコ<END>",
+            "bank_hex": "0x14",
+            "byte_length": 4,
+            "category": "character_and_monster_nickname_fields",
+            "cpu_address_hex": "0x474A",
+            "end_offset_exclusive": 329550,
+            "end_offset_hex": "0x05074E",
+            "game": "jp_dqm1",
+            "id": "jp_dqm1_05074A",
+            "notes": [],
+            "offset": 329546,
+            "offset_hex": "0x05074A",
+            "origins": [
+              "manual_text_field"
+            ],
+            "raw_hex": "7A6B64F0",
+            "references": [
+              {
+                "fixed_table_offset": 329122,
+                "index": 53,
+                "stride": 8
+              }
+            ],
+            "scope": "referenced_or_reviewed_field",
+            "status": "decoded",
+            "text": "マチコ",
+            "unknown_bytes": []
+          },
+          "jp_dqm1_050752": {
+            "annotated_text": "ピート<END>",
+            "bank_hex": "0x14",
+            "byte_length": 5,
+            "category": "character_and_monster_nickname_fields",
+            "cpu_address_hex": "0x4752",
+            "end_offset_exclusive": 329559,
+            "end_offset_hex": "0x050757",
+            "game": "jp_dqm1",
+            "id": "jp_dqm1_050752",
+            "notes": [],
+            "offset": 329554,
+            "offset_hex": "0x050752",
+            "origins": [
+              "manual_text_field"
+            ],
+            "raw_hex": "768E9C6FF0",
+            "references": [
+              {
+                "fixed_table_offset": 329122,
+                "index": 54,
+                "stride": 8
+              }
+            ],
+            "scope": "referenced_or_reviewed_field",
+            "status": "decoded",
+            "text": "ピート",
+            "unknown_bytes": []
+          }
+        },
+        "gameboy": {
+          "DWM1_05074A": {
+            "start": 329546,
+            "end": 329550,
+            "text": "May",
+            "raw_text": "May<F0>",
+            "bytes_hex": "30 3E 56 F0",
+            "refs": [
+              {
+                "table_offset": 329122,
+                "entry_index": 53,
+                "stride": 8
+              }
+            ],
+            "terminated": true,
+            "extraction_method": "fixed_stride_name",
+            "categories": [
+              "preset_and_generated_names"
+            ],
+            "notes": [
+              "Preset nickname allocation; some untranslated/blank-glyph remnants are retained in the unresolved file."
+            ],
+            "id": "DWM1_05074A",
+            "source_offset": "0x05074A",
+            "source_end_exclusive": "0x05074E",
+            "bank_hex": "14",
+            "cpu_address_hex": "474A",
+            "source_length": 4,
+            "source_sha256": "8e5340682c61c9d316817148a1d77c446e417aef58f83148b237e8e6c12361b4",
+            "contains_english": true,
+            "status": "decoded_source_text",
+            "control_codes": [
+              {
+                "offset": "0x05074D",
+                "opcode": "F0",
+                "arguments_hex": ""
+              }
+            ]
+          },
+          "DWM1_050752": {
+            "start": 329554,
+            "end": 329559,
+            "text": "Pete",
+            "raw_text": "Pete<F0>",
+            "bytes_hex": "33 42 51 42 F0",
+            "refs": [
+              {
+                "table_offset": 329122,
+                "entry_index": 54,
+                "stride": 8
+              }
+            ],
+            "terminated": true,
+            "extraction_method": "fixed_stride_name",
+            "categories": [
+              "preset_and_generated_names"
+            ],
+            "notes": [
+              "Preset nickname allocation; some untranslated/blank-glyph remnants are retained in the unresolved file."
+            ],
+            "id": "DWM1_050752",
+            "source_offset": "0x050752",
+            "source_end_exclusive": "0x050757",
+            "bank_hex": "14",
+            "cpu_address_hex": "4752",
+            "source_length": 5,
+            "source_sha256": "7a12659a817379bec627bb50febd736d35d606393e9e300585a75fc5ad800965",
+            "contains_english": true,
+            "status": "decoded_source_text",
+            "control_codes": [
+              {
+                "offset": "0x050756",
+                "opcode": "F0",
+                "arguments_hex": ""
+              }
+            ]
+          }
+        },
+        "delocalized": {
+          "delocalized_05074A": {
+            "annotated_text": "Maci<END>",
+            "bank_hex": "0x14",
+            "byte_length": 5,
+            "category": "character_and_monster_nickname_fields",
+            "cpu_address_hex": "0x474A",
+            "end_offset_exclusive": 329551,
+            "end_offset_hex": "0x05074F",
+            "game": "delocalized",
+            "id": "delocalized_05074A",
+            "notes": [],
+            "offset": 329546,
+            "offset_hex": "0x05074A",
+            "origins": [
+              "manual_text_field"
+            ],
+            "raw_hex": "303E4046F0",
+            "references": [
+              {
+                "fixed_table_offset": 329122,
+                "index": 53,
+                "stride": 8
+              }
+            ],
+            "scope": "referenced_or_reviewed_field",
+            "status": "decoded",
+            "text": "Maci",
+            "unknown_bytes": []
+          },
+          "delocalized_050752": {
+            "annotated_text": "Pete<END>",
+            "bank_hex": "0x14",
+            "byte_length": 5,
+            "category": "character_and_monster_nickname_fields",
+            "cpu_address_hex": "0x4752",
+            "end_offset_exclusive": 329559,
+            "end_offset_hex": "0x050757",
+            "game": "delocalized",
+            "id": "delocalized_050752",
+            "notes": [],
+            "offset": 329554,
+            "offset_hex": "0x050752",
+            "origins": [
+              "manual_text_field"
+            ],
+            "raw_hex": "33425142F0",
+            "references": [
+              {
+                "fixed_table_offset": 329122,
+                "index": 54,
+                "stride": 8
+              }
+            ],
+            "scope": "referenced_or_reviewed_field",
+            "status": "decoded",
+            "text": "Pete",
+            "unknown_bytes": []
+          }
+        }
+      }
+    }
+  },
+  "date": "2026-10-09",
+  "source_file_sha256": {
+    "src/translations/patches/gift_names.json": "3a5eba36d70b53793660180a6f2283f9f398c1ec25476c7bcfa79c3ff105c942",
+    "src/tools/machiko_gift_name.py": "e2ef4f5bde0e9712f58541c41a672a7925d799cb1e60498b1cf3a65188031c19",
+    "src/translations/dialogue/main/4000_6131.json": "75e87669d51d1ef485b30d6b64ed02447412d94d51079ce30139a9b19963a4d2"
+  }
+}

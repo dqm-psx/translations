@@ -84,12 +84,34 @@ function expectBody(body, draft, source) {
   for (const field of ['key', 'table', 'id', 'source_id', 'catalog', 'current', 'japanese_psx']) {
     if (source.row[field]) expect(body, `Issue includes ${field}`).toContain(source.row[field]);
   }
-  expect(body).toContain(source.revision);
+  expect(body).toContain(source.row.source_revision || source.revision);
   expect(body).toContain('https://dqm-psx.github.io/translations/');
   expect(body).toContain('Reason / context');
 }
 
 for (const protocol of ['http', 'file']) {
+  test(`${protocol}: Machiko gift issue uses its updated row revision while the snapshot keeps its baseline`, async ({ page, siteServer }) => {
+    const url = protocol === 'file' ? pathToFileURL(path.join(root, 'index.html')).href : siteServer.url;
+    await openComparison(page, url);
+    await page.locator('#search').fill('machiko.nickname');
+    await expect(page.locator('#comparison-rows > tr')).toHaveCount(1);
+    const { row, input, submit } = firstSuggestion(page);
+    const key = 'patches/gift_names.json:machiko.nickname';
+    await expect(row).toHaveAttribute('data-key', key);
+    const source = await metadata(page, key);
+    expect(source.revision).toBe('057877498252bac5cb42d35a1cb29286ecbec8f9');
+    expect(source.row.source_revision).toBe('a57b93caf4791701fe62cd703065edbedfc44554');
+    const draft = 'Machiko’s Rank A gift nickname: Pete / ピート';
+    await input.fill(draft);
+    await submit.click();
+    const handoffs = await page.evaluate(() => window.issueHandoffs);
+    expect(handoffs).toHaveLength(1);
+    const body = expectIssueDestination(handoffs[0][0]).searchParams.get('body');
+    expectBody(body, draft, source);
+    expect(body).not.toContain(source.revision);
+    await expect(input).toHaveValue(draft);
+  });
+
   test(`${protocol}: hands off the exact Unicode draft and row context without changing saved suggestions`, async ({ page, siteServer }) => {
     const url = protocol === 'file' ? pathToFileURL(path.join(root, 'index.html')).href : siteServer.url;
     await openComparison(page, url);
