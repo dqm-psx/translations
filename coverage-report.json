@@ -1,9 +1,9 @@
 {
   "revision": "057877498252bac5cb42d35a1cb29286ecbec8f9",
   "generated_at": "2026-09-28T21:39:45.432656-07:00",
-  "source_records": 10005,
-  "leaf_records": 10085,
-  "included_rows": 9956,
+  "source_records": 10006,
+  "leaf_records": 10086,
+  "included_rows": 9957,
   "excluded_rows": 129,
   "catalogs": [
     {
@@ -141,9 +141,9 @@
     },
     {
       "catalog": "patches/gift_names.json",
-      "source_records": 3,
-      "leaf_records": 3,
-      "included": 3,
+      "source_records": 4,
+      "leaf_records": 4,
+      "included": 4,
       "excluded": 0
     },
     {
@@ -3332,7 +3332,7 @@
     "Feature text": 118,
     "Appraisal certificate art": 5,
     "Boss nicknames": 15,
-    "Gift monster names": 8,
+    "Gift monster names": 9,
     "Library detail art": 2,
     "Item headers": 5,
     "Hidden text": 5,
@@ -3376,15 +3376,15 @@
       }
     },
     "coverage": {
-      "rows": 9956,
+      "rows": 9957,
       "dqm1": {
         "not_verified": 6971,
-        "verified": 2778,
+        "verified": 2779,
         "not_applicable": 207
       },
       "dqm2": {
         "verified": 3576,
-        "not_verified": 6295,
+        "not_verified": 6296,
         "not_applicable": 85
       },
       "by_catalog": {
@@ -3590,12 +3590,14 @@
           }
         },
         "patches/gift_names.json": {
-          "rows": 3,
+          "rows": 4,
           "dqm1": {
-            "not_verified": 3
+            "not_verified": 3,
+            "verified": 1
           },
           "dqm2": {
-            "verified": 3
+            "verified": 3,
+            "not_verified": 1
           }
         },
         "patches/library_detail_art.json": {
@@ -3743,5 +3745,23 @@
       "Ruka and Iru wording remains separate when different. A single verified edition is labelled explicitly.",
       "Not verified means the counterpart is unestablished, not that it is absent from the original game."
     ]
-  }
+  },
+  "source_updates": [
+    {
+      "source_repository": "https://github.com/phakic/dqm1",
+      "source_revision": "a57b93caf4791701fe62cd703065edbedfc44554",
+      "source_pr": "https://github.com/phakic/dqm1/pull/63",
+      "date": "2026-10-09",
+      "source_file_sha256": {
+        "src/translations/patches/gift_names.json": "3a5eba36d70b53793660180a6f2283f9f398c1ec25476c7bcfa79c3ff105c942",
+        "src/tools/machiko_gift_name.py": "e2ef4f5bde0e9712f58541c41a672a7925d799cb1e60498b1cf3a65188031c19",
+        "src/translations/dialogue/main/4000_6131.json": "75e87669d51d1ef485b30d6b64ed02447412d94d51079ce30139a9b19963a4d2"
+      },
+      "row_keys": [
+        "patches/gift_names.json:machiko.nickname"
+      ],
+      "update_file": "updates/machiko-gift.json",
+      "update_sha256": "b7ae093f7a5f4152c2ed86e536a1caac4bacf7d8e6690d32fd2217163afa5f08"
+    }
+  ]
 }

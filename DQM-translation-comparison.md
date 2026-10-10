@@ -2,7 +2,9 @@
 
 Snapshot: 28 September 2026. Revision `057877498252bac5cb42d35a1cb29286ecbec8f9`.
 
-9,956 comparison rows from 10,005 source records; 129 empty/control-only or metadata slots excluded.
+Supplement: Machiko's Rank A statue gift nickname, added 9 October 2026 from [PR #63](https://github.com/phakic/dqm1/pull/63), revision `a57b93caf4791701fe62cd703065edbedfc44554`; other rows retain the original snapshot.
+
+9,957 comparison rows from 10,006 source records; 129 empty/control-only or metadata slots excluded.
 
 Common limits: species/items/skills 9; nicknames 3–5; locations 10 (map 15). Spaces count.
 
@@ -9849,6 +9851,7 @@ Full project wording. Japanese GBC cells use verified source references; unknown
 | Boss nicknames<br>patches/boss_names.json / boss_5630_11b1.english | ベティ | ベティ | Not verified | Betty | Betty | Betty | Betty |  |
 | Gift monster names<br>patches/boss_names.json / gift_5688_0453.english | スラお | スラお | Not verified | Suo | Suo | Slio<br>Menu: Sli | Slio<br>Menu: Sli |  |
 | Gift monster names<br>patches/boss_names.json / gift_5688_0dc4.english | わたぼう | わたぼう | Not verified | Wata | Wata | Wata | Fluf |  |
+| Gift monster names<br>patches/gift_names.json / machiko.nickname | ビート | ピート | Not verified | Pete | Pete | Pete | Pete |  |
 | Gift monster names<br>patches/gift_names.json / gift_names.132.english | スラッシュ | Not verified | Ruka: スラッシュ | Slash | Slash | Slash | Slash |  |
 | Gift monster names<br>patches/gift_names.json / gift_names.139.english | ビーン | Not verified | ビーン | Biino | Biino | Biino | Biino |  |
 | Gift monster names<br>patches/gift_names.json / gift_names.151.english | イカルガ | Not verified | イカルガ | Ikar | Ikar | Squiz<br>Menu: Squi | Squiz<br>Menu: Squi |  |

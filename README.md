@@ -3,7 +3,7 @@
 [Open the translation comparison](https://dqm-psx.github.io/translations/) ·
 [Open the breeding guide](https://dqm-psx.github.io/guide/)
 
-Compare 9,956 entries from the Dragon Quest Monsters 1 & 2 PlayStation translation
+Compare 9,957 entries from the Dragon Quest Monsters 1 & 2 PlayStation translation
 project alongside Japanese PS1, verified Japanese Game Boy Color, Current,
 Game Boy, and Delocalized wording. Search all text, combine labels, show English
 differences, and sort the complete selection before viewing 100 rows per page.
@@ -60,22 +60,32 @@ Copied from [phakic/DQM-guide](https://github.com/phakic/DQM-guide), directory
 `0ee1916ef0b9fba559a8a3eaec1073caed16ad3d`.
 The wording snapshot was generated on September 28, 2026, from translation
 revision `057877498252bac5cb42d35a1cb29286ecbec8f9` (clean working tree).
-This is a preserved snapshot, not a live feed of translation changes.
+The Machiko Rank A statue gift nickname was added on October 9, 2026, from
+[translation PR #63](https://github.com/phakic/dqm1/pull/63), merge revision
+`a57b93caf4791701fe62cd703065edbedfc44554`: **Pete** in Current, Game Boy,
+and Delocalized. The PS1 Japanese name is **ビート**; the verified Game Boy
+name is **ピート**. The existing owner row supplies **Machi / May / Maci**.
+`updates/machiko-gift.json` records the added row and its source evidence.
+Other rows retain the September 28 snapshot. Supplementary provenance is
+recorded in `source_updates`; suggestion issues use the row's source revision
+when one is supplied.
 
 The standalone HTML is renamed to `index.html`, has a link back to the guide,
 and includes a theme picker, dark palette, the original guide's column
 controls adapted for standalone storage, and a GitHub issue submission layer.
-Its embedded comparison data and local suggestion storage module are unchanged.
+Its local suggestion storage module and existing row keys are unchanged.
 Comparison focus handling also keeps row actions available while a search or
-suggestion sort waits to refresh. The three companion
-downloads retain their original bytes. `source-manifest.json` records the
-original and published SHA-256 hashes. No ROMs, disc images, or executables are
+suggestion sort waits to refresh. The three companion downloads include the
+same added gift row and updated coverage. `source-manifest.json` records the
+historical original and current published SHA-256 hashes. No ROMs, disc images, or executables are
 included.
 
 To refresh, export all four matching artifacts together from the source project,
 decompress the HTML and JSON if stored as `.gz`, preserve the guide link and
 theme, column, and GitHub submission controls, and update the manifest.
 Preserve row keys so saved suggestion exports remain usable.
+Reconcile the supplementary rows in `updates/` when refreshing the historical
+source export, keeping each row's translation revision and source evidence.
 
 ## Test
 

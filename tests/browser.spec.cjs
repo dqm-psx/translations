@@ -6,6 +6,9 @@ const { pathToFileURL, fileURLToPath } = require('node:url');
 const { startServer } = require('./server.cjs');
 
 const root = path.resolve(__dirname, '..');
+const machikoKey = 'patches/gift_names.json:machiko.nickname';
+const machikoRevision = 'a57b93caf4791701fe62cd703065edbedfc44554';
+const snapshotRevision = '057877498252bac5cb42d35a1cb29286ecbec8f9';
 const digest = bytes => createHash('sha256').update(bytes).digest('hex');
 const test = base.extend({
   siteServer: [async ({}, use) => {
@@ -31,7 +34,7 @@ const test = base.extend({
 async function openComparison(page, url) {
   await page.goto(url);
   await expect(page.locator('#comparison-rows > tr')).toHaveCount(100);
-  await expect(page.locator('#count')).toHaveText('1–100 of 9,956 matching entries · 9,956 total');
+  await expect(page.locator('#count')).toHaveText('1–100 of 9,957 matching entries · 9,957 total');
 }
 
 async function visibleKeys(page) {
@@ -81,22 +84,22 @@ for (const protocol of ['file', 'http']) {
       await page.locator('#close-labels').click();
       await expect(page.locator('#label-picker')).not.toHaveAttribute('open', '');
       await page.locator('#clear-filters').click();
-      await expect(page.locator('#count')).toHaveText('1–100 of 9,956 matching entries · 9,956 total');
+      await expect(page.locator('#count')).toHaveText('1–100 of 9,957 matching entries · 9,957 total');
     });
 
     test('paginates across the full snapshot and sorts matching rows', async ({ page }) => {
       const firstKey = (await visibleKeys(page))[0];
       await page.locator('#next-page').click();
       await expect(page.locator('#page-number')).toHaveValue('2');
-      await expect(page.locator('#count')).toHaveText('101–200 of 9,956 matching entries · 9,956 total');
+      await expect(page.locator('#count')).toHaveText('101–200 of 9,957 matching entries · 9,957 total');
       expect((await visibleKeys(page))[0]).not.toBe(firstKey);
       await page.locator('#last-page').click();
-      await expect(page.locator('#comparison-rows > tr')).toHaveCount(56);
+      await expect(page.locator('#comparison-rows > tr')).toHaveCount(57);
       await expect(page.locator('#page-number')).toHaveValue('100');
       await expect(page.locator('#next-page')).toBeDisabled();
       await page.locator('#page-number').fill('3');
       await page.locator('#page-number').press('Enter');
-      await expect(page.locator('#count')).toHaveText('201–300 of 9,956 matching entries · 9,956 total');
+      await expect(page.locator('#count')).toHaveText('201–300 of 9,957 matching entries · 9,957 total');
       await page.locator('#first-page').click();
       expect((await visibleKeys(page))[0]).toBe(firstKey);
 
@@ -113,6 +116,35 @@ for (const protocol of ['file', 'http']) {
       expect(descending).toEqual([...ascending].reverse());
       await page.locator('#source-order').click();
       await expect(page.locator('#heading-current')).toHaveAttribute('aria-sort', 'none');
+    });
+
+    test('finds Machiko’s Rank A gift and expands its source details', async ({ page }) => {
+      const gift = page.locator(`#comparison-rows > tr[data-key="${machikoKey}"]`);
+      await page.locator('#search').fill('Pete');
+      await expect.poll(() => visibleKeys(page)).toContain(machikoKey);
+      await page.locator('#search').fill('machiko.nickname');
+      await expect(page.locator('#comparison-rows > tr')).toHaveCount(1);
+      await expect(gift).toHaveAttribute('data-key', machikoKey);
+      await page.locator('#column-summary').click();
+      await page.locator('#all-columns').click();
+      await page.keyboard.press('Escape');
+      await expect(gift.locator('.tag')).toContainText('Gift monster names');
+      await expect(gift.locator('.note')).toContainText(/Machiko.*Rank A|Rank A.*Machiko/);
+      await expect(gift.locator('td').nth(1)).toHaveText('ビート');
+      await expect(gift.locator('td').nth(2)).toHaveText('ピート');
+      for (const index of [4, 5, 6, 7]) await expect(gift.locator('td').nth(index)).toHaveText('Pete');
+      await gift.getByText('Source & codes', { exact: true }).click();
+      const details = gift.locator('.source-details pre');
+      await expect(details).toBeVisible();
+      const source = JSON.parse(await details.textContent());
+      expect(source).toMatchObject({ catalog: 'patches/gift_names.json', id: 'machiko.nickname', key: machikoKey, menu_limit: 5 });
+      expect(source.exact_source.translations).toMatchObject({ current: 'Pete', gameboy: 'Pete', delocalized: 'Pete' });
+      expect(source.japanese_gbc.variants).toEqual(expect.arrayContaining([
+        expect.objectContaining({ text: 'ピート', games: ['dqm1'], sources: expect.any(Array) }),
+      ]));
+      expect(source.japanese_gbc.variants.find(variant => variant.text === 'ピート').sources.length).toBeGreaterThan(0);
+      const row = await page.evaluate(key => window.DQM_COMPARISON_CONTEXT.rows.find(row => row.key === key), machikoKey);
+      expect(row.source_revision).toBe(machikoRevision);
     });
 
     test('persists a suggestion and restores an exported backup', async ({ page }, testInfo) => {
@@ -154,7 +186,6 @@ for (const protocol of ['file', 'http']) {
       const manifest = JSON.parse(await readFile(path.join(root, 'source-manifest.json'), 'utf8'));
       for (const [filename, hash] of Object.entries(manifest.published_sha256)) {
         expect(digest(await readFile(path.join(root, filename)))).toBe(hash);
-        if (filename !== 'index.html') expect(hash).toBe(manifest.original_sha256[filename]);
       }
       await page.getByText('Sources and coverage', { exact: true }).click();
       const companions = [
@@ -183,7 +214,7 @@ for (const protocol of ['file', 'http']) {
           const document = JSON.parse(actual.toString('utf8'));
           expect(document.revision).toBe(await page.evaluate(() => window.DQM_COMPARISON_CONTEXT.revision));
           if (filename === 'comparison-data.json') {
-            expect(document.rows).toHaveLength(9956);
+            expect(document.rows).toHaveLength(9957);
             // Compare all embedded data without transferring the large snapshot out of the browser.
             const embeddedHash = await page.evaluate(async () => {
               const bytes = new TextEncoder().encode(JSON.stringify(window.DQM_COMPARISON_CONTEXT.rows));
@@ -192,7 +223,7 @@ for (const protocol of ['file', 'http']) {
             });
             expect(embeddedHash).toBe(digest(JSON.stringify(document.rows)));
           }
-          else expect(document.included_rows).toBe(9956);
+          else expect(document.included_rows).toBe(9957);
         } else {
           expect(actual.toString('utf8')).toContain('Desert World');
         }
@@ -223,3 +254,71 @@ for (const protocol of ['file', 'http']) {
     });
   });
 }
+
+test('Machiko gift data, coverage, Markdown and the embedded snapshot stay aligned', async ({ page, siteServer }) => {
+  const [data, coverage, manifest, markdown] = await Promise.all([
+    readFile(path.join(root, 'comparison-data.json'), 'utf8').then(JSON.parse),
+    readFile(path.join(root, 'coverage-report.json'), 'utf8').then(JSON.parse),
+    readFile(path.join(root, 'source-manifest.json'), 'utf8').then(JSON.parse),
+    readFile(path.join(root, 'DQM-translation-comparison.md'), 'utf8'),
+  ]);
+  await openComparison(page, siteServer.url);
+  const embedded = await page.evaluate(key => ({
+    row: window.DQM_COMPARISON_CONTEXT.rows.find(row => row.key === key),
+    revision: window.DQM_COMPARISON_CONTEXT.revision,
+    coverage: window.DQM_COMPARISON_CONTEXT.coverage,
+    gbc: window.DQM_COMPARISON_CONTEXT.gbc_sources,
+  }), machikoKey);
+  const matches = data.rows.filter(row => row.key === machikoKey);
+  expect(matches).toHaveLength(1);
+  expect(matches[0]).toMatchObject({
+    current: 'Pete', gameboy: 'Pete', delocalized: 'Pete', japanese_psx: 'ビート',
+    japanese_gbc_dqm1: 'ピート', limit: 5, source_revision: machikoRevision,
+  });
+  expect(embedded.row).toEqual(matches[0]);
+  expect([data.revision, coverage.revision, manifest.translation_revision, embedded.revision])
+    .toEqual(Array(4).fill(snapshotRevision));
+  expect(manifest.row_count).toBe(9957);
+  // The standalone page omits the detailed exclusion inventory from its payload.
+  const { exclusions, ...embeddedCoverage } = data.coverage;
+  expect(embeddedCoverage).toEqual(embedded.coverage);
+  const { revision, generated_at, gbc, source_updates, ...reportCoverage } = coverage;
+  expect(reportCoverage).toEqual(data.coverage);
+  expect(source_updates).toEqual(data.source_updates);
+  expect(source_updates).toEqual(manifest.source_updates);
+  expect(source_updates).toEqual(expect.arrayContaining([
+    expect.objectContaining({ source_revision: machikoRevision, row_keys: [machikoKey] }),
+  ]));
+  expect(gbc).toEqual(data.gbc_sources);
+  expect(embedded.gbc).toEqual(gbc);
+  expect(coverage).toMatchObject({ source_records: 10006, leaf_records: 10086, included_rows: 9957, excluded_rows: 129 });
+  expect(coverage.catalogs.find(item => item.catalog === 'patches/gift_names.json'))
+    .toEqual({ catalog: 'patches/gift_names.json', source_records: 4, leaf_records: 4, included: 4, excluded: 0 });
+  expect(coverage.label_counts['Gift monster names']).toBe(9);
+  expect(coverage.label_counts['Gift monster names'])
+    .toBe(data.rows.filter(row => row.labels.includes('Gift monster names')).length);
+  const gifts = data.rows.filter(row => row.catalog === 'patches/gift_names.json');
+  for (const game of ['dqm1', 'dqm2']) {
+    const counts = rows => rows.reduce((result, row) => {
+      const status = row.gbc_details.game_status[game].status;
+      result[status] = (result[status] || 0) + 1;
+      return result;
+    }, {});
+    expect(gbc.coverage[game]).toEqual(counts(data.rows));
+    expect(gbc.coverage.by_catalog['patches/gift_names.json'][game]).toEqual(counts(gifts));
+  }
+  expect(gbc.coverage.rows).toBe(9957);
+  expect(gbc.coverage.by_catalog['patches/gift_names.json'].rows).toBe(4);
+  const markdownRows = markdown.split(/\r?\n/).filter(line => line.startsWith('| '));
+  expect(markdownRows).toHaveLength(9959); // Header and separator plus data rows.
+  const giftLines = markdownRows.filter(line => line.includes('patches/gift_names.json / machiko.nickname'));
+  expect(giftLines).toHaveLength(1);
+  expect(giftLines[0]).toContain('| ビート | ピート |');
+  expect(giftLines[0]).toContain('| Pete | Pete | Pete | Pete |');
+  expect(markdown).toContain('9,957 comparison rows from 10,006 source records');
+  expect(markdown).toContain(snapshotRevision);
+  expect(data.rows.find(row => row.key === 'dialogue_full_4000_6131.json:s0adf7000_0c40')).toMatchObject({
+    japanese_psx: 'マチコ', current: 'Machiko', current_menu: 'Machi',
+    gameboy: 'May', gameboy_menu: 'May', delocalized: 'Maci', delocalized_menu: 'Maci',
+  });
+});

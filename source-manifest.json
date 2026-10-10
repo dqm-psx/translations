@@ -4,7 +4,7 @@
   "source_directory": "translation-project/build/translation-comparison",
   "translation_revision": "057877498252bac5cb42d35a1cb29286ecbec8f9",
   "generated_at": "2026-09-28T21:39:45.432656-07:00",
-  "row_count": 9956,
+  "row_count": 9957,
   "changes": [
     "Renamed the standalone HTML to index.html and added a link back to the guide.",
     "Added a persistent System/Light/Dark theme picker and screen-only dark palette; original comparison data and logic are unchanged.",
@@ -12,7 +12,8 @@
     "Matched the dark palette to dqm-psx/guide: charcoal page and panels, light text, muted gray text, and teal accents.",
     "Added per-entry GitHub issue drafts with full source context and a long-text copy fallback; moved existing JSON backup/restore controls into a collapsed section. Original comparison data and local suggestion storage are unchanged.",
     "Extended comparison focus handling to defer search/suggestion-sort redraws while a submission button or copy dialog is active, preserving click and keyboard activation.",
-    "Added the PSX Japanese / Current / Game Boy / Suggestions column preset and made it the default when no valid column preference is saved, preserving existing saved selections."
+    "Added the PSX Japanese / Current / Game Boy / Suggestions column preset and made it the default when no valid column preference is saved, preserving existing saved selections.",
+    "Added Machiko's Rank A statue gift nickname Pete from translation PR #63, with Japanese PSX/GBC provenance, synchronized coverage and downloads, and row-specific source revision in suggestion issues. All existing row keys and translations are preserved."
   ],
   "original_sha256": {
     "DQM-translation-comparison.html": "8cd80690f72909d4bffa4fe482cc94453e5120cd14b95f5341b7c70543dee646",
@@ -21,9 +22,28 @@
     "comparison-data.json": "1a8bd7004dc7b3f64b984124433cc6f27f15ca85c9bfd320e0716f3c9e38a992"
   },
   "published_sha256": {
-    "index.html": "febd360c97b590fdcd81131a7fdbee913eb5c9d0e113c32c5e065ace62b123f4",
-    "DQM-translation-comparison.md": "99d08fe6fcfdfdbfb9fc8db4369f8e404ba4ccc7a6437ac96f042d693e3178eb",
-    "coverage-report.json": "122557f3c9042b4aff52cbe1203e2062f3c5038fcd073140953d4671ec0f338e",
-    "comparison-data.json": "1a8bd7004dc7b3f64b984124433cc6f27f15ca85c9bfd320e0716f3c9e38a992"
-  }
+    "index.html": "de1645d8bf18fed72038bc6713460f11589d79fdf8c5cf48554e4210950332d4",
+    "DQM-translation-comparison.md": "1c6f0d855ff8e3b456d2b79e517b3e702db970a59dbee6d7cc993442c58c46f6",
+    "coverage-report.json": "cbf32da468802746469d1742ed74559ec5bf8df7b23449949e3cf0290f8428e2",
+    "comparison-data.json": "4bf98f38d695a21770fcbbf86ba0338e0701815a4e72a6a0c60f2ce1762dad6c",
+    "updates/machiko-gift.json": "b7ae093f7a5f4152c2ed86e536a1caac4bacf7d8e6690d32fd2217163afa5f08"
+  },
+  "source_updates": [
+    {
+      "source_repository": "https://github.com/phakic/dqm1",
+      "source_revision": "a57b93caf4791701fe62cd703065edbedfc44554",
+      "source_pr": "https://github.com/phakic/dqm1/pull/63",
+      "date": "2026-10-09",
+      "source_file_sha256": {
+        "src/translations/patches/gift_names.json": "3a5eba36d70b53793660180a6f2283f9f398c1ec25476c7bcfa79c3ff105c942",
+        "src/tools/machiko_gift_name.py": "e2ef4f5bde0e9712f58541c41a672a7925d799cb1e60498b1cf3a65188031c19",
+        "src/translations/dialogue/main/4000_6131.json": "75e87669d51d1ef485b30d6b64ed02447412d94d51079ce30139a9b19963a4d2"
+      },
+      "row_keys": [
+        "patches/gift_names.json:machiko.nickname"
+      ],
+      "update_file": "updates/machiko-gift.json",
+      "update_sha256": "b7ae093f7a5f4152c2ed86e536a1caac4bacf7d8e6690d32fd2217163afa5f08"
+    }
+  ]
 }
