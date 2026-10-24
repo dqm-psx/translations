@@ -19,5 +19,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - run: python3 tools/donor_source_audit.py
       - run: npx playwright install --with-deps chromium
       - run: npm test
