@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "key": "dialogue_full_2000_3999.json:s004ae000_136e",
+  "catalog": "dialogue/main/2000_3999.json",
+  "id": "s004ae000_136e",
+  "source_status": "verified_original_gameboy_text",
+  "english_sources": [
+    {
+      "game": "dwm2_cobi",
+      "title": "Dragon Warrior Monsters 2 — Cobi's Journey (USA)",
+      "source_package": "DWM_GBC_English_Text_Extracts",
+      "file": "DWM2_Cobi/strings.jsonl",
+      "record_id": "DWM2_Cobi_1F2365",
+      "offset_hex": "0x1F2365",
+      "end_offset_hex": "0x1F23B0",
+      "rom_sha256": "8e38a7420ef5239c7196aa4fd4b1499e65db2823e875bbf8241bb2199e766d4e",
+      "source_file_sha256": "7f378016f46eaa6017d0fd2e76559a186e89a3459cf95fa0503cf0b207e4918e",
+      "source_sha256": "157607729687c5f59355ec9faf280e6f02de275a7a118c68bde5b8b0b65bd562",
+      "text": "*: I saw a child\ncross the sea on a\ngiant clam. No, no\nlie! I saw it!",
+      "annotated_text": "<EA>*: I saw a child<F1>cross the sea on a<FA><F7><EF><EE>giant clam. No, no<EF><EE>lie! I saw it!<F7><F0>",
+      "bytes_hex": "EA 45 90 12 90 36 24 3A 90 24 90 26 2B 2C 2F 27 F1 26 35 32 36 36 90 37 2B 28 90 36 28 24 90 32 31 90 24 FA F7 EF EE 2A 2C 24 31 37 90 26 2F 24 30 B5 90 17 32 AB 90 31 32 EF EE 2F 2C 28 99 90 12 90 36 24 3A 90 2C 37 99 F7 F0",
+      "references": [
+        {
+          "root_offset": 2031666,
+          "group_index": 0,
+          "entry_index": 67,
+          "pointer_offset": 2031802
+        }
+      ],
+      "method": "verified-extracted-original-source"
+    },
+    {
+      "game": "dwm2_tara",
+      "title": "Dragon Warrior Monsters 2 — Tara's Adventure (USA)",
+      "source_package": "DWM_GBC_English_Text_Extracts",
+      "file": "DWM2_Tara/strings.jsonl",
+      "record_id": "DWM2_Tara_1F2365",
+      "offset_hex": "0x1F2365",
+      "end_offset_hex": "0x1F23B0",
+      "rom_sha256": "fc6809c31ff69c889dee80c5f39f4d8069042a2b4d933edd83d1627c32e013cc",
+      "source_file_sha256": "df418f057eb81ff2ac61f3c0fdffaf794ad64bab1f09e6be84d4dc650c8478d0",
+      "source_sha256": "157607729687c5f59355ec9faf280e6f02de275a7a118c68bde5b8b0b65bd562",
+      "text": "*: I saw a child\ncross the sea on a\ngiant clam. No, no\nlie! I saw it!",
+      "annotated_text": "<EA>*: I saw a child<F1>cross the sea on a<FA><F7><EF><EE>giant clam. No, no<EF><EE>lie! I saw it!<F7><F0>",
+      "bytes_hex": "EA 45 90 12 90 36 24 3A 90 24 90 26 2B 2C 2F 27 F1 26 35 32 36 36 90 37 2B 28 90 36 28 24 90 32 31 90 24 FA F7 EF EE 2A 2C 24 31 37 90 26 2F 24 30 B5 90 17 32 AB 90 31 32 EF EE 2F 2C 28 99 90 12 90 36 24 3A 90 2C 37 99 F7 F0",
+      "references": [
+        {
+          "root_offset": 2031666,
+          "group_index": 0,
+          "entry_index": 67,
+          "pointer_offset": 2031802
+        }
+      ],
+      "method": "verified-extracted-original-source"
+    }
+  ],
+  "japanese_sources": [
+    {
+      "game": "dqm2_ruka",
+      "title": "Dragon Quest Monsters 2 — Ruka no Tabidachi (Japan)",
+      "source_package": "DQM_Additional_Text_Extracts",
+      "file": "DQM2_Ruka_Japanese/strings.jsonl",
+      "record_id": "jp_ruka_1F18AC",
+      "offset_hex": "0x1F18AC",
+      "end_offset_hex": "0x1F18FF",
+      "rom_sha256": "90517f73231e52fe3ef733e369b8a3464996e785803fdb583398d40689760ab7",
+      "source_file_sha256": "db97e297baa63890de5e992293f00c2bc4d126d1bd3834d170e6f4b1509639a8",
+      "source_sha256": "d29960365faefe3f063352bb5f53862e97fb8131e00f1fcc453c5814ca8ca20e",
+      "text": "＊「こどもが おおきな かいにのって\n  うみを わたってただよぉ～。\n＊「オラは ウソなんか ついてねえ…\n  このめで はっきり みただ！",
+      "annotated_text": "<CTRL_EA>＊「こどもが おおきな かいにのって<LINE>  うみを わたってただよぉ～。<MORE><WAIT><SCROLL_LINE><LINE_SETUP>＊「オラは ウソなんか ついてねえ…<SCROLL_LINE><LINE_SETUP>  このめで はっきり みただ！<WAIT><END>",
+      "bytes_hex": "EA 9F 96 2D 38 8D 47 29 8D 90 28 28 2A 39 90 29 25 3A 3D 36 37 F1 90 90 26 44 54 90 53 33 36 37 33 33 8D 4C 95 9D 8F FA F7 EF EE 9F 96 5E 85 3E 90 5A 69 39 55 29 90 35 25 37 3C 27 A4 EF EE 90 90 2D 3D 46 37 8D 90 3E 36 2A 4F 90 44 33 33 8D 99 F7 F0",
+      "references": [
+        {
+          "directory_offset": 2031638,
+          "group": 0,
+          "index": 67,
+          "pointer_offset": 2031774,
+          "pointer_offset_hex": "0x1F009E"
+        }
+      ],
+      "method": "verified-extracted-original-source"
+    },
+    {
+      "game": "dqm2_iru",
+      "title": "Dragon Quest Monsters 2 — Iru no Bouken (Japan)",
+      "source_package": "DQM_Additional_Text_Extracts",
+      "file": "DQM2_Iru_Japanese/strings.jsonl",
+      "record_id": "jp_iru_1F18AC",
+      "offset_hex": "0x1F18AC",
+      "end_offset_hex": "0x1F18FF",
+      "rom_sha256": "1916208828ce85763d7ca03821eb17cec1a51d55cd80a36bd30a3ea653396a39",
+      "source_file_sha256": "97afcca072b2f9983f9466d881e5197115aebdaefececc3dd9450aa9186d279d",
+      "source_sha256": "d29960365faefe3f063352bb5f53862e97fb8131e00f1fcc453c5814ca8ca20e",
+      "text": "＊「こどもが おおきな かいにのって\n  うみを わたってただよぉ～。\n＊「オラは ウソなんか ついてねえ…\n  このめで はっきり みただ！",
+      "annotated_text": "<CTRL_EA>＊「こどもが おおきな かいにのって<LINE>  うみを わたってただよぉ～。<MORE><WAIT><SCROLL_LINE><LINE_SETUP>＊「オラは ウソなんか ついてねえ…<SCROLL_LINE><LINE_SETUP>  このめで はっきり みただ！<WAIT><END>",
+      "bytes_hex": "EA 9F 96 2D 38 8D 47 29 8D 90 28 28 2A 39 90 29 25 3A 3D 36 37 F1 90 90 26 44 54 90 53 33 36 37 33 33 8D 4C 95 9D 8F FA F7 EF EE 9F 96 5E 85 3E 90 5A 69 39 55 29 90 35 25 37 3C 27 A4 EF EE 90 90 2D 3D 46 37 8D 90 3E 36 2A 4F 90 44 33 33 8D 99 F7 F0",
+      "references": [
+        {
+          "directory_offset": 2031638,
+          "group": 0,
+          "index": 67,
+          "pointer_offset": 2031774,
+          "pointer_offset_hex": "0x1F009E"
+        }
+      ],
+      "method": "verified-extracted-original-source"
+    }
+  ],
+  "display": {
+    "gameboy": "*: I saw a child\ncross the sea on a\ngiant clam. No, no\nlie! I saw it!",
+    "delocalized": "*: I saw a child\ncross the sea on a\ngiant clam. No, no\nlie! I saw it!"
+  },
+  "edition_notes": {
+    "gameboy": "Unadapted original English donor text from the official Cobi and Tara releases, including its speaker marker and line breaks.",
+    "delocalized": "Official DWM2 English donor reused for the project's sequel extension. The supplied Delocalized 1.09 patch is for DWM1; no separate DWM2 Delocalized source is supplied. This text is not attributed to a DWM2 ROM hack."
+  },
+  "validation": {
+    "record_spans_compared_with_original_roms": 4,
+    "full_rom_sha256_verified": 4,
+    "directory_pointers_verified": 4,
+    "english_editions_have_identical_source_bytes": true,
+    "japanese_editions_have_identical_source_bytes": true
+  }
+}

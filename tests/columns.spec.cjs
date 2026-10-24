@@ -28,7 +28,7 @@ async function openPicker(page) {
 }
 
 async function expectColumns(page, selected) {
-  await expect(page.locator('#column-summary')).toHaveText(`Columns · ${selected.length} of 9`);
+  await expect(page.locator('#column-selection-status')).toHaveText(`${selected.length} of 9 visible`);
   // Check every rendered row as well as the headers so pagination and filtering
   // cannot silently restore cells hidden by a previous selection.
   const visible = await page.locator('#comparison-table').evaluate(table => ({
@@ -80,9 +80,9 @@ test('presets and keyboard controls keep at least one column visible', async ({ 
   await page.locator('#column-summary').focus();
   await page.keyboard.press('Enter');
   await expect(page.locator('#column-picker')).toHaveAttribute('open', '');
-  await page.getByRole('button', { name: 'PSX / Current / Game Boy', exact: true }).click();
+  await page.getByRole('button', { name: 'Compare: PSX Japanese, Current and Game Boy', exact: true }).click();
   await expectColumns(page, comparison);
-  await page.getByRole('button', { name: 'PSX Japanese / Current / Game Boy / Suggestions', exact: true }).click();
+  await page.getByRole('button', { name: 'Suggest: PSX Japanese, Current, Game Boy and Suggestions', exact: true }).click();
   await expectColumns(page, suggestions);
   await page.locator('#comparison-columns').click();
   await expectColumns(page, comparison);
@@ -120,7 +120,7 @@ test('hidden columns stay hidden through filtering, sorting and paging, while su
   await expect(page.locator('#comparison-rows > tr')).toHaveCount(2);
   await expectColumns(page, comparison);
   await page.locator('#clear-filters').click();
-  await page.locator('[data-quick-label="Monster names"]').click();
+  await page.locator('#quick-label-select').selectOption('Monster names');
   await expect(page.locator('#active-labels')).toContainText('Monster names');
   await page.locator('[data-sort="current"]').click();
   await expect(page.locator('#heading-current')).toHaveAttribute('aria-sort', 'ascending');

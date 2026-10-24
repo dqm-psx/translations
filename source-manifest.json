@@ -1,49 +1,52 @@
 {
-  "source_repository": "https://github.com/phakic/DQM-guide",
-  "source_repository_commit": "0ee1916ef0b9fba559a8a3eaec1073caed16ad3d",
-  "source_directory": "translation-project/build/translation-comparison",
-  "translation_revision": "057877498252bac5cb42d35a1cb29286ecbec8f9",
-  "generated_at": "2026-09-28T21:39:45.432656-07:00",
-  "row_count": 9957,
-  "changes": [
-    "Renamed the standalone HTML to index.html and added a link back to the guide.",
-    "Added a persistent System/Light/Dark theme picker and screen-only dark palette; original comparison data and logic are unchanged.",
-    "Ported selectable columns and the PSX / Current / Game Boy preset from guide/runtime/frame.js at source repository commit 0ee1916ef0b9fba559a8a3eaec1073caed16ad3d, using standalone browser storage and theme colors.",
-    "Matched the dark palette to dqm-psx/guide: charcoal page and panels, light text, muted gray text, and teal accents.",
-    "Added per-entry GitHub issue drafts with full source context and a long-text copy fallback; moved existing JSON backup/restore controls into a collapsed section. Original comparison data and local suggestion storage are unchanged.",
-    "Extended comparison focus handling to defer search/suggestion-sort redraws while a submission button or copy dialog is active, preserving click and keyboard activation.",
-    "Added the PSX Japanese / Current / Game Boy / Suggestions column preset and made it the default when no valid column preference is saved, preserving existing saved selections.",
-    "Added Machiko's Rank A statue gift nickname Pete from translation PR #63, with Japanese PSX/GBC provenance, synchronized coverage and downloads, and row-specific source revision in suggestion issues. All existing row keys and translations are preserved."
-  ],
-  "original_sha256": {
-    "DQM-translation-comparison.html": "8cd80690f72909d4bffa4fe482cc94453e5120cd14b95f5341b7c70543dee646",
-    "DQM-translation-comparison.md": "99d08fe6fcfdfdbfb9fc8db4369f8e404ba4ccc7a6437ac96f042d693e3178eb",
-    "coverage-report.json": "122557f3c9042b4aff52cbe1203e2062f3c5038fcd073140953d4671ec0f338e",
-    "comparison-data.json": "1a8bd7004dc7b3f64b984124433cc6f27f15ca85c9bfd320e0716f3c9e38a992"
+  "schema_version": 2,
+  "source_repository": "https://github.com/phakic/dqm1",
+  "translation_revision": "68b294e9ea66f051d2b2b6045f38ca739b8e298c",
+  "generated_at": "2026-10-24T21:44:52+00:00",
+  "updated_from_builder_at": "2026-10-24T21:44:52+00:00",
+  "row_count": 9939,
+  "source_file_sha256": {
+    "src/translations/dialogue/church.json": "a4ad0a759326a0389efce78de92e1890a001b80bf0c984453627923a11472b93",
+    "src/translations/dialogue/extra.json": "15542bd13cd1047fc353370dd4df5d25b943d4aa9465c88f3d017008eccec5e7",
+    "src/translations/dialogue/main/0000_1999.json": "f252056496eab59cad5f24cc967c3bdb8421ba5a2c0d258fe0b64a9e7b31f827",
+    "src/translations/dialogue/main/2000_3999.json": "09385babc9fb48732fa15490532e60766658716bdeec568e0658eab1bcb98dd5",
+    "src/translations/dialogue/main/4000_6131.json": "d953d2c9539617c62f06e96fc1b0a4139cae694ba10a3d76b7b29efa1b1900c3",
+    "src/translations/dialogue/medal_appraisal.json": "66585906bff86ba8936611b909381e69b22a47b5169bcfd0749319bb2d8d8270",
+    "src/translations/dialogue/recruitment.json": "fb9a6c27ad3eb821594db963b97f713a0609e3dbafeddabbdd52be85a9033be9",
+    "src/translations/dialogue/services.json": "f551ffbbff45fead519459b8f5ddfc2cab3181c060bd8ca093e3017d79e683a7",
+    "src/translations/menus/general.json": "4ed407af5c0e78a577b207178dd43b659b0614f1d4070b04a85bdb66a7f268d7",
+    "src/translations/menus/keyboard.json": "0c8c0dd0162dfdbdd576800a57f200a8a79b47ec115942f3431ed9987e6dd5ca",
+    "src/translations/menus/mobile.json": "f02235d3f5c4d750247712a09245b95bc44bb6f7c739827ccb113ebfefe96160",
+    "src/translations/patches/appraisal_certificate_art.json": "811a1e2b71973681ac13cf6d18711cfce81aa81e945b6341e8bb48ab357150a0",
+    "src/translations/patches/battle_party_tactics.json": "d3bcbf6d40555f22a1d2fe9c30b485d90c596d92608d6327adeb1ea4b61e128f",
+    "src/translations/patches/boss_names.json": "b852efd54fcb1c9f56f499c175365384e466b7c336ac644e6443df39c009aae4",
+    "src/translations/patches/gift_names.json": "18839873671162959c8a7d933024bfb66abf32b3eb3070d5a7f828f663f7ddb9",
+    "src/translations/patches/hidden_movement.json": "0b90bece11fe4d5190f8b309342798117d25327ebc6f2b31132009aa1e22c561",
+    "src/translations/patches/hidden_text.json": "acefb54dde19795769b67bf98a4c63b45d2258ee9a84180f3c4c99caaf7c6bfd",
+    "src/translations/patches/information_menu.json": "dfbfc0a39831aa02c229639841dc31523cce4176224f58be1c0d68e15c8c446e",
+    "src/translations/patches/item_headers.json": "d85e596ae26ed9f952c3b6a2002969386731f7cfd003bf194c9717fce3392218",
+    "src/translations/patches/library_book_layout.json": "1cac3bbe2c1043f9585722b166ba06adb48fcf4ae85807ea720592f3d9f399dc",
+    "src/translations/patches/library_detail_art.json": "8484576682526c3ac53d6ef931b486fb7be3cd87cd5fc4ba098cff3201356527",
+    "src/translations/patches/opening_menu_layout.json": "b566cede8af1bb7118d32e19cda2de4bd23f086571b1bce93ac4f2d90e6c9ec3",
+    "src/translations/patches/regular_item_stacks.json": "0a65123d764246dbed83c9d76fdf691fa7e197716ff5f78a73692bcaf7051b04",
+    "src/translations/patches/shop_menu_layout.json": "7b0bca07ddceb9fe88734eb9852fd03d05e0c339a00d98cd4f13242b484c4721",
+    "src/translations/patches/special_floor_colosseum.json": "79ec06912c6a2891cf8ba0064bf1ee2357c83edbe85de4d149137d9137480044",
+    "src/translations/patches/starter_name.json": "4ab403ca5e30dafc77260b252bafdabe9dc0e7a7d25246d8644b8b52915dfa3d",
+    "src/translations/text/executable.json": "da7c746c89777dffbdc4eb633b3b4c0712686d6c85bcf8ad2c2e09df15a574d9",
+    "src/translations/text/location_titles.json": "78ed7061cf4b30cc84b3685bbec30d608206fb60de4aaba70ccacb68004ae83b",
+    "src/translations/text/monster_captions.json": "fceca0401ad23e2684640c9ea2f6a45636ddf845232fadb8cbb776d3574008bf",
+    "src/translations/text/static.json": "90871891a129eed252417a20fa2586fb9de601f4807b33adb1634226a7a4f0aa",
+    "src/translations/text/static_pools.json": "53bdd9226bfbff7ceac8a36351b8ac5a8717115d7ff8cc79ad11c51167d73221",
+    "src/translations/text/system.json": "c38a9c01b783f6ab924cd3c8ecf40de83cbcce92426a7f1ea50d0c41e5041678"
   },
   "published_sha256": {
-    "index.html": "de1645d8bf18fed72038bc6713460f11589d79fdf8c5cf48554e4210950332d4",
-    "DQM-translation-comparison.md": "1c6f0d855ff8e3b456d2b79e517b3e702db970a59dbee6d7cc993442c58c46f6",
-    "coverage-report.json": "cbf32da468802746469d1742ed74559ec5bf8df7b23449949e3cf0290f8428e2",
-    "comparison-data.json": "4bf98f38d695a21770fcbbf86ba0338e0701815a4e72a6a0c60f2ce1762dad6c",
-    "updates/machiko-gift.json": "b7ae093f7a5f4152c2ed86e536a1caac4bacf7d8e6690d32fd2217163afa5f08"
+    "index.html": "4810a896ad80c05af767ac772c62298a73ee5423e18a976810dc509c421447df",
+    "comparison-data.json": "959f6e123ffa8a60d73c74325187c2c6bb544dca2e1f2ab839320ecafaa23f0c",
+    "coverage-report.json": "4a7cd00ad9fa73038882afaa95df4e51feb190ee82d444572ea244c55682f2cd",
+    "DQM-translation-comparison.md": "e335eab92127abb5c7ddf1cb0ace2ed5dda05338fbbaadb7a40caf73dcc2e2d6"
   },
-  "source_updates": [
-    {
-      "source_repository": "https://github.com/phakic/dqm1",
-      "source_revision": "a57b93caf4791701fe62cd703065edbedfc44554",
-      "source_pr": "https://github.com/phakic/dqm1/pull/63",
-      "date": "2026-10-09",
-      "source_file_sha256": {
-        "src/translations/patches/gift_names.json": "3a5eba36d70b53793660180a6f2283f9f398c1ec25476c7bcfa79c3ff105c942",
-        "src/tools/machiko_gift_name.py": "e2ef4f5bde0e9712f58541c41a672a7925d799cb1e60498b1cf3a65188031c19",
-        "src/translations/dialogue/main/4000_6131.json": "75e87669d51d1ef485b30d6b64ed02447412d94d51079ce30139a9b19963a4d2"
-      },
-      "row_keys": [
-        "patches/gift_names.json:machiko.nickname"
-      ],
-      "update_file": "updates/machiko-gift.json",
-      "update_sha256": "b7ae093f7a5f4152c2ed86e536a1caac4bacf7d8e6690d32fd2217163afa5f08"
-    }
-  ]
+  "source_donor_evidence": {
+    "file": "updates/clam-source-donors.json",
+    "sha256": "ffa91730abcb6670ad6893e7bf7a69115551df3f58bf7503424291225b37f44d"
+  }
 }

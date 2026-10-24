@@ -90,7 +90,7 @@ function expectBody(body, draft, source) {
 }
 
 for (const protocol of ['http', 'file']) {
-  test(`${protocol}: Machiko gift issue uses its updated row revision while the snapshot keeps its baseline`, async ({ page, siteServer }) => {
+  test(`${protocol}: Machiko gift issue uses the current builder revision and retains its source PR`, async ({ page, siteServer }) => {
     const url = protocol === 'file' ? pathToFileURL(path.join(root, 'index.html')).href : siteServer.url;
     await openComparison(page, url);
     await page.locator('#search').fill('machiko.nickname');
@@ -99,8 +99,10 @@ for (const protocol of ['http', 'file']) {
     const key = 'patches/gift_names.json:machiko.nickname';
     await expect(row).toHaveAttribute('data-key', key);
     const source = await metadata(page, key);
-    expect(source.revision).toBe('057877498252bac5cb42d35a1cb29286ecbec8f9');
-    expect(source.row.source_revision).toBe('a57b93caf4791701fe62cd703065edbedfc44554');
+    const manifest = JSON.parse(await readFile(path.join(root, 'source-manifest.json'), 'utf8'));
+    expect(source.revision).toBe(manifest.translation_revision);
+    expect(source.row.source_revision).toBe(manifest.translation_revision);
+    expect(source.row.source_pr).toBe('https://github.com/phakic/dqm1/pull/63');
     const draft = 'Machiko’s Rank A gift nickname: Pete / ピート';
     await input.fill(draft);
     await submit.click();
@@ -108,7 +110,7 @@ for (const protocol of ['http', 'file']) {
     expect(handoffs).toHaveLength(1);
     const body = expectIssueDestination(handoffs[0][0]).searchParams.get('body');
     expectBody(body, draft, source);
-    expect(body).not.toContain(source.revision);
+    expect(body).toContain(`"revision": "${manifest.translation_revision}"`);
     await expect(input).toHaveValue(draft);
   });
 
@@ -146,6 +148,30 @@ for (const protocol of ['http', 'file']) {
     await expect(submit).toBeEnabled();
   });
 }
+
+test('issue provenance prefers a row revision when it differs from the builder snapshot', async ({ page, siteServer }) => {
+  await openComparison(page, siteServer.url);
+  const { input, submit } = firstSuggestion(page);
+  const key = await input.getAttribute('data-key');
+  const rowRevision = '1234567890abcdef1234567890abcdef12345678';
+  // Isolate the override contract: refreshed real rows now share the builder's
+  // revision, while imported supplementary rows may carry their own revision.
+  await page.evaluate(({ key, revision }) => {
+    window.DQM_COMPARISON_CONTEXT.rows.find(row => row.key === key).source_revision = revision;
+  }, { key, revision: rowRevision });
+  const source = await metadata(page, key);
+  expect(source.revision).not.toBe(rowRevision);
+  const draft = 'Review wording from a supplementary source revision';
+  await input.fill(draft);
+  await submit.click();
+  const handoffs = await page.evaluate(() => window.issueHandoffs);
+  expect(handoffs).toHaveLength(1);
+  const body = expectIssueDestination(handoffs[0][0]).searchParams.get('body');
+  expectBody(body, draft, source);
+  expect(body).toContain(`"revision": "${rowRevision}"`);
+  expect(body).not.toContain(`"revision": "${source.revision}"`);
+  await expect(input).toHaveValue(draft);
+});
 
 test('explains public GitHub submission and keeps backup controls available but collapsed', async ({ page, siteServer }) => {
   await openComparison(page, siteServer.url);
