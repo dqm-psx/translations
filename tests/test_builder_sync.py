@@ -27,6 +27,7 @@ REVISION = "a" * 40
 STAMP = "2026-10-24T12:34:56+00:00"
 DONOR_KEY = "dialogue_full_2000_3999.json:s004ae000_136e"
 EXACT_DONOR = "*: I saw a child\ncross the sea on a\ngiant clam. No, no\nlie! I saw it!"
+ACTIVE_TEXT = '<VOICE_42>*: I saw a child\ncross the sea on a<PROMPT><WAIT>giant clam. No, no\nlie! I saw it!'
 PRIVATE_MARKER = "PRIVATE-NATIVE-CODE-DO-NOT-PUBLISH"
 
 
@@ -64,6 +65,30 @@ def baseline_row(catalog, identity, *, table=None, row_id=None):
     }
 
 
+def source_evidence():
+    return {
+        "schema_version": 1,
+        "private_metadata": PRIVATE_MARKER,
+        "english_sources": [{
+            "game": "dwm2_" + edition, "title": edition.title(),
+            "record_id": "DWM2_" + edition.title() + "_1F2365",
+            "text": EXACT_DONOR, "private_metadata": PRIVATE_MARKER,
+            "references": [{"pointer_offset": 2031802, "private_metadata": PRIVATE_MARKER}],
+        } for edition in ("cobi", "tara")],
+        "japanese_sources": [{
+            "game": "dqm2_" + edition, "record_id": "jp_" + edition + "_1F18AC",
+            "text": "こどもが おおきな かいにのって", "method": "verified-extracted-original-source",
+        } for edition in ("ruka", "iru")],
+        "japanese_applicability": {"dqm1": False, "dqm2": True},
+        "edition_notes": {
+            "gameboy": "Original English source; active wording uses PSX presentation controls.",
+            "delocalized": "Official DWM2 English reused; no separate DWM2 Delocalized source is supplied.",
+            "private_metadata": PRIVATE_MARKER,
+        },
+        "validation": {"private_metadata": PRIVATE_MARKER},
+    }
+
+
 class BuilderSyncTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
@@ -78,8 +103,9 @@ class BuilderSyncTests(unittest.TestCase):
             identity = f"entry_{index}"
             item = entry(identity, f"Fresh current {index}", f"Fresh Game Boy {index}", f"Fresh Delocalized {index}")
             if catalog == "dialogue/main/2000_3999.json":
-                item = entry("s004ae000_136e", "I saw a child riding a giant clam across the sea!", "Adapted builder clam", "Adapted extension clam")
+                item = entry("s004ae000_136e", "I saw a child riding a giant clam across the sea!", ACTIVE_TEXT, ACTIVE_TEXT)
                 item["japanese"] = "子供が 大きな貝に乗って 海をわたってただよお~。<WAIT><END>"
+                item["source_evidence"] = source_evidence()
             self.entries[catalog] = [item]
         # The eighteenth catalog exercises structured patch wording and leaves.
         self.entries["patches/test_labels.json"] = [{
@@ -146,15 +172,66 @@ class BuilderSyncTests(unittest.TestCase):
         self.assertNotIn("old-supplement", json.dumps(context))
         self.assertEqual((self.site / "browser-drafts.json").read_text(), "USER LOCAL DRAFTS")
 
-    def test_original_donor_override_is_exact_and_separate_from_builder_adaptation(self):
+    def test_active_builder_values_and_separate_original_source_evidence(self):
         self.run_export()
         row = next(row for row in self.context()["rows"] if row["key"] == DONOR_KEY)
         self.assertEqual(row["gameboy"], EXACT_DONOR)
         self.assertEqual(row["delocalized"], EXACT_DONOR)
-        self.assertEqual(row["raw"]["translations"]["gameboy"]["english"], "Adapted builder clam<WAIT><END>")
+        self.assertEqual(row["raw"]["translations"]["gameboy"]["english"], ACTIVE_TEXT + "<WAIT><END>")
+        self.assertTrue(all(source["text"] == EXACT_DONOR for source in row["english_sources"]))
         self.assertEqual({source["record_id"] for source in row["english_sources"]}, {"DWM2_Cobi_1F2365", "DWM2_Tara_1F2365"})
         self.assertEqual(set(row["gbc_details"]["variants"][0]["games"]), {"dqm2_ruka", "dqm2_iru"})
+        self.assertEqual(row['japanese_gbc_dqm1'], 'Not applicable')
         self.assertIn("no separate DWM2 Delocalized source is supplied", row["edition_notes"]["delocalized"])
+
+    def test_same_id_builder_editions_are_authoritative_and_export_has_no_public_donor_dependency(self):
+        self.run_export()
+        item = self.entries["dialogue/main/2000_3999.json"][0]
+        item["translations"]["gameboy"]["english"] = 'Revised GB<LINE>with controls<WAIT><END>'
+        item["translations"]["delocalized"]["english"] = 'Revised extension<PROMPT>with controls<WAIT><END>'
+        # There are no row-specific Japanese or Current prerequisites either.
+        item["japanese"] = '別の言葉'
+        item["translations"]["current"]["english"] = 'Independent Current wording'
+        self.write_catalog("dialogue/main/2000_3999.json")
+        original_load = sync.load
+        def builder_or_baseline_only(path):
+            self.assertTrue(Path(path).is_relative_to(self.root), f'Unexpected public fixture dependency: {path}')
+            return original_load(path)
+        with mock.patch.object(sync, "load", side_effect=builder_or_baseline_only):
+            self.run_export()
+        row = next(row for row in self.context()["rows"] if row["key"] == DONOR_KEY)
+        self.assertEqual(row["gameboy"], 'Revised GB\nwith controls')
+        self.assertEqual(row["delocalized"], 'Revised extension\nwith controls')
+        self.assertEqual(row["current"], 'Independent Current wording')
+        self.assertTrue(all(source["text"] == EXACT_DONOR for source in row["english_sources"]))
+        self.assertNotIn('original_donor_override', json.dumps(self.context()))
+
+    def test_removing_builder_evidence_clears_previously_owned_details(self):
+        self.run_export()
+        del self.entries["dialogue/main/2000_3999.json"][0]["source_evidence"]
+        self.write_catalog("dialogue/main/2000_3999.json")
+        self.run_export()
+        row = next(row for row in self.context()["rows"] if row["key"] == DONOR_KEY)
+        self.assertNotIn('english_sources', row)
+        self.assertNotIn('edition_notes', row)
+        self.assertEqual(row['gbc_details']['variants'], [])
+        self.assertEqual(row['japanese_gbc_dqm2'], 'Not verified')
+        self.assertEqual(row['gameboy'], EXACT_DONOR)
+
+    def test_malformed_evidence_is_rejected_before_writing(self):
+        source = self.entries["dialogue/main/2000_3999.json"][0]["source_evidence"]["english_sources"][0]
+        for extra in ({'file': 'C:/private/folder.json'}, {'bytes_hex': '00', 'source_sha256': 'a' * 64},
+                      {'text': {'private_metadata': PRIVATE_MARKER}}, {'references': [{'pointer_offset': True}]}):
+            with self.subTest(extra=extra):
+                original = copy.deepcopy(source)
+                source.update(extra)
+                self.write_catalog("dialogue/main/2000_3999.json")
+                before = self.snapshot()
+                with self.assertRaises(ValueError):
+                    self.run_export()
+                self.assertEqual(self.snapshot(), before)
+                source.clear()
+                source.update(original)
 
     def test_legacy_patch_leaf_keeps_its_original_key_and_reviewed_evidence(self):
         legacy = baseline_row("patches/test_labels.json", "labels", row_id='["labels",[0]]')
@@ -187,6 +264,10 @@ class BuilderSyncTests(unittest.TestCase):
         markdown = (self.site / "DQM-translation-comparison.md").read_text(encoding="utf8")
         self.assertIn(REVISION, markdown)
         self.assertIn("*: I saw a child<br>cross the sea on a<br>giant clam.", markdown)
+        self.assertEqual(manifest['builder_source_evidence'], [{
+            'key': DONOR_KEY, 'catalog': 'src/translations/dialogue/main/2000_3999.json',
+            'entry_id': 's004ae000_136e'}])
+        self.assertNotIn('source_donor_evidence', manifest)
         before = self.snapshot()
         # Omitted --updated-at must reuse the stored sync timestamp.
         sync.export(self.builder, self.site, check=True)

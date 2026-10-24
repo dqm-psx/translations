@@ -76,6 +76,19 @@ supplied the initial row keys and Game Boy source evidence. Historical evidence
 is retained as provenance; it does not establish that a current PS1 line has a
 verified Game Boy counterpart. Supplementary evidence is stored in `updates/`.
 
+The Game Boy and Delocalized columns use the builder's active translation values,
+with PSX presentation controls removed for display. There is no dialogue-specific
+wording override. Original extracted text and provenance can accompany an entry
+in the builder's `source_evidence` field. The exporter copies only documented
+source-record fields and edition notes into the source details; those records
+never replace an edition's text. Removing builder evidence also clears its
+previously exported details. The manifest identifies the originating builder
+catalog, which is covered by the source-file hashes.
+
+`updates/clam-source-donors.json` remains a historical audit fixture for the
+original-ROM verifier. The exporter does not read it; all active clam wording
+and source details come from the builder translation JSON.
+
 The exporter updates the embedded page data and all three downloads together,
 then refreshes the manifest hashes. Stable row keys preserve saved suggestion
 drafts. The public repository contains the site, translation data, and export

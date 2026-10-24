@@ -1,7 +1,7 @@
 # DQM translation comparison
 
 Last updated from phakic/dqm1 on 24 October 2026.
-Builder revision: `68b294e9ea66f051d2b2b6045f38ca739b8e298c`.
+Builder revision: `abfd73f8846b36aea9350645d553a5a96badea68`.
 
 | Entry | Labels | Japanese-PSX | Japanese-GBC DQM1 | Japanese-GBC DQM2 | Current | Current short/menu | Game Boy | Delocalized |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
