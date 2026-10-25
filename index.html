@@ -152,7 +152,7 @@ select:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
 <div class="page-tools"><nav aria-label="Related tools"><a href="https://dqm-psx.github.io/guide/">← Back to the guide</a></nav><div class="theme-picker" role="group" aria-label="Theme"><span>Theme</span><button type="button" data-theme-choice="system" aria-pressed="true">System</button><button type="button" data-theme-choice="light" aria-pressed="false">Light</button><button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button></div></div>
 <h1>DQM 1+2 translation comparison</h1>
 <p class="intro">All project text alongside Japanese-PSX and verified Japanese-GBC wording. Compare the Current, Game Boy and Delocalized editions, explore labels, and keep your own translation suggestions.</p>
-<p class="stamp" id="builder-update-stamp">Last updated from the <a id="builder-repository" href="https://github.com/phakic/dqm1">translation builder repository</a> on <time id="builder-updated-at" datetime="2026-10-24">24 October 2026</time>. <a href="DQM-translation-comparison.md">Plain Markdown table</a></p>
+<p class="stamp" id="builder-update-stamp">Last updated from the <span id="builder-repository">translation builder repository</span> on <time id="builder-updated-at" datetime="2026-10-24">24 October 2026</time>. <a href="DQM-translation-comparison.md">Plain Markdown table</a></p>
 <noscript><p>Enable JavaScript to display this standalone table. The plain Markdown table above is also available.</p></noscript>
 <div class="tools" aria-label="Table filters">
 <label class="field search-field"><span>Search all text</span><input id="search" type="search" placeholder="Japanese, English, suggestion, label or entry ID" autocomplete="off"></label>
@@ -647,7 +647,7 @@ window.DQM_COMPARISON_CONTEXT={"schema_version":2,"commit":"decd1012378352530d77
         day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'
       }).format(updated);
     }
-    if (context.builder_repository_url) byId('builder-repository').href = context.builder_repository_url;
+
     const rows = context.rows;
     const values = win.DQMSuggestions ? win.DQMSuggestions.store.values : new Map();
     const searchIndex = new Map(rows.map(row => [row.key, searchable(row)]));
