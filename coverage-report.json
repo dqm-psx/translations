@@ -678,7 +678,7 @@
     "src/translations/dialogue/church.json": "a4ad0a759326a0389efce78de92e1890a001b80bf0c984453627923a11472b93",
     "src/translations/dialogue/extra.json": "15542bd13cd1047fc353370dd4df5d25b943d4aa9465c88f3d017008eccec5e7",
     "src/translations/dialogue/main/0000_1999.json": "f252056496eab59cad5f24cc967c3bdb8421ba5a2c0d258fe0b64a9e7b31f827",
-    "src/translations/dialogue/main/2000_3999.json": "09385babc9fb48732fa15490532e60766658716bdeec568e0658eab1bcb98dd5",
+    "src/translations/dialogue/main/2000_3999.json": "9b063dd9479e508ce578632646760891fe1d0756efebd6fbb6735a2c7533b3df",
     "src/translations/dialogue/main/4000_6131.json": "d953d2c9539617c62f06e96fc1b0a4139cae694ba10a3d76b7b29efa1b1900c3",
     "src/translations/dialogue/medal_appraisal.json": "66585906bff86ba8936611b909381e69b22a47b5169bcfd0749319bb2d8d8270",
     "src/translations/dialogue/recruitment.json": "fb9a6c27ad3eb821594db963b97f713a0609e3dbafeddabbdd52be85a9033be9",
@@ -786,7 +786,7 @@
     "Special floor colosseum": 53,
     "Project text": 4
   },
-  "revision": "68b294e9ea66f051d2b2b6045f38ca739b8e298c",
-  "generated_at": "2026-10-24T21:44:52+00:00",
+  "revision": "abfd73f8846b36aea9350645d553a5a96badea68",
+  "generated_at": "2026-10-24T23:06:36+00:00",
   "date": "24 October 2026"
 }

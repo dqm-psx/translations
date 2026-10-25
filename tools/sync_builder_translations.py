@@ -40,6 +40,14 @@ CATALOGS = {
 }
 OUTPUTS = ('index.html', 'comparison-data.json', 'coverage-report.json',
            'DQM-translation-comparison.md', 'source-manifest.json')
+SOURCE_TEXT_FIELDS = ('game', 'title', 'source_package', 'file', 'record_id',
+                      'offset_hex', 'end_offset_hex', 'rom_sha256',
+                      'source_file_sha256', 'source_sha256', 'text',
+                      'annotated_text', 'bytes_hex', 'method')
+SOURCE_REFERENCE_FIELDS = ('root_offset', 'group_index', 'entry_index',
+                           'directory_offset', 'group', 'index', 'pointer_offset')
+EVIDENCE_OUTPUT_FIELDS = ('english_sources', 'edition_notes', 'gbc_details',
+                          'japanese_gbc_dqm1', 'japanese_gbc_dqm2')
 
 
 def digest(data):
@@ -102,6 +110,123 @@ def at(value, path):
     for part in path:
         value = value[int(part)] if isinstance(value, list) else value[part]
     return value
+
+
+def public_sources(value):
+    """Copy only documented source-record fields; reject malformed provenance."""
+    if not isinstance(value, list):
+        raise ValueError('Builder source evidence records must be a list')
+    records = []
+    for source in value:
+        if not isinstance(source, dict):
+            raise ValueError('Builder source evidence record must be an object')
+        safe = {}
+        for field in SOURCE_TEXT_FIELDS:
+            if field not in source:
+                continue
+            text = source[field]
+            if not isinstance(text, str):
+                raise ValueError(f'Builder source evidence {field} must be text')
+            if field.endswith('_sha256') and not re.fullmatch('[0-9a-f]{64}', text):
+                raise ValueError(f'Invalid builder source evidence hash: {field}')
+            if field.endswith('_hex') and field != 'bytes_hex' and not re.fullmatch(r'0x[0-9A-Fa-f]+', text):
+                raise ValueError(f'Invalid builder source evidence offset: {field}')
+            if field == 'file' and (re.search(r'[:\\]', text) or text.startswith('/') or '..' in text.split('/')):
+                raise ValueError('Builder source evidence file must be a relative package path')
+            safe[field] = text
+        if any(not safe.get(field) for field in ('game', 'text', 'record_id')):
+            raise ValueError('Builder source evidence needs game, text, and record_id')
+        if 'bytes_hex' in safe:
+            if not re.fullmatch(r'[0-9A-Fa-f]{2}(?: [0-9A-Fa-f]{2})*', safe['bytes_hex']):
+                raise ValueError('Invalid builder source evidence bytes')
+            data = bytes.fromhex(safe['bytes_hex'])
+            if 'source_sha256' in safe and digest(data) != safe['source_sha256']:
+                raise ValueError('Builder source evidence bytes do not match their hash')
+            if all(key in safe for key in ('offset_hex', 'end_offset_hex')) and len(data) != int(safe['end_offset_hex'], 16) - int(safe['offset_hex'], 16):
+                raise ValueError('Builder source evidence bytes do not match their span')
+        if 'references' in source:
+            if not isinstance(source['references'], list):
+                raise ValueError('Builder source evidence references must be a list')
+            safe['references'] = []
+            for reference in source['references']:
+                if not isinstance(reference, dict):
+                    raise ValueError('Builder source evidence reference must be an object')
+                item = {}
+                for field in SOURCE_REFERENCE_FIELDS:
+                    if field in reference:
+                        number = reference[field]
+                        if type(number) is not int or number < 0:
+                            raise ValueError(f'Builder source evidence {field} must be a nonnegative integer')
+                        item[field] = number
+                if 'pointer_offset_hex' in reference:
+                    pointer = reference['pointer_offset_hex']
+                    if not isinstance(pointer, str) or not re.fullmatch(r'0x[0-9A-Fa-f]+', pointer):
+                        raise ValueError('Invalid builder source evidence pointer offset')
+                    item['pointer_offset_hex'] = pointer
+                safe['references'].append(item)
+        records.append(safe)
+    return records
+
+
+def refresh_source_evidence(row, evidence):
+    """Refresh builder-owned provenance without altering translation wording."""
+    if evidence is not None and (not isinstance(evidence, dict) or evidence.get('schema_version') != 1):
+        raise ValueError('Unsupported builder source evidence schema')
+    incoming = set()
+    if evidence is not None:
+        incoming.update(field for field in ('english_sources', 'edition_notes') if field in evidence)
+        if 'japanese_sources' in evidence:
+            incoming.update(('gbc_details', 'japanese_gbc_dqm1', 'japanese_gbc_dqm2'))
+    for field in row.get('builder_source_evidence_fields', []):
+        if field in EVIDENCE_OUTPUT_FIELDS and field not in incoming:
+            row.pop(field, None)
+    row.setdefault('gbc_details', {'variants': [], 'supporting_sources': [],
+        'note': '', 'game_status': {game: {'status': 'not_verified',
+            'note': 'Source correspondence has not been established.'} for game in ('dqm1', 'dqm2')}})
+    for game in ('dqm1', 'dqm2'):
+        row.setdefault('japanese_gbc_' + game, 'Not verified')
+    if evidence is None:
+        row.pop('builder_source_evidence_fields', None)
+        return
+    owned = []
+    if 'english_sources' in evidence:
+        row['english_sources'] = public_sources(evidence['english_sources'])
+        owned.append('english_sources')
+    if 'edition_notes' in evidence:
+        notes = evidence['edition_notes']
+        if not isinstance(notes, dict) or any(not isinstance(notes[e], str) for e in EDITION_KEYS if e in notes):
+            raise ValueError('Builder source evidence edition notes must be text')
+        row['edition_notes'] = {e: notes[e] for e in EDITION_KEYS if e in notes}
+        owned.append('edition_notes')
+    if 'japanese_sources' in evidence:
+        sources = public_sources(evidence['japanese_sources'])
+        applicability = evidence.get('japanese_applicability', {})
+        if not isinstance(applicability, dict) or any(type(applicability[game]) is not bool for game in ('dqm1', 'dqm2') if game in applicability):
+            raise ValueError('Builder Japanese source applicability must be boolean')
+        by_text, by_game = {}, {'dqm1': [], 'dqm2': []}
+        for source in sources:
+            match = re.match(r'd[qw]m([12])(?:_|$)', source['game'])
+            if not match:
+                raise ValueError('Unknown Japanese source game family')
+            by_game['dqm' + match[1]].append(source)
+            variant = by_text.setdefault(source['text'], {'text': source['text'], 'games': [], 'sources': []})
+            if source['game'] not in variant['games']:
+                variant['games'].append(source['game'])
+            variant['sources'].append(source)
+        status = {}
+        for game, records in by_game.items():
+            applicable = applicability.get(game)
+            if applicable is False and records:
+                raise ValueError('Japanese source records conflict with declared applicability')
+            texts = list(dict.fromkeys(source['text'] for source in records))
+            row['japanese_gbc_' + game] = '\n\n'.join(texts) if texts else ('Not applicable' if applicable is False else 'Not verified')
+            verified = bool(records) and all(source.get('method') == 'verified-extracted-original-source' for source in records)
+            status[game] = {'status': 'not_applicable' if applicable is False else ('verified' if verified else 'not_verified'),
+                'note': 'Not applicable according to the builder catalog.' if applicable is False else ('Source records recorded in the builder catalog.' if records else 'No source record supplied by this builder entry.')}
+        row['gbc_details'] = {'variants': list(by_text.values()), 'supporting_sources': [],
+                             'note': 'Provenance from the builder translation catalog.', 'game_status': status}
+        owned.extend(('gbc_details', 'japanese_gbc_dqm1', 'japanese_gbc_dqm2'))
+    row['builder_source_evidence_fields'] = owned
 
 
 def source_rows(builder, baseline):
@@ -183,40 +308,13 @@ def source_rows(builder, baseline):
                     row[edition], row[edition + '_menu'] = text, menu
                 row['different'] = len({row[e] for e in EDITION_KEYS}) > 1
                 row['key'] = row['table'] + ':' + row['id']
+                refresh_source_evidence(row, entry.get('source_evidence') if not subpath else None)
                 rows.append(row)
     if not rows:
         raise ValueError('Refusing to publish an empty comparison')
     if len({row['key'] for row in rows}) != len(rows):
         raise ValueError('Duplicate public row keys after source refresh')
     return rows, hashes, counts, exclusions
-
-
-def apply_donors(rows, donor):
-    # Validate pinned public source evidence without depending on private ROMs.
-    from donor_source_audit import validate_artifact
-    validate_artifact(donor)
-    matches = [row for row in rows if row['key'] == donor['key']]
-    if len(matches) != 1:
-        raise ValueError('Expected one original clam dialogue row')
-    row = matches[0]
-    if '大きな貝' not in row['japanese_psx'] or 'giant clam' not in row['current']:
-        raise ValueError('Builder source must contain the verified Port Ritz clam correction (PR #80)')
-    row['english_sources'] = copy.deepcopy(donor['english_sources'])
-    row['edition_notes'] = copy.deepcopy(donor['edition_notes'])
-    for edition in ('gameboy', 'delocalized'):
-        row[edition] = donor['display'][edition]
-        row[edition + '_menu'] = None
-    # raw retains the actual builder edition values; public source display is explicit.
-    row['different'] = len({row[e] for e in EDITION_KEYS}) > 1
-    sources = copy.deepcopy(donor['japanese_sources'])
-    row['gbc_details'] = {'variants': [{'text': sources[0]['text'],
-        'games': [s['game'] for s in sources], 'sources': sources}],
-        'supporting_sources': [], 'note': 'Both Japanese GBC versions independently verified against their original ROMs.',
-        'game_status': {'dqm1': {'status': 'not_applicable', 'note': 'DWM2 dialogue.'},
-                        'dqm2': {'status': 'verified', 'note': 'Original Ruka and Iru records byte-verified.'}}}
-    row['japanese_gbc_dqm1'] = 'Not applicable'
-    row['japanese_gbc_dqm2'] = sources[0]['text']
-    return row
 
 
 def replace_context(document, context):
@@ -266,8 +364,6 @@ def export(builder, site, updated_at=None, check=False):
     if when.utcoffset() is None:
         raise ValueError('Update timestamp must include a timezone')
     rows, hashes, counts, exclusions = source_rows(builder, baseline['rows'])
-    donor = load(Path(__file__).resolve().parent.parent / 'updates/clam-source-donors.json')
-    apply_donors(rows, donor)
     baseline_order = {r['key']: i for i, r in enumerate(baseline['rows'])}
     rows.sort(key=lambda r: baseline_order.get(r['key'], len(baseline_order)))
     labels = Counter(label for row in rows for label in row['labels'])
@@ -291,8 +387,7 @@ def export(builder, site, updated_at=None, check=False):
     context.setdefault('gbc_sources', {})['coverage'] = gbc_coverage
     # Historical supplements no longer override wording freshly read from builder.
     context['source_updates'] = [{'kind': 'builder-json-export', 'source_repository': context['builder_repository_url'],
-                                 'source_revision': revision, 'date': stamp[:10],
-                                 'original_donor_override': donor['key']}]
+                                 'source_revision': revision, 'date': stamp[:10]}]
     for row in rows:
         row['source_revision'] = revision
     document = replace_context((site / 'index.html').read_text(encoding='utf8'), context)
@@ -311,8 +406,8 @@ def export(builder, site, updated_at=None, check=False):
                 'translation_revision': revision, 'generated_at': stamp, 'updated_from_builder_at': stamp,
                 'row_count': len(rows), 'source_file_sha256': hashes,
                 'published_sha256': {name: digest(data) for name, data in outputs.items()},
-                'source_donor_evidence': {'file': 'updates/clam-source-donors.json',
-                    'sha256': digest((Path(__file__).resolve().parent.parent / 'updates/clam-source-donors.json').read_bytes())}}
+                'builder_source_evidence': [{'key': row['key'], 'catalog': 'src/translations/' + row['catalog'],
+                    'entry_id': row['builder_entry_id']} for row in rows if row.get('builder_source_evidence_fields')]}
     outputs['source-manifest.json'] = (encoded(manifest) + '\n').encode('utf8')
     if check:
         different = [name for name, data in outputs.items() if not (site / name).exists() or (site / name).read_bytes() != data]

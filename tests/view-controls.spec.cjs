@@ -100,14 +100,15 @@ test('expanded selectors fit on a narrow screen in both themes', async ({ page }
 });
 
 test('original English source details preserve donor text and explain its edition attribution', async ({ page }) => {
-  const donor = JSON.parse(await readFile(path.join(root, 'updates/clam-source-donors.json'), 'utf8'));
+  const context = JSON.parse(await readFile(path.join(root, 'comparison-data.json'), 'utf8'));
+  const donor = context.rows.find(row => row.id === 's004ae000_136e');
   await page.locator('#search').fill(donor.id);
   await expect(page.locator('#comparison-rows > tr')).toHaveCount(1);
   await expect(page.locator('#comparison-rows > tr')).toHaveAttribute('data-key', donor.key);
   await page.locator('#all-columns').click();
   for (const [index, edition] of [[6, 'gameboy'], [7, 'delocalized']]) {
     const cell = page.locator('#comparison-rows tr').first().locator('td').nth(index);
-    expect(await cell.evaluate(element => [...element.childNodes].filter(node => node.nodeType === Node.TEXT_NODE).map(node => node.textContent).join(''))).toBe(donor.display[edition]);
+    expect(await cell.evaluate(element => [...element.childNodes].filter(node => node.nodeType === Node.TEXT_NODE).map(node => node.textContent).join(''))).toBe(donor[edition]);
     const details = cell.locator('.english-source-details');
     await details.locator('summary').click();
     await expect(details.locator('.english-source-note')).toHaveText(donor.edition_notes[edition]);

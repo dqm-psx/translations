@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
   "source_repository": "https://github.com/phakic/dqm1",
-  "translation_revision": "68b294e9ea66f051d2b2b6045f38ca739b8e298c",
-  "generated_at": "2026-10-24T21:44:52+00:00",
-  "updated_from_builder_at": "2026-10-24T21:44:52+00:00",
+  "translation_revision": "abfd73f8846b36aea9350645d553a5a96badea68",
+  "generated_at": "2026-10-24T23:06:36+00:00",
+  "updated_from_builder_at": "2026-10-24T23:06:36+00:00",
   "row_count": 9939,
   "source_file_sha256": {
     "src/translations/dialogue/church.json": "a4ad0a759326a0389efce78de92e1890a001b80bf0c984453627923a11472b93",
     "src/translations/dialogue/extra.json": "15542bd13cd1047fc353370dd4df5d25b943d4aa9465c88f3d017008eccec5e7",
     "src/translations/dialogue/main/0000_1999.json": "f252056496eab59cad5f24cc967c3bdb8421ba5a2c0d258fe0b64a9e7b31f827",
-    "src/translations/dialogue/main/2000_3999.json": "09385babc9fb48732fa15490532e60766658716bdeec568e0658eab1bcb98dd5",
+    "src/translations/dialogue/main/2000_3999.json": "9b063dd9479e508ce578632646760891fe1d0756efebd6fbb6735a2c7533b3df",
     "src/translations/dialogue/main/4000_6131.json": "d953d2c9539617c62f06e96fc1b0a4139cae694ba10a3d76b7b29efa1b1900c3",
     "src/translations/dialogue/medal_appraisal.json": "66585906bff86ba8936611b909381e69b22a47b5169bcfd0749319bb2d8d8270",
     "src/translations/dialogue/recruitment.json": "fb9a6c27ad3eb821594db963b97f713a0609e3dbafeddabbdd52be85a9033be9",
@@ -40,13 +40,16 @@
     "src/translations/text/system.json": "c38a9c01b783f6ab924cd3c8ecf40de83cbcce92426a7f1ea50d0c41e5041678"
   },
   "published_sha256": {
-    "index.html": "4810a896ad80c05af767ac772c62298a73ee5423e18a976810dc509c421447df",
-    "comparison-data.json": "959f6e123ffa8a60d73c74325187c2c6bb544dca2e1f2ab839320ecafaa23f0c",
-    "coverage-report.json": "4a7cd00ad9fa73038882afaa95df4e51feb190ee82d444572ea244c55682f2cd",
-    "DQM-translation-comparison.md": "e335eab92127abb5c7ddf1cb0ace2ed5dda05338fbbaadb7a40caf73dcc2e2d6"
+    "index.html": "794436f9e8baec27919556d415de9a3299b09244a15f5c2e17e2c6f291e401fb",
+    "comparison-data.json": "eff36ef60558bbf288b5a2cd824f5040c97d9837fed060539bea039e00c7d23a",
+    "coverage-report.json": "601b4eb8e3bec54ee475f9033affd8b7f74b2bcfe6af02f7c80eb8c7852f6818",
+    "DQM-translation-comparison.md": "8de927d078fb566ef3503d6a6ebb83b9168ca3da094ac216f62f5df2288e350e"
   },
-  "source_donor_evidence": {
-    "file": "updates/clam-source-donors.json",
-    "sha256": "ffa91730abcb6670ad6893e7bf7a69115551df3f58bf7503424291225b37f44d"
-  }
+  "builder_source_evidence": [
+    {
+      "key": "dialogue_full_2000_3999.json:s004ae000_136e",
+      "catalog": "src/translations/dialogue/main/2000_3999.json",
+      "entry_id": "s004ae000_136e"
+    }
+  ]
 }
