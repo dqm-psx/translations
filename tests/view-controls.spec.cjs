@@ -20,7 +20,7 @@ test.beforeEach(async ({ page, siteServer }) => {
 test('shows the builder update date and current columns before opening selectors', async ({ page }) => {
   const manifest = JSON.parse(await readFile(path.join(root, 'source-manifest.json'), 'utf8'));
   await expect(page.locator('#builder-update-stamp')).toContainText('Last updated from the translation builder repository on');
-  await expect(page.locator('#builder-repository')).toHaveAttribute('href', 'https://github.com/phakic/dqm1');
+  await expect(page.locator('a#builder-repository')).toHaveCount(0);
   await expect(page.locator('#builder-updated-at')).toHaveAttribute('datetime', manifest.updated_from_builder_at);
   await expect(page.locator('#builder-updated-at')).toHaveText(new Intl.DateTimeFormat('en-GB', {
     day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'
