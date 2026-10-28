@@ -677,13 +677,13 @@
   "source_sha256": {
     "src/translations/dialogue/church.json": "61512d2a963203683f6eb0f08b05198dddba32ca143618b843db6047f8868eaf",
     "src/translations/dialogue/extra.json": "7645378ca3e11dddd6120190bca86cc80eac9837df0a56a652b9b14d6b97ecdc",
-    "src/translations/dialogue/main/0000_1999.json": "dac8dfa446b268ba562209222a4e653ad66d4cc5cba939a1c31638db430e9e66",
+    "src/translations/dialogue/main/0000_1999.json": "884c07f732f79192c2ebc29465a0a89884b691e4d72bca40d0dbd2bb79dc1c3d",
     "src/translations/dialogue/main/2000_3999.json": "13638c3439e8c61c06d6754f47c1f66cfdc4e87df328b7d82790661172924270",
-    "src/translations/dialogue/main/4000_6131.json": "425f0f766eda85788cfe70712c2f15fd5c34dcf2cd9c7b6e2a8629f9f67158dd",
+    "src/translations/dialogue/main/4000_6131.json": "babe4d7c997c1607655280573f01d1fba8506b3813733c9c36f54528c31e32a5",
     "src/translations/dialogue/medal_appraisal.json": "f5df59fcdc9198bb6ed655fddcc3f153f739639d487d4440048ac6d687e1694c",
     "src/translations/dialogue/recruitment.json": "d3795c3552e654ac4e7530182617d763225472d4ca023adab09264dd258e92df",
     "src/translations/dialogue/services.json": "f27720c9c477cb565ee6d1a7b96e5a2731c6d42b5faf2fa7a5a073f271d5e218",
-    "src/translations/menus/general.json": "b251aff8ed214f1c22c1d4e9a6dcdb45025719fe4a18d2a586e2e785b3e492ce",
+    "src/translations/menus/general.json": "ffbeca9b685209f48a0dcd4137ce869114b348c495977dd2960218022b304c11",
     "src/translations/menus/keyboard.json": "030099fae636fd5bcdec8b4f0df245d55fcecbd37e96490c902f835b582a64fb",
     "src/translations/menus/mobile.json": "97fb1abd78c088d346a5ed7b9b8dea70815cd637a886f6be00298a929df674af",
     "src/translations/patches/appraisal_certificate_art.json": "321e698336d96110aac03c1cfbb16f9c563525d1320c81d505664ea82fc3bd88",
@@ -702,11 +702,11 @@
     "src/translations/patches/special_floor_colosseum.json": "ae059d6a45720038e5203b6124e6250f42ced2f09c585bab5c06bd69ab084443",
     "src/translations/patches/starter_name.json": "f28d590a15ddaf266c3f1af50e2a5023d3ee2b72205fef8c463c6254e0dc8afb",
     "src/translations/text/executable.json": "b90571a70a9346a4fa164d8bcb28d281f517d5d9af15f5b108e2995678320feb",
-    "src/translations/text/location_titles.json": "a060582c2ae6d37ecb1fc57d39dc0bb67369d60329dafda15388a84ba7eda80b",
+    "src/translations/text/location_titles.json": "d56a7a7ab20ac802f3d7be0cb02367330c4467c2fbf4fe022e013079805ca26d",
     "src/translations/text/monster_captions.json": "d9a7eb96b872572ce922d6ddb15e70744f40cfd74f9adf1b82b9b8d25ac0c1d6",
     "src/translations/text/static.json": "5dffe9be27b01543834ed70dafc57d642023c5cf0c6b3e95e8393f7c31e4165a",
     "src/translations/text/static_pools.json": "39ec47ec3018f7675ef4af75a97d5d83a7c2d48e14952e7848f8b7db5641ee3e",
-    "src/translations/text/system.json": "fcd750ccb717b4956c61c14ca104af61d4c371f7b99a7a73b6831e9a2f451013"
+    "src/translations/text/system.json": "7c6afe553cfde7fb5dea2fb517cb1292528b732d7876feea5b676cfa45380d73"
   },
   "label_counts": {
     "Dialogue": 6745,
@@ -786,7 +786,7 @@
     "Special floor colosseum": 53,
     "Project text": 4
   },
-  "revision": "867e67d3644e94141a835c8ef62eb3c9c631cfca",
-  "generated_at": "2026-10-25T11:37:00-07:00",
-  "date": "25 October 2026"
+  "revision": "fcf4333eef28f7204af123328f81b7e3fd2b7e8f",
+  "generated_at": "2026-10-27T22:08:18-07:00",
+  "date": "27 October 2026"
 }
