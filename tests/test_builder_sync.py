@@ -36,14 +36,15 @@ def dump(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False), encoding="utf8")
 
 
-def entry(identity, current="Fresh current", gameboy="Fresh Game Boy", delocalized="Fresh Delocalized"):
+def entry(identity, current="Fresh current", gameboy="Fresh Game Boy", delocalized="Fresh Delocalized",
+          vibecoded="Original vibecoded"):
     return {
         "id": identity,
         "japanese": "日本語<WAIT><END>",
         "private_metadata": PRIVATE_MARKER,
         "translations": {
             edition: {"english": text + "<WAIT><END>", "native_metadata": PRIVATE_MARKER}
-            for edition, text in zip(sync.EDITION_KEYS, (current, gameboy, delocalized))
+            for edition, text in zip(sync.EDITION_KEYS, (current, gameboy, delocalized, vibecoded))
         },
     }
 
@@ -161,6 +162,7 @@ class BuilderSyncTests(unittest.TestCase):
         kept = by_key[self.keep["key"]]
         self.assertEqual(kept["current"], "Fresh current 0")
         self.assertEqual(kept["gameboy"], "Fresh Game Boy 0")
+        self.assertEqual(kept["vibecoded"], "Original vibecoded")
         self.assertEqual(kept["labels"], self.keep["labels"])
         self.assertEqual(kept["gbc_details"], self.keep["gbc_details"])
         self.assertEqual(kept["note"], self.keep["note"])
@@ -218,6 +220,64 @@ class BuilderSyncTests(unittest.TestCase):
         self.assertEqual(row['japanese_gbc_dqm2'], 'Not verified')
         self.assertEqual(row['gameboy'], EXACT_DONOR)
 
+    def test_vibecoded_keeps_original_full_and_menu_wording_and_counts_differences(self):
+        catalog = "dialogue/main/0000_1999.json"
+        item = self.entries[catalog][0]
+        for edition in ("current", "gameboy", "delocalized"):
+            item["translations"][edition] = {"english": "Revised wording<END>"}
+        item["translations"]["vibecoded"] = {
+            "english_full": "Original<LINE>vibecoded wording<WAIT><END>",
+            "english": "Original display<END>",
+            "english_short": "Orig.<END>",
+            "native_metadata": PRIVATE_MARKER,
+        }
+        self.write_catalog(catalog)
+        self.run_export()
+        row = next(row for row in self.context()["rows"] if row["key"] == self.keep["key"])
+        self.assertEqual(row["vibecoded"], "Original\nvibecoded wording")
+        self.assertEqual(row["vibecoded_menu"], "Orig.")
+        self.assertTrue(row["different"])
+        self.assertEqual(row["raw"]["translations"]["vibecoded"], {
+            "english_full": "Original<LINE>vibecoded wording<WAIT><END>",
+            "english": "Original display<END>", "english_short": "Orig.<END>",
+        })
+        markdown = (self.site / "DQM-translation-comparison.md").read_text(encoding="utf8")
+        self.assertIn("| Vibecoded | Vibecoded short/menu |", markdown)
+        self.assertIn("| Original<br>vibecoded wording | Orig. |", markdown)
+        item["translations"]["current"]["english"] = "Another revision<END>"
+        self.write_catalog(catalog)
+        self.run_export()
+        refreshed = next(row for row in self.context()["rows"] if row["key"] == self.keep["key"])
+        self.assertEqual(refreshed["vibecoded"], row["vibecoded"])
+        self.assertEqual(refreshed["vibecoded_menu"], row["vibecoded_menu"])
+
+    def test_vibecoded_empty_and_exclusive_wording_never_fall_back(self):
+        catalog = "text/system.json"
+        for translations, expected in (
+            ({edition: {"english": "Only vibecoded<END>" if edition == "vibecoded" else "<END>"}
+              for edition in sync.EDITION_KEYS}, "Only vibecoded"),
+            ({edition: {"english": "<END>" if edition == "vibecoded" else "Other edition<END>"}
+              for edition in sync.EDITION_KEYS}, ""),
+        ):
+            with self.subTest(expected=expected):
+                self.entries[catalog][0]["translations"] = translations
+                self.write_catalog(catalog)
+                self.run_export()
+                row = next(row for row in self.context()["rows"] if row["catalog"] == catalog)
+                self.assertEqual(row["vibecoded"], expected)
+                self.assertIsNone(row["vibecoded_menu"])
+                self.assertTrue(row["different"])
+
+    def test_missing_vibecoded_refuses_before_writing_any_companion(self):
+        self.run_export()
+        before = self.snapshot()
+        catalog = "text/system.json"
+        del self.entries[catalog][0]["translations"]["vibecoded"]
+        self.write_catalog(catalog)
+        with self.assertRaisesRegex(ValueError, "Missing maintained edition"):
+            self.run_export()
+        self.assertEqual(self.snapshot(), before)
+
     def test_malformed_evidence_is_rejected_before_writing(self):
         source = self.entries["dialogue/main/2000_3999.json"][0]["source_evidence"]["english_sources"][0]
         for extra in ({'file': 'C:/private/folder.json'}, {'bytes_hex': '00', 'source_sha256': 'a' * 64},
@@ -241,6 +301,7 @@ class BuilderSyncTests(unittest.TestCase):
         self.run_export()
         row = next(row for row in self.context()["rows"] if row["key"] == legacy["key"])
         self.assertEqual(row["current"], "current patch 0")
+        self.assertEqual(row["vibecoded"], "vibecoded patch 0")
         self.assertEqual(row["note"], legacy["note"])
         self.assertEqual(row["labels"], legacy["labels"])
         self.assertEqual(row["gbc_details"], legacy["gbc_details"])

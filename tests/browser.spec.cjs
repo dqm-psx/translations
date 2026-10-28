@@ -53,7 +53,7 @@ for (const protocol of ['file', 'http']) {
     test('renders the snapshot, searches, filters labels and differences', async ({ page }) => {
       await expect(page.getByRole('heading', { name: 'DQM 1+2 translation comparison' })).toBeVisible();
       await expect(page.getByRole('link', { name: /Back to (the )?guide/ })).toHaveAttribute('href', 'https://dqm-psx.github.io/guide/');
-      await expect(page.locator('#comparison-table thead th')).toHaveCount(9);
+      await expect(page.locator('#comparison-table thead th')).toHaveCount(10);
       await expect(page.locator('#comparison-rows tr').first().locator('td').nth(4)).toHaveText('Desert World');
       const firstKey = (await visibleKeys(page))[0];
 
@@ -331,7 +331,7 @@ test('Machiko gift data, coverage, Markdown and the embedded snapshot stay align
   const giftIndex = data.rows.findIndex(row => row.key === machikoKey);
   expect(giftIndex).toBeGreaterThanOrEqual(0);
   const giftCells = markdownRows[giftIndex + 2].split('|').slice(1, -1).map(cell => cell.trim());
-  expect(giftCells).toEqual([machikoKey, 'Gift monster names', 'ビート', 'ピート', 'Not verified', 'Pete', '', 'Pete', 'Pete']);
+  expect(giftCells).toEqual([machikoKey, 'Gift monster names', 'ビート', 'ピート', 'Not verified', 'Pete', '', 'Pete', 'Pete', 'Beat', '']);
   expect(markdown).toContain(`Last updated from ${data.builder_repository} on ${data.date}.`);
   expect(markdown).toContain(`${data.rows.length.toLocaleString('en')} comparison rows from ${coverage.source_records.toLocaleString('en')} source records`);
   expect(markdown).toContain(data.revision);

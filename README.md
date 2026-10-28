@@ -5,8 +5,9 @@
 
 Compare entries from the Dragon Quest Monsters 1 & 2 PlayStation translation
 project alongside Japanese PS1, verified Japanese Game Boy Color, Current,
-Game Boy, and Delocalized wording. Search all text, combine labels, show English
-differences, and sort the complete selection before viewing 100 rows per page.
+Game Boy, Delocalized, and Vibecoded wording. Search all text, combine labels,
+show English differences, and sort the complete selection before viewing
+100 rows per page.
 
 The **Labels** and **Columns** cards keep your current view visible. Use the
 common-label dropdown for a quick view, or **Choose labels** to search all labels
@@ -16,8 +17,9 @@ match any selected label. Clearing labels keeps your search and differences filt
 The default **Suggest** preset shows **PSX Japanese / Current / Game Boy /
 Suggestions**. **Compare** shows the three main comparison columns, and **All
 columns** restores the full table. **Choose columns** lets you select any of the
-nine columns. The visible column names always appear below the presets. Existing
-saved selections take precedence over the default. At least one column stays
+ten columns, including **Vibecoded (EN)**. The visible column names always appear
+below the presets. Existing saved selections take precedence over the default.
+At least one column stays
 visible, and your selection is remembered in this browser. Search still includes
 hidden columns, and hiding Suggestions preserves your drafts. Printing uses the
 selected columns. Both selectors support keyboard navigation and Escape to close.
@@ -84,6 +86,13 @@ source-record fields and edition notes into the source details; those records
 never replace an edition's text. Removing builder evidence also clears its
 previously exported details. The manifest identifies the originating builder
 catalog, which is covered by the source-file hashes.
+
+The **Vibecoded (EN)** column shows the builder's separately preserved snapshot
+of the wording from before the October 3, 2026 translation overhaul. Select it
+under **Columns → Choose columns**, or use **All columns**. Its text is searchable
+even when hidden, participates in the English differences filter, and includes
+short/menu wording where it differs. The JSON and Markdown downloads include
+the snapshot as well. Later changes to Current do not replace Vibecoded wording.
 
 `updates/clam-source-donors.json` remains a historical audit fixture for the
 original-ROM verifier. The exporter does not read it; all active clam wording
