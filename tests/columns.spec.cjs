@@ -5,7 +5,7 @@ const { startServer } = require('./server.cjs');
 
 const root = path.resolve(__dirname, '..');
 const storageKey = 'dqm-translations:columns:v1';
-const columns = ['labels', 'japanese_psx', 'japanese_gbc_dqm1', 'japanese_gbc_dqm2', 'current', 'current_menu', 'gameboy', 'delocalized', 'suggestion'];
+const columns = ['labels', 'japanese_psx', 'japanese_gbc_dqm1', 'japanese_gbc_dqm2', 'current', 'current_menu', 'gameboy', 'delocalized', 'vibecoded', 'suggestion'];
 const comparison = ['japanese_psx', 'current', 'gameboy'];
 const suggestions = [...comparison, 'suggestion'];
 const test = base.extend({
@@ -28,7 +28,7 @@ async function openPicker(page) {
 }
 
 async function expectColumns(page, selected) {
-  await expect(page.locator('#column-selection-status')).toHaveText(`${selected.length} of 9 visible`);
+  await expect(page.locator('#column-selection-status')).toHaveText(`${selected.length} of ${columns.length} visible`);
   // Check every rendered row as well as the headers so pagination and filtering
   // cannot silently restore cells hidden by a previous selection.
   const visible = await page.locator('#comparison-table').evaluate(table => ({
@@ -43,6 +43,36 @@ async function expectColumns(page, selected) {
 }
 
 for (const protocol of ['http', 'file']) {
+  test(`${protocol}: Vibecoded can be selected, searched while hidden, and restored without changing other columns`, async ({ page, siteServer }) => {
+    const url = protocol === 'file' ? pathToFileURL(path.join(root, 'index.html')).href : siteServer.url;
+    await openComparison(page, url);
+    await expectColumns(page, suggestions);
+    await page.locator('#search').fill('giant turtle');
+    const key = 'dialogue_full_2000_3999.json:s004ae000_136e';
+    const turtle = page.locator(`#comparison-rows > tr[data-key="${key}"]`);
+    await expect(turtle).toHaveCount(1);
+    await expect(turtle.locator('td').nth(8)).toBeHidden();
+    await openPicker(page);
+    const choice = page.getByRole('checkbox', { name: 'Vibecoded (EN)', exact: true });
+    await choice.focus();
+    await page.keyboard.press('Space');
+    const selected = [...comparison, 'vibecoded', 'suggestion'];
+    await expectColumns(page, selected);
+    await expect(page.locator('#visible-columns')).toContainText('Vibecoded (EN)');
+    await expect(turtle.locator('td').nth(8)).toContainText('giant turtle');
+    await expect(turtle.locator('td').nth(4)).toContainText('giant clam');
+    await expect(turtle.locator('td').nth(8).locator('.english-source-details')).toHaveCount(0);
+    await page.reload();
+    await expectColumns(page, selected);
+    await page.locator('#search').fill('machiko.nickname');
+    await page.locator('#different').check();
+    await expect(page.locator('#comparison-rows > tr')).toHaveCount(1);
+    await expect(page.locator('#comparison-rows td').nth(8)).toHaveText('Beat');
+    for (const index of [4, 6, 7]) await expect(page.locator('#comparison-rows td').nth(index)).toHaveText('Pete');
+    await page.emulateMedia({ media: 'print' });
+    await expectColumns(page, selected);
+  });
+
   test(`${protocol}: custom column choices persist across reloads and keep the remaining table aligned`, async ({ page, siteServer }) => {
     const url = protocol === 'file' ? pathToFileURL(path.join(root, 'index.html')).href : siteServer.url;
     await openComparison(page, url);
@@ -53,9 +83,9 @@ for (const protocol of ['http', 'file']) {
     const fullWidth = await page.locator('#comparison-table').evaluate(table => table.getBoundingClientRect().width);
     await openPicker(page);
     const choices = page.locator('#column-picker input[data-column]');
-    await expect(choices).toHaveCount(9);
+    await expect(choices).toHaveCount(columns.length);
     for (const choice of await choices.all()) await expect(choice).toHaveAttribute('aria-controls', 'comparison-table');
-    for (const column of ['japanese_gbc_dqm1', 'japanese_gbc_dqm2', 'current_menu', 'delocalized', 'suggestion']) {
+    for (const column of ['japanese_gbc_dqm1', 'japanese_gbc_dqm2', 'current_menu', 'delocalized', 'vibecoded', 'suggestion']) {
       await page.locator(`input[data-column="${column}"]`).uncheck();
     }
     const selected = ['labels', ...comparison];
@@ -74,6 +104,33 @@ for (const protocol of ['http', 'file']) {
     expect(alignment.every(offset => offset < 1)).toBe(true);
   });
 }
+
+test('Vibecoded sorts the filtered rows and displays its compact menu wording', async ({ page, siteServer }) => {
+  await openComparison(page, siteServer.url);
+  await openPicker(page);
+  await page.locator('input[data-column="vibecoded"]').check();
+  await page.locator('#quick-label-select').selectOption('Town names');
+  const cellTexts = () => page.locator('#comparison-rows td:nth-child(9)').evaluateAll(cells => cells.map(cell =>
+    [...cell.childNodes].filter(node => node.nodeType === Node.TEXT_NODE).map(node => node.textContent).join('')));
+  await page.locator('[data-sort="vibecoded"]').click();
+  await expect(page.locator('#heading-vibecoded')).toHaveAttribute('aria-sort', 'ascending');
+  const ascending = await cellTexts();
+  expect(ascending.length).toBeGreaterThan(1);
+  const collator = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
+  expect(ascending).toEqual([...ascending].sort(collator.compare));
+  await page.locator('[data-sort="vibecoded"]').click();
+  await expect(page.locator('#heading-vibecoded')).toHaveAttribute('aria-sort', 'descending');
+  expect(await cellTexts()).toEqual([...ascending].reverse());
+  await page.locator('#clear-filters').click();
+  const compact = await page.evaluate(() => {
+    const row = window.DQM_COMPARISON_CONTEXT.rows.find(row => row.vibecoded_menu && row.vibecoded_menu !== row.vibecoded);
+    return { id: row.id, key: row.key, text: row.vibecoded, menu: row.vibecoded_menu };
+  });
+  await page.locator('#search').fill(compact.id);
+  const cell = page.locator('#comparison-rows > tr').filter({ has: page.locator(`textarea[data-key="${compact.key}"]`) }).locator('td').nth(8);
+  await expect(cell).toContainText(compact.text);
+  await expect(cell.locator('.menu')).toHaveText('Menu: ' + compact.menu);
+});
 
 test('presets and keyboard controls keep at least one column visible', async ({ page, siteServer }) => {
   await openComparison(page, siteServer.url);

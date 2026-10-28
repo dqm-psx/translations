@@ -18,7 +18,7 @@ from pathlib import Path
 import re
 import subprocess
 
-EDITION_KEYS = ('current', 'gameboy', 'delocalized')
+EDITION_KEYS = ('current', 'gameboy', 'delocalized', 'vibecoded')
 CATALOGS = {
     'dialogue/main/0000_1999.json': 'dialogue_full_0000_1999.json',
     'dialogue/main/2000_3999.json': 'dialogue_full_2000_3999.json',
@@ -330,7 +330,8 @@ def markdown(context):
     columns = [('Entry', 'key'), ('Labels', 'labels'), ('Japanese-PSX', 'japanese_psx'),
                ('Japanese-GBC DQM1', 'japanese_gbc_dqm1'), ('Japanese-GBC DQM2', 'japanese_gbc_dqm2'),
                ('Current', 'current'), ('Current short/menu', 'current_menu'),
-               ('Game Boy', 'gameboy'), ('Delocalized', 'delocalized')]
+               ('Game Boy', 'gameboy'), ('Delocalized', 'delocalized'),
+               ('Vibecoded', 'vibecoded'), ('Vibecoded short/menu', 'vibecoded_menu')]
     def cell(value):
         if isinstance(value, list):
             value = ', '.join(value)
