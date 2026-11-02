@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
   "source_repository": "https://github.com/phakic/dqm1",
-  "translation_revision": "e25eff9b7db743b2d9ce8c6bf4b57cd0dc3920c1",
-  "generated_at": "2026-11-01T23:27:59-08:00",
-  "updated_from_builder_at": "2026-11-01T23:27:59-08:00",
+  "translation_revision": "62bb740a4ce85cc1ae08012ee1acbfa8dbbbcb77",
+  "generated_at": "2026-11-01T23:28:09-08:00",
+  "updated_from_builder_at": "2026-11-01T23:28:09-08:00",
   "row_count": 9939,
   "source_file_sha256": {
     "src/translations/dialogue/church.json": "61512d2a963203683f6eb0f08b05198dddba32ca143618b843db6047f8868eaf",
@@ -14,7 +14,7 @@
     "src/translations/dialogue/medal_appraisal.json": "f5df59fcdc9198bb6ed655fddcc3f153f739639d487d4440048ac6d687e1694c",
     "src/translations/dialogue/recruitment.json": "d3795c3552e654ac4e7530182617d763225472d4ca023adab09264dd258e92df",
     "src/translations/dialogue/services.json": "f27720c9c477cb565ee6d1a7b96e5a2731c6d42b5faf2fa7a5a073f271d5e218",
-    "src/translations/menus/general.json": "ffbeca9b685209f48a0dcd4137ce869114b348c495977dd2960218022b304c11",
+    "src/translations/menus/general.json": "ab2f5de370975e50a73161e3d4e468d130a16af25de1e71e3e4d5e802599b850",
     "src/translations/menus/keyboard.json": "030099fae636fd5bcdec8b4f0df245d55fcecbd37e96490c902f835b582a64fb",
     "src/translations/menus/mobile.json": "97fb1abd78c088d346a5ed7b9b8dea70815cd637a886f6be00298a929df674af",
     "src/translations/patches/appraisal_certificate_art.json": "321e698336d96110aac03c1cfbb16f9c563525d1320c81d505664ea82fc3bd88",
@@ -31,7 +31,7 @@
     "src/translations/patches/regular_item_stacks.json": "5ab0644f5dd4df6b1ab3a855210318e5af59c29928c5a2ee288e9ab0dda7a730",
     "src/translations/patches/shop_menu_layout.json": "9a580882114ff94df57483801d8c1f4a34ff173b4c746ed63a47b9a83c18dee7",
     "src/translations/patches/special_floor_colosseum.json": "ae059d6a45720038e5203b6124e6250f42ced2f09c585bab5c06bd69ab084443",
-    "src/translations/patches/starter_name.json": "f28d590a15ddaf266c3f1af50e2a5023d3ee2b72205fef8c463c6254e0dc8afb",
+    "src/translations/patches/starter_name.json": "94be0301bb7842a3f3f533b0e0b4d06a5a7ae8e8792f0cfa16d72f7a39a2059c",
     "src/translations/text/executable.json": "b90571a70a9346a4fa164d8bcb28d281f517d5d9af15f5b108e2995678320feb",
     "src/translations/text/location_titles.json": "d56a7a7ab20ac802f3d7be0cb02367330c4467c2fbf4fe022e013079805ca26d",
     "src/translations/text/monster_captions.json": "d9a7eb96b872572ce922d6ddb15e70744f40cfd74f9adf1b82b9b8d25ac0c1d6",
@@ -40,10 +40,10 @@
     "src/translations/text/system.json": "f1e51419db1ea5c8558d4cc273a07170ba670768fab4381bf0362351dcef9608"
   },
   "published_sha256": {
-    "index.html": "44a508af8ed1c37e4f0e8c434f5039a29440c52e93bcc292cc5bb6839c760f11",
-    "comparison-data.json": "7734e732d173fe4d2958140b640a3311de6f513b8210b2e1b000fac3162753c9",
-    "coverage-report.json": "c5b126bb79125c1901ba02d95009d89e5ffa0a67ddf78291aca0df444e453a18",
-    "DQM-translation-comparison.md": "e80950b8878708c9167e426867ca684cd1ead831974e5f4e3d12643484ff633c"
+    "index.html": "ead537536eb16f87f639ca1fee45be02c066aede243c4ed0030f9962d20632a3",
+    "comparison-data.json": "4c710b9d6fdb28b687e0bdc854bee062b6c2fa5e17612a340424be8282af7da4",
+    "coverage-report.json": "3b1db086af01f9abfce7e248ac67e9432a9b81ddb7eaa958fc3ccd89d4bdd0b3",
+    "DQM-translation-comparison.md": "c6e8b47ceb72f003685efde72e2f5defac5e6f99e450b1b7be6e9e857e780f8b"
   },
   "builder_source_evidence": [
     {
