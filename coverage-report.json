@@ -683,7 +683,7 @@
     "src/translations/dialogue/medal_appraisal.json": "f5df59fcdc9198bb6ed655fddcc3f153f739639d487d4440048ac6d687e1694c",
     "src/translations/dialogue/recruitment.json": "d3795c3552e654ac4e7530182617d763225472d4ca023adab09264dd258e92df",
     "src/translations/dialogue/services.json": "f27720c9c477cb565ee6d1a7b96e5a2731c6d42b5faf2fa7a5a073f271d5e218",
-    "src/translations/menus/general.json": "ffbeca9b685209f48a0dcd4137ce869114b348c495977dd2960218022b304c11",
+    "src/translations/menus/general.json": "ab2f5de370975e50a73161e3d4e468d130a16af25de1e71e3e4d5e802599b850",
     "src/translations/menus/keyboard.json": "030099fae636fd5bcdec8b4f0df245d55fcecbd37e96490c902f835b582a64fb",
     "src/translations/menus/mobile.json": "97fb1abd78c088d346a5ed7b9b8dea70815cd637a886f6be00298a929df674af",
     "src/translations/patches/appraisal_certificate_art.json": "321e698336d96110aac03c1cfbb16f9c563525d1320c81d505664ea82fc3bd88",
@@ -700,7 +700,7 @@
     "src/translations/patches/regular_item_stacks.json": "5ab0644f5dd4df6b1ab3a855210318e5af59c29928c5a2ee288e9ab0dda7a730",
     "src/translations/patches/shop_menu_layout.json": "9a580882114ff94df57483801d8c1f4a34ff173b4c746ed63a47b9a83c18dee7",
     "src/translations/patches/special_floor_colosseum.json": "ae059d6a45720038e5203b6124e6250f42ced2f09c585bab5c06bd69ab084443",
-    "src/translations/patches/starter_name.json": "f28d590a15ddaf266c3f1af50e2a5023d3ee2b72205fef8c463c6254e0dc8afb",
+    "src/translations/patches/starter_name.json": "94be0301bb7842a3f3f533b0e0b4d06a5a7ae8e8792f0cfa16d72f7a39a2059c",
     "src/translations/text/executable.json": "b90571a70a9346a4fa164d8bcb28d281f517d5d9af15f5b108e2995678320feb",
     "src/translations/text/location_titles.json": "d56a7a7ab20ac802f3d7be0cb02367330c4467c2fbf4fe022e013079805ca26d",
     "src/translations/text/monster_captions.json": "d9a7eb96b872572ce922d6ddb15e70744f40cfd74f9adf1b82b9b8d25ac0c1d6",
@@ -786,7 +786,7 @@
     "Special floor colosseum": 53,
     "Project text": 4
   },
-  "revision": "e25eff9b7db743b2d9ce8c6bf4b57cd0dc3920c1",
-  "generated_at": "2026-11-01T23:27:59-08:00",
+  "revision": "62bb740a4ce85cc1ae08012ee1acbfa8dbbbcb77",
+  "generated_at": "2026-11-01T23:28:09-08:00",
   "date": "1 November 2026"
 }
