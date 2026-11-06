@@ -1,7 +1,7 @@
 # DQM translation comparison
 
-Last updated from phakic/dqm1 on 5 November 2026.
-Builder revision: `dbf5b12cc419268e5dda0d227ab273ba702be53d`.
+Last updated from phakic/dqm1 on 6 November 2026.
+Builder revision: `3beb14e3de87eb1dca04943c6f2851d8720a9b57`.
 
 | Entry | Labels | Japanese-PSX | Japanese-GBC DQM1 | Japanese-GBC DQM2 | Current | Current short/menu | Game Boy | Delocalized | Vibecoded | Vibecoded short/menu |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
