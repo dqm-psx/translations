@@ -1,26 +1,26 @@
 {
   "schema_version": 2,
   "source_repository": "https://github.com/phakic/dqm1",
-  "translation_revision": "db23014738d3df4f4e485a5cf2756d80c5776aca",
-  "generated_at": "2026-11-05T22:20:04-08:00",
-  "updated_from_builder_at": "2026-11-05T22:20:04-08:00",
-  "row_count": 9939,
+  "translation_revision": "dbf5b12cc419268e5dda0d227ab273ba702be53d",
+  "generated_at": "2026-11-05T22:22:26-08:00",
+  "updated_from_builder_at": "2026-11-05T22:22:26-08:00",
+  "row_count": 9962,
   "source_file_sha256": {
     "src/translations/dialogue/church.json": "61512d2a963203683f6eb0f08b05198dddba32ca143618b843db6047f8868eaf",
     "src/translations/dialogue/extra.json": "7645378ca3e11dddd6120190bca86cc80eac9837df0a56a652b9b14d6b97ecdc",
     "src/translations/dialogue/main/0000_1999.json": "0ada7d75dcc9d2bbcb4a6c732ca9f87d8208da6b5da316c5e8ae34fa6e41df62",
-    "src/translations/dialogue/main/2000_3999.json": "7dfc09c33790e7461b785c5ab2e95d687b791d6955f85b4739cea3654bafb306",
+    "src/translations/dialogue/main/2000_3999.json": "84c4d197fac25a98c158fa37520f2e51c30bb9e81cf88f0cfd5e10aac9c0104e",
     "src/translations/dialogue/main/4000_6131.json": "b3809e5e0ce088fb56a8b62426b35bd9bc8854b15a8a1ec9e7347d14e2c70c9f",
     "src/translations/dialogue/medal_appraisal.json": "f5df59fcdc9198bb6ed655fddcc3f153f739639d487d4440048ac6d687e1694c",
     "src/translations/dialogue/recruitment.json": "d3795c3552e654ac4e7530182617d763225472d4ca023adab09264dd258e92df",
     "src/translations/dialogue/services.json": "f27720c9c477cb565ee6d1a7b96e5a2731c6d42b5faf2fa7a5a073f271d5e218",
-    "src/translations/menus/general.json": "fba3dfbfb622d9250c9db8460aad4ef19553f8f3db63bd4d0732337e018c117f",
+    "src/translations/menus/general.json": "532a2614b92c562d8838469953f9c8f06f8d908b82ebee6494f41e7cfa6869e0",
     "src/translations/menus/keyboard.json": "030099fae636fd5bcdec8b4f0df245d55fcecbd37e96490c902f835b582a64fb",
     "src/translations/menus/mobile.json": "97fb1abd78c088d346a5ed7b9b8dea70815cd637a886f6be00298a929df674af",
     "src/translations/patches/appraisal_certificate_art.json": "321e698336d96110aac03c1cfbb16f9c563525d1320c81d505664ea82fc3bd88",
     "src/translations/patches/battle_party_tactics.json": "6df2087a41b983722119ceacdea02f7f6b87c9fc5bf4f4273d36af490491bd74",
-    "src/translations/patches/boss_names.json": "18603d6f6140e48e1296a15c893832bf816f76e33f6e1ee572de1a8d82f04116",
-    "src/translations/patches/gift_names.json": "3a5eba36d70b53793660180a6f2283f9f398c1ec25476c7bcfa79c3ff105c942",
+    "src/translations/patches/boss_names.json": "716e425d91302dac8f7397ce69d6568796bab1cb0dfe1e1df5dd4ebf320115d0",
+    "src/translations/patches/gift_names.json": "838b78c27a548e1f51d1f6f00d04f11ce0f2ac3217c0e40b204e483f75b62aac",
     "src/translations/patches/hidden_movement.json": "2ec1459d1e7e310f4f990dcf9b22a52d604f7aa163ef0a7fd305c33c78a4ae95",
     "src/translations/patches/hidden_text.json": "33a46bb1d957f86654dc443a99e8cbb0d05ea603becd8f07d30afb7f449e6150",
     "src/translations/patches/information_menu.json": "3ba4c0735212a37a721f0dff92e972d0463b41647148ffa7525a8ec8ffde5f39",
@@ -28,6 +28,7 @@
     "src/translations/patches/library_book_layout.json": "225a5c2bd4ba5af6867d425ed882409d63e8341d56f786909f2ca6482edfbf0d",
     "src/translations/patches/library_detail_art.json": "c433281936f6b6d85027bea37762acc49552c76cd85c36e68fb76444b86a84c9",
     "src/translations/patches/opening_menu_layout.json": "b954206b1c205ce8cb13ec489c0bb16b286e5b5251db5cfea27b1f1647a1334b",
+    "src/translations/patches/pvp_wagering.json": "a725dc5499556eb6106b98d79864fdb7c5ad3f00ebf7c19d64b6f4f91091ec97",
     "src/translations/patches/regular_item_stacks.json": "5ab0644f5dd4df6b1ab3a855210318e5af59c29928c5a2ee288e9ab0dda7a730",
     "src/translations/patches/shop_menu_layout.json": "9a580882114ff94df57483801d8c1f4a34ff173b4c746ed63a47b9a83c18dee7",
     "src/translations/patches/special_floor_colosseum.json": "ae059d6a45720038e5203b6124e6250f42ced2f09c585bab5c06bd69ab084443",
@@ -40,10 +41,10 @@
     "src/translations/text/system.json": "fe5f21b865fd9c35ac4004809f06ce4c13c0e40d943ebade6c444bd2e141e71b"
   },
   "published_sha256": {
-    "index.html": "c6730dae30b2c95c701a876c8bbd14025067d5b14c3f31f003645a2643e7a946",
-    "comparison-data.json": "68b1b5b5939ba91e222a5856c9e2d67e5b0339cfcbc7e8a423d727680120ac81",
-    "coverage-report.json": "47521ecd09c9a61029daa3374e3e902378fef33ffaf9bde0f1d1ca7ecb52b5c2",
-    "DQM-translation-comparison.md": "b76331d86a6366ade11f13244c78fdbb62b747ff4cddf11e4fa9bec93f2b8e6b"
+    "index.html": "d004110db73b6b11e38909b3f62ebe6f1b55f6d5b29d6dc41244d3e0665eaea3",
+    "comparison-data.json": "32917440a0e776050a45564a6bb394a86dbce1d001f3d07837f0835870108181",
+    "coverage-report.json": "9b57f5f769a9dc925905b76bc7acef22dad96f040a8e2f0ee93f70ea268af9d9",
+    "DQM-translation-comparison.md": "0f1332de911312b1f1f95ba2bb5dd124be6ad74624c1ef64400b4f5045ac053e"
   },
   "builder_source_evidence": [
     {
