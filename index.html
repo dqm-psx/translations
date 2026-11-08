@@ -56,7 +56,37 @@
 /* Dark colors match dqm-psx/guide. Screen-only variables keep printing light. */
 @media screen{:root[data-theme="dark"]{--scheme:dark;--page:#0d1316;--surface:#162025;--ink:#e7eef1;--heading:#e7eef1;--intro:#9db0b8;--muted:#9db0b8;--accent:#5ad7c6;--accent-hover:#5ad7c6;--button-ink:#e7eef1;--button-border:#33474e;--button-hover:#1d2c32;--focus:#b47719;--panel-border:#2a3a41;--label-ink:#9db0b8;--input-border:#33474e;--input-ink:#e7eef1;--separator:#26343a;--label-hover:#1d2c32;--label-selected:#1d2c32;--label-selected-border:#2f4a46;--entry:#9db0b8;--active-label:#1d2c32;--active-border:#2f4a46;--table-border:#2a3a41;--table-header:#1b262b;--table-heading:#9db0b8;--header-border:#26343a;--header-hover:#24343b;--sort-arrow:#9db0b8;--header-sorted:#24343b;--row-alternate:#162025;--row-hover:#1b262b;--menu-ink:#9db0b8;--tag:#1d2c32;--tag-border:#2f4a46;--tag-ink:#5ad7c6;--note:#d9ab52;--missing:#9db0b8;--source-ink:#9db0b8;--suggestion-border:#33474e;--warning-border:#5c4a22;--warning-bg:#3a2f16;--warning-ink:#f0d9a0;}}
 @media screen and (prefers-color-scheme:dark){:root:not([data-theme]){--scheme:dark;--page:#0d1316;--surface:#162025;--ink:#e7eef1;--heading:#e7eef1;--intro:#9db0b8;--muted:#9db0b8;--accent:#5ad7c6;--accent-hover:#5ad7c6;--button-ink:#e7eef1;--button-border:#33474e;--button-hover:#1d2c32;--focus:#b47719;--panel-border:#2a3a41;--label-ink:#9db0b8;--input-border:#33474e;--input-ink:#e7eef1;--separator:#26343a;--label-hover:#1d2c32;--label-selected:#1d2c32;--label-selected-border:#2f4a46;--entry:#9db0b8;--active-label:#1d2c32;--active-border:#2f4a46;--table-border:#2a3a41;--table-header:#1b262b;--table-heading:#9db0b8;--header-border:#26343a;--header-hover:#24343b;--sort-arrow:#9db0b8;--header-sorted:#24343b;--row-alternate:#162025;--row-hover:#1b262b;--menu-ink:#9db0b8;--tag:#1d2c32;--tag-border:#2f4a46;--tag-ink:#5ad7c6;--note:#d9ab52;--missing:#9db0b8;--source-ink:#9db0b8;--suggestion-border:#33474e;--warning-border:#5c4a22;--warning-bg:#3a2f16;--warning-ink:#f0d9a0;}}
-.page-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.project-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: clamp(8px, 2vw, 22px);
+  padding: 0 clamp(12px, 4vw, 48px);
+  background: #0c1a2b;
+  color: #f8f3e7;
+  font: 600 14px/1.3 system-ui, sans-serif;
+}
+.project-nav a, .project-nav [aria-current] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+}
+.project-nav .project-home {
+  margin-right: auto;
+  font: bold 20px/1 Georgia, serif;
+  white-space: nowrap;
+}
+.project-nav .project-home span, .project-nav [aria-current] { color: #ffd783; }
+.project-nav .project-home span { margin-left: .24em; }
+.project-nav [aria-current] { box-shadow: inset 0 -2px currentColor; }
+.project-nav a:hover, .project-nav a:focus-visible { color: #ffd783; text-decoration: underline; }
+.project-nav a:focus-visible { outline: 2px solid #ffd783; outline-offset: 1px; }
+@media print { .project-nav { display: none; } }
+.page-tools{display:flex;justify-content:flex-end;margin-bottom:20px}
 .theme-picker{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .theme-picker>span{font-size:13px;color:var(--label-ink);margin-right:3px}
 .theme-picker button{min-height:36px;padding:7px 11px;font-size:13px}
@@ -148,8 +178,15 @@ select:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
 @media print{.suggestion-backups{display:none}}
 </style>
 </head>
-<body><main>
-<div class="page-tools"><nav aria-label="Related tools"><a href="https://dqm-psx.github.io/guide/">← Back to the guide</a></nav><div class="theme-picker" role="group" aria-label="Theme"><span>Theme</span><button type="button" data-theme-choice="system" aria-pressed="true">System</button><button type="button" data-theme-choice="light" aria-pressed="false">Light</button><button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button></div></div>
+<body>
+<nav class="project-nav" aria-label="DQM PSX project">
+  <a class="project-home" href="https://dqm-psx.github.io/" aria-label="DQM PSX home">DQM <span>PSX</span></a>
+  <a href="https://dqm-psx.github.io/#download">Patch</a>
+  <a href="https://dqm-psx.github.io/guide/">Guide</a>
+  <span aria-current="page">Translations</span>
+</nav>
+<main>
+<div class="page-tools"><div class="theme-picker" role="group" aria-label="Theme"><span>Theme</span><button type="button" data-theme-choice="system" aria-pressed="true">System</button><button type="button" data-theme-choice="light" aria-pressed="false">Light</button><button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button></div></div>
 <h1>DQM 1+2 translation comparison</h1>
 <div class="intro">
 <p><strong>Compare</strong> the project’s translations with text from the Japanese PlayStation and Game Boy Color games, the official English releases of DWM1 and DWM2, the DWM1 Delocalized ROM hack, and the original Vibecoded translation snapshot.</p>
