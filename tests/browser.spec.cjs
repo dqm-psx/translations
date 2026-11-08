@@ -52,7 +52,11 @@ for (const protocol of ['file', 'http']) {
 
     test('renders the snapshot, searches, filters labels and differences', async ({ page }) => {
       await expect(page.getByRole('heading', { name: 'DQM 1+2 translation comparison' })).toBeVisible();
-      await expect(page.getByRole('link', { name: /Back to (the )?guide/ })).toHaveAttribute('href', 'https://dqm-psx.github.io/guide/');
+      const project = page.getByRole('navigation', { name: 'DQM PSX project' });
+      await expect(project.getByRole('link', { name: 'DQM PSX home' })).toHaveAttribute('href', 'https://dqm-psx.github.io/');
+      await expect(project.getByRole('link', { name: 'Patch' })).toHaveAttribute('href', 'https://dqm-psx.github.io/#download');
+      await expect(project.getByRole('link', { name: 'Guide' })).toHaveAttribute('href', 'https://dqm-psx.github.io/guide/');
+      await expect(project.locator('[aria-current="page"]')).toHaveText('Translations');
       await expect(page.locator('#comparison-table thead th')).toHaveCount(10);
       await expect(page.locator('#comparison-rows tr').first().locator('td').nth(4)).toHaveText('Desert World');
       const firstKey = (await visibleKeys(page))[0];
@@ -236,6 +240,10 @@ for (const protocol of ['file', 'http']) {
     });
 
     test('keeps controls usable on a narrow screen and scrolls to suggestions', async ({ page }) => {
+      await page.setViewportSize({ width: 320, height: 640 });
+      const project = page.getByRole('navigation', { name: 'DQM PSX project' });
+      // The project links fit a single row even before the table scrolls horizontally.
+      expect(await project.evaluate(nav => new Set([...nav.children].map(item => item.offsetTop)).size)).toBe(1);
       await page.setViewportSize({ width: 390, height: 844 });
       await expect(page.locator('#search')).toBeVisible();
       await expect(page.locator('#suggestion-backups > summary')).toBeVisible();
