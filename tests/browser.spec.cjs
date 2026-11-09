@@ -52,7 +52,10 @@ for (const protocol of ['file', 'http']) {
 
     test('renders the snapshot, searches, filters labels and differences', async ({ page }) => {
       await expect(page.getByRole('heading', { name: 'DQM 1+2 translation comparison' })).toBeVisible();
-      await expect(page.getByRole('link', { name: /Back to (the )?guide/ })).toHaveAttribute('href', 'https://dqm-psx.github.io/guide/');
+      const nav = page.getByRole('navigation', {name:'Project sites'});
+      await expect(nav.getByRole('link', {name:'Player Guide'})).toHaveAttribute('href', 'https://dqm-psx.github.io/guide/');
+      await expect(nav.getByRole('link', {name:'English patch'})).toHaveAttribute('href', 'https://dqm-psx.github.io/');
+      await expect(nav.locator('[aria-current="page"]')).toHaveText('Translations');
       await expect(page.locator('#comparison-table thead th')).toHaveCount(10);
       await expect(page.locator('#comparison-rows tr').first().locator('td').nth(4)).toHaveText('Desert World');
       const firstKey = (await visibleKeys(page))[0];

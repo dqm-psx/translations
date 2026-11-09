@@ -41,7 +41,7 @@
     "src/translations/text/system.json": "fe5f21b865fd9c35ac4004809f06ce4c13c0e40d943ebade6c444bd2e141e71b"
   },
   "published_sha256": {
-    "index.html": "afc6dea2fdd0c1ec1ee9112807fdffdb03934020f29e0615c3a48e9ae50b9e02",
+    "index.html": "52295b551d5baea49828cefea0e94687a75fa06f9b0092ea76f692429d2c164c",
     "comparison-data.json": "d9666b598773aec100e0c7fb9d42a61f941d252b5e38b3122cf165328a4d2788",
     "coverage-report.json": "f0868676f8f56e4035807bd265a62bce92387ff41d057dbc71495ca93e5e759b",
     "DQM-translation-comparison.md": "a52b0783efbc64ca99d7ee29201e5c83eef879f31cd43cf7dfb345518e1f94db"
