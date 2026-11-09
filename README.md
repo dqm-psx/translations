@@ -1,7 +1,9 @@
 # DQM translation comparison
 
-[Open the translation comparison](https://dqm-psx.github.io/translations/) ·
-[Open the breeding guide](https://dqm-psx.github.io/guide/)
+[English patch](https://dqm-psx.github.io/) · [Player Guide](https://dqm-psx.github.io/guide/) ·
+[Translations](https://dqm-psx.github.io/translations/)
+
+The [public patch archive](https://anonymous.4open.science/r/DQM-1-2-PSX-translation-D1FC/README.txt) lists the current package and installation instructions.
 
 Compare entries from the Dragon Quest Monsters 1 & 2 PlayStation translation
 project alongside Japanese PS1, verified Japanese Game Boy Color, Current,
