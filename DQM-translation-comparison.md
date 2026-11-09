@@ -1,7 +1,7 @@
 # DQM translation comparison
 
-Last updated from phakic/dqm1 on 8 November 2026.
-Builder revision: `a5b29b8686d49453f5a47c0dbef7b326a2bf810a`.
+Last updated from phakic/dqm1 on 9 November 2026.
+Builder revision: `b4cc703931137a52ee365376102375602bd985fd`.
 
 | Entry | Labels | Japanese-PSX | Japanese-GBC DQM1 | Japanese-GBC DQM2 | Current | Current short/menu | Game Boy | Delocalized | Vibecoded | Vibecoded short/menu |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -9967,5 +9967,6 @@ Builder revision: `a5b29b8686d49453f5a47c0dbef7b326a2bf810a`.
 | patches/pvp_wagering.json:rule_allow | Project text | Not recorded | Not verified | Not verified | Allow |  | Allow | Allow | Allow |  |
 | patches/pvp_wagering.json:rule_block | Project text | Not recorded | Not verified | Not verified | Block |  | Block | Block | Block |  |
 | patches/pvp_wagering.json:turn_limit_hint | Project text | Not recorded | Not verified | Not verified | 0 = No limit |  | 0 = No limit | 0 = No limit | 0 = No limit |  |
+| patches/aibou_exchange.json:offer | Project text | Not recorded | Not verified | Not verified | You&#x27;ve completed the monster book! Trade {price} medals for an Aibou egg? |  | You&#x27;ve completed the monster book! Trade {price} TinyMedals for an Aibou egg? | You&#x27;ve completed the monster book! Trade {price} Small Medals for an Aibou egg? | You&#x27;ve completed the monster book! Trade {price} medals for an Aibou egg? |  |
 
-9,962 comparison rows from 9,998 source records.
+9,963 comparison rows from 9,999 source records.
