@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
   "source_repository": "https://github.com/phakic/dqm1",
-  "translation_revision": "a5b29b8686d49453f5a47c0dbef7b326a2bf810a",
-  "generated_at": "2026-11-08T22:09:02-08:00",
-  "updated_from_builder_at": "2026-11-08T22:09:02-08:00",
-  "row_count": 9962,
+  "translation_revision": "b4cc703931137a52ee365376102375602bd985fd",
+  "generated_at": "2026-11-09T14:59:15-08:00",
+  "updated_from_builder_at": "2026-11-09T14:59:15-08:00",
+  "row_count": 9963,
   "source_file_sha256": {
     "src/translations/dialogue/church.json": "61512d2a963203683f6eb0f08b05198dddba32ca143618b843db6047f8868eaf",
     "src/translations/dialogue/extra.json": "7645378ca3e11dddd6120190bca86cc80eac9837df0a56a652b9b14d6b97ecdc",
@@ -17,6 +17,7 @@
     "src/translations/menus/general.json": "532a2614b92c562d8838469953f9c8f06f8d908b82ebee6494f41e7cfa6869e0",
     "src/translations/menus/keyboard.json": "030099fae636fd5bcdec8b4f0df245d55fcecbd37e96490c902f835b582a64fb",
     "src/translations/menus/mobile.json": "97fb1abd78c088d346a5ed7b9b8dea70815cd637a886f6be00298a929df674af",
+    "src/translations/patches/aibou_exchange.json": "08892234fe3ca688fc2b4e3a4ffe5f9c800f71d2d2069b3d9dbed02c26bd4bc7",
     "src/translations/patches/appraisal_certificate_art.json": "321e698336d96110aac03c1cfbb16f9c563525d1320c81d505664ea82fc3bd88",
     "src/translations/patches/battle_party_tactics.json": "6df2087a41b983722119ceacdea02f7f6b87c9fc5bf4f4273d36af490491bd74",
     "src/translations/patches/boss_names.json": "716e425d91302dac8f7397ce69d6568796bab1cb0dfe1e1df5dd4ebf320115d0",
@@ -41,10 +42,10 @@
     "src/translations/text/system.json": "fe5f21b865fd9c35ac4004809f06ce4c13c0e40d943ebade6c444bd2e141e71b"
   },
   "published_sha256": {
-    "index.html": "afc6dea2fdd0c1ec1ee9112807fdffdb03934020f29e0615c3a48e9ae50b9e02",
-    "comparison-data.json": "d9666b598773aec100e0c7fb9d42a61f941d252b5e38b3122cf165328a4d2788",
-    "coverage-report.json": "f0868676f8f56e4035807bd265a62bce92387ff41d057dbc71495ca93e5e759b",
-    "DQM-translation-comparison.md": "a52b0783efbc64ca99d7ee29201e5c83eef879f31cd43cf7dfb345518e1f94db"
+    "index.html": "51a0a9732e467afa7cf6c8329fce0977c2d0077e17f709a63fae1358cde88c61",
+    "comparison-data.json": "472369e8c8ffcf28250146377b5399ea0a20080914c7b2ede9d99950150de6d0",
+    "coverage-report.json": "391e6399ad7366fe73e37c6917a5dc1b00c0a4853e4967b279550c745770dfab",
+    "DQM-translation-comparison.md": "8d99b95d9fdcd5e95bfddd42211990f037571c5ff362af035c64e42cf835eb68"
   },
   "builder_source_evidence": [
     {

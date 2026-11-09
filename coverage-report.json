@@ -1,7 +1,7 @@
 {
-  "source_records": 9998,
-  "leaf_records": 10089,
-  "included_rows": 9962,
+  "source_records": 9999,
+  "leaf_records": 10090,
+  "included_rows": 9963,
   "excluded_rows": 127,
   "catalogs": {
     "dialogue/main/0000_1999.json": 1997,
@@ -36,7 +36,8 @@
     "patches/regular_item_stacks.json": 1,
     "patches/starter_name.json": 1,
     "patches/special_floor_colosseum.json": 53,
-    "patches/pvp_wagering.json": 23
+    "patches/pvp_wagering.json": 23,
+    "patches/aibou_exchange.json": 1
   },
   "exclusions": [
     {
@@ -687,6 +688,7 @@
     "src/translations/menus/general.json": "532a2614b92c562d8838469953f9c8f06f8d908b82ebee6494f41e7cfa6869e0",
     "src/translations/menus/keyboard.json": "030099fae636fd5bcdec8b4f0df245d55fcecbd37e96490c902f835b582a64fb",
     "src/translations/menus/mobile.json": "97fb1abd78c088d346a5ed7b9b8dea70815cd637a886f6be00298a929df674af",
+    "src/translations/patches/aibou_exchange.json": "08892234fe3ca688fc2b4e3a4ffe5f9c800f71d2d2069b3d9dbed02c26bd4bc7",
     "src/translations/patches/appraisal_certificate_art.json": "321e698336d96110aac03c1cfbb16f9c563525d1320c81d505664ea82fc3bd88",
     "src/translations/patches/battle_party_tactics.json": "6df2087a41b983722119ceacdea02f7f6b87c9fc5bf4f4273d36af490491bd74",
     "src/translations/patches/boss_names.json": "716e425d91302dac8f7397ce69d6568796bab1cb0dfe1e1df5dd4ebf320115d0",
@@ -786,9 +788,9 @@
     "Regular item stacks": 1,
     "Starter nickname": 1,
     "Special floor colosseum": 53,
-    "Project text": 27
+    "Project text": 28
   },
-  "revision": "a5b29b8686d49453f5a47c0dbef7b326a2bf810a",
-  "generated_at": "2026-11-08T22:09:02-08:00",
-  "date": "8 November 2026"
+  "revision": "b4cc703931137a52ee365376102375602bd985fd",
+  "generated_at": "2026-11-09T14:59:15-08:00",
+  "date": "9 November 2026"
 }
