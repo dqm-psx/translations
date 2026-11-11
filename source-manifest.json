@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
   "source_repository": "https://github.com/phakic/dqm1",
-  "translation_revision": "ab68da88e2a1ed941414292ba37759e7bdffddbe",
-  "generated_at": "2026-11-10T22:49:59-08:00",
-  "updated_from_builder_at": "2026-11-10T22:49:59-08:00",
+  "translation_revision": "5451f5b046553c796272940ef826828b5d378df9",
+  "generated_at": "2026-11-10T23:17:18-08:00",
+  "updated_from_builder_at": "2026-11-10T23:17:18-08:00",
   "row_count": 10034,
   "source_file_sha256": {
     "src/translations/dialogue/church.json": "61512d2a963203683f6eb0f08b05198dddba32ca143618b843db6047f8868eaf",
@@ -43,10 +43,10 @@
     "src/translations/text/system.json": "507ed8a3d8e7290dcb8a99e56f607f334d847a370c0f3fabc4feefc8cd806dbc"
   },
   "published_sha256": {
-    "index.html": "7aae46896bc2a06563cc7df0488f349d53efb7108d25176ca19a61c028665473",
-    "comparison-data.json": "1e07c0632ba3f5a477a3ae09e84ebd2ce02d8680c73088e59dfa1e171b92141a",
-    "coverage-report.json": "17f4fbc0ef34b958cac6e2e63e501aab8a2cc678a1d6d7d2942ca980859eed42",
-    "DQM-translation-comparison.md": "033de003b866ea0bb389b9ea0914c3b73e3021e3910285d61fa6112223e84a3d"
+    "index.html": "d8e237f46a549a32909fca42056dbf89a230db2e7263639958c07561b87a801e",
+    "comparison-data.json": "911df5f58a5aa94e2f1518c305d6fc6c3ea1de9138bec4912e49323993477cb6",
+    "coverage-report.json": "713b7dbe290988608e79c0b0d2ec9d626f07cb33c6f8ba2027b61fd11e654c94",
+    "DQM-translation-comparison.md": "ebd7676f519e127a9a386ecd07be1884e74a4cdaeb24d0ab1a2fbe8745741951"
   },
   "builder_source_evidence": [
     {
