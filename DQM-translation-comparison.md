@@ -1,7 +1,7 @@
 # DQM translation comparison
 
-Last updated from phakic/dqm1 on 10 November 2026.
-Builder revision: `5451f5b046553c796272940ef826828b5d378df9`.
+Last updated from phakic/dqm1 on 11 November 2026.
+Builder revision: `ee4199af8f87d4dbfe33929310c1177321a9a8a6`.
 
 | Entry | Labels | Japanese-PSX | Japanese-GBC DQM1 | Japanese-GBC DQM2 | Current | Current short/menu | Game Boy | Delocalized | Vibecoded | Vibecoded short/menu |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -10039,5 +10039,6 @@ Builder revision: `5451f5b046553c796272940ef826828b5d378df9`.
 | patches/greattree_arena.json:[&quot;item_categories&quot;,[&quot;special&quot;]] | Project text | Not recorded | Not verified | Not verified | Special |  | Special | Special | Special |  |
 | patches/greattree_arena.json:[&quot;navigation&quot;,[&quot;previous&quot;]] | Project text | Not recorded | Not verified | Not verified | Previous Page |  | Previous Page | Previous Page | Previous Page |  |
 | patches/greattree_arena.json:[&quot;navigation&quot;,[&quot;next&quot;]] | Project text | Not recorded | Not verified | Not verified | Next Page |  | Next Page | Next Page | Next Page |  |
+| patches/greattree_arena.json:[&quot;messages&quot;,[&quot;reception_win&quot;]] | Project text | Not recorded | Not verified | Not verified | Well done! You won! |  | Well done! You won! | Well done! You won! | Well done! You won! |  |
 
-10,034 comparison rows from 10,007 source records.
+10,035 comparison rows from 10,007 source records.
