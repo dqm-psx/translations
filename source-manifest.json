@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
   "source_repository": "https://github.com/phakic/dqm1",
-  "translation_revision": "d8bfb01c57b0474115d2049626d95da0e5e5eead",
-  "generated_at": "2026-11-10T22:49:45-08:00",
-  "updated_from_builder_at": "2026-11-10T22:49:45-08:00",
-  "row_count": 9963,
+  "translation_revision": "ab68da88e2a1ed941414292ba37759e7bdffddbe",
+  "generated_at": "2026-11-10T22:49:59-08:00",
+  "updated_from_builder_at": "2026-11-10T22:49:59-08:00",
+  "row_count": 10034,
   "source_file_sha256": {
     "src/translations/dialogue/church.json": "61512d2a963203683f6eb0f08b05198dddba32ca143618b843db6047f8868eaf",
     "src/translations/dialogue/extra.json": "7645378ca3e11dddd6120190bca86cc80eac9837df0a56a652b9b14d6b97ecdc",
@@ -22,6 +22,7 @@
     "src/translations/patches/battle_party_tactics.json": "6df2087a41b983722119ceacdea02f7f6b87c9fc5bf4f4273d36af490491bd74",
     "src/translations/patches/boss_names.json": "83bda28a92c383fbeadac3ba353aa7d820e28967ce2c9167dcceb388f885c424",
     "src/translations/patches/gift_names.json": "838b78c27a548e1f51d1f6f00d04f11ce0f2ac3217c0e40b204e483f75b62aac",
+    "src/translations/patches/greattree_arena.json": "376d4b2000f5b892583a639a570eea531b7ae74d4d10e1f97dca54783a8fb955",
     "src/translations/patches/hidden_movement.json": "2ec1459d1e7e310f4f990dcf9b22a52d604f7aa163ef0a7fd305c33c78a4ae95",
     "src/translations/patches/hidden_text.json": "33a46bb1d957f86654dc443a99e8cbb0d05ea603becd8f07d30afb7f449e6150",
     "src/translations/patches/information_menu.json": "3ba4c0735212a37a721f0dff92e972d0463b41647148ffa7525a8ec8ffde5f39",
@@ -42,10 +43,10 @@
     "src/translations/text/system.json": "507ed8a3d8e7290dcb8a99e56f607f334d847a370c0f3fabc4feefc8cd806dbc"
   },
   "published_sha256": {
-    "index.html": "6a325633b6a5ba343d842d7ed069366ab6e97af3ddc7c7e6f11bf31f47cfac77",
-    "comparison-data.json": "d113f6d097e32263f97370e0b5686055735d907da1345e5575557257bbe50e27",
-    "coverage-report.json": "96ccacd4f3ecb1affed21f0e33e75428a9cc17b33437987614f07095291361f5",
-    "DQM-translation-comparison.md": "daf2e5957f721fd2864641897020499dd3132907473f92288d0494781a5d2773"
+    "index.html": "7aae46896bc2a06563cc7df0488f349d53efb7108d25176ca19a61c028665473",
+    "comparison-data.json": "1e07c0632ba3f5a477a3ae09e84ebd2ce02d8680c73088e59dfa1e171b92141a",
+    "coverage-report.json": "17f4fbc0ef34b958cac6e2e63e501aab8a2cc678a1d6d7d2942ca980859eed42",
+    "DQM-translation-comparison.md": "033de003b866ea0bb389b9ea0914c3b73e3021e3910285d61fa6112223e84a3d"
   },
   "builder_source_evidence": [
     {
