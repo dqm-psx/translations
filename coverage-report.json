@@ -680,9 +680,9 @@
   "source_sha256": {
     "src/translations/dialogue/church.json": "61512d2a963203683f6eb0f08b05198dddba32ca143618b843db6047f8868eaf",
     "src/translations/dialogue/extra.json": "7645378ca3e11dddd6120190bca86cc80eac9837df0a56a652b9b14d6b97ecdc",
-    "src/translations/dialogue/main/0000_1999.json": "59f029806e28ab3e36d79b00eb1cdfcd5ff848c6a8b891f916151e94129e2619",
+    "src/translations/dialogue/main/0000_1999.json": "e21140327fb9cbbaa5e06d29bebcc3a34a868f44172159f698661e035f459476",
     "src/translations/dialogue/main/2000_3999.json": "d42fad86674eba65a48ac73179b4655380f989650f2a279e2de0ddbc46a1a039",
-    "src/translations/dialogue/main/4000_6131.json": "75aa0f026feb50db24da64f1a08d9c80a6177f72ccc33c3835877816ec0acc39",
+    "src/translations/dialogue/main/4000_6131.json": "7d6fbe2adfbae8f14b597ca751e50075c32f8a2ee3013a6c2cf257c8311378c2",
     "src/translations/dialogue/medal_appraisal.json": "f5df59fcdc9198bb6ed655fddcc3f153f739639d487d4440048ac6d687e1694c",
     "src/translations/dialogue/recruitment.json": "d3795c3552e654ac4e7530182617d763225472d4ca023adab09264dd258e92df",
     "src/translations/dialogue/services.json": "f27720c9c477cb565ee6d1a7b96e5a2731c6d42b5faf2fa7a5a073f271d5e218",
@@ -712,7 +712,7 @@
     "src/translations/text/monster_captions.json": "edcd7f3a1eeeb67d3ce6c2e0d1b9da952118b100fa7f3dc6f0ecfd5ac6523087",
     "src/translations/text/static.json": "161793835e36890c6087bb97b1e658099f59a4b2a0b7a087d992f40282e93284",
     "src/translations/text/static_pools.json": "39ec47ec3018f7675ef4af75a97d5d83a7c2d48e14952e7848f8b7db5641ee3e",
-    "src/translations/text/system.json": "507ed8a3d8e7290dcb8a99e56f607f334d847a370c0f3fabc4feefc8cd806dbc"
+    "src/translations/text/system.json": "8220924338ef1163f0129ec614cfa0b60db67409702c06b53a9aeaa9d310b213"
   },
   "label_counts": {
     "Dialogue": 6745,
@@ -792,7 +792,7 @@
     "Special floor colosseum": 53,
     "Project text": 100
   },
-  "revision": "ee4199af8f87d4dbfe33929310c1177321a9a8a6",
-  "generated_at": "2026-11-11T00:08:36-08:00",
-  "date": "11 November 2026"
+  "revision": "6b21ce537208849a2022075147bf5c1f83f801b1",
+  "generated_at": "2026-11-14T02:28:38-08:00",
+  "date": "14 November 2026"
 }

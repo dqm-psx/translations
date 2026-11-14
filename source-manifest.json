@@ -1,16 +1,16 @@
 {
   "schema_version": 2,
   "source_repository": "https://github.com/phakic/dqm1",
-  "translation_revision": "ee4199af8f87d4dbfe33929310c1177321a9a8a6",
-  "generated_at": "2026-11-11T00:08:36-08:00",
-  "updated_from_builder_at": "2026-11-11T00:08:36-08:00",
+  "translation_revision": "6b21ce537208849a2022075147bf5c1f83f801b1",
+  "generated_at": "2026-11-14T02:28:38-08:00",
+  "updated_from_builder_at": "2026-11-14T02:28:38-08:00",
   "row_count": 10035,
   "source_file_sha256": {
     "src/translations/dialogue/church.json": "61512d2a963203683f6eb0f08b05198dddba32ca143618b843db6047f8868eaf",
     "src/translations/dialogue/extra.json": "7645378ca3e11dddd6120190bca86cc80eac9837df0a56a652b9b14d6b97ecdc",
-    "src/translations/dialogue/main/0000_1999.json": "59f029806e28ab3e36d79b00eb1cdfcd5ff848c6a8b891f916151e94129e2619",
+    "src/translations/dialogue/main/0000_1999.json": "e21140327fb9cbbaa5e06d29bebcc3a34a868f44172159f698661e035f459476",
     "src/translations/dialogue/main/2000_3999.json": "d42fad86674eba65a48ac73179b4655380f989650f2a279e2de0ddbc46a1a039",
-    "src/translations/dialogue/main/4000_6131.json": "75aa0f026feb50db24da64f1a08d9c80a6177f72ccc33c3835877816ec0acc39",
+    "src/translations/dialogue/main/4000_6131.json": "7d6fbe2adfbae8f14b597ca751e50075c32f8a2ee3013a6c2cf257c8311378c2",
     "src/translations/dialogue/medal_appraisal.json": "f5df59fcdc9198bb6ed655fddcc3f153f739639d487d4440048ac6d687e1694c",
     "src/translations/dialogue/recruitment.json": "d3795c3552e654ac4e7530182617d763225472d4ca023adab09264dd258e92df",
     "src/translations/dialogue/services.json": "f27720c9c477cb565ee6d1a7b96e5a2731c6d42b5faf2fa7a5a073f271d5e218",
@@ -40,13 +40,13 @@
     "src/translations/text/monster_captions.json": "edcd7f3a1eeeb67d3ce6c2e0d1b9da952118b100fa7f3dc6f0ecfd5ac6523087",
     "src/translations/text/static.json": "161793835e36890c6087bb97b1e658099f59a4b2a0b7a087d992f40282e93284",
     "src/translations/text/static_pools.json": "39ec47ec3018f7675ef4af75a97d5d83a7c2d48e14952e7848f8b7db5641ee3e",
-    "src/translations/text/system.json": "507ed8a3d8e7290dcb8a99e56f607f334d847a370c0f3fabc4feefc8cd806dbc"
+    "src/translations/text/system.json": "8220924338ef1163f0129ec614cfa0b60db67409702c06b53a9aeaa9d310b213"
   },
   "published_sha256": {
-    "index.html": "00f6efcf0eb4093bc2bf8043987c5192bdc542b81f68fa6b192330b72c071df1",
-    "comparison-data.json": "f7a98efc62deba17ce023b29c63f7723cdf3421e6e0d96b502b4b9a089165de1",
-    "coverage-report.json": "390ca048e93f8d9a1524e56c6202afc38f5201574aba2423e5ed3e59d968635f",
-    "DQM-translation-comparison.md": "6d21f1f7e1aba31571920124adb44181f1d265670fe990032ea642a61cea1722"
+    "index.html": "8f962190f9e936ed96ece0e8744e536dfe73744dc94c3383228d195dbcbdf113",
+    "comparison-data.json": "3f8919e3048a419c856d04447bcae1d9c9f258303e5c1863d334625019ef74c1",
+    "coverage-report.json": "30989440637a31da1647f1bcb952c5baaf4490f9e2f91aa5c821dc26cae65138",
+    "DQM-translation-comparison.md": "69e9e048c3499881a89e253a9c77beaf913f5d6eaf601aa6262af5e1657e81a2"
   },
   "builder_source_evidence": [
     {
@@ -61,10 +61,10 @@
     }
   ],
   "current_patch": {
-    "version": "v1.0.73",
+    "version": "v1.0.74",
     "edition": "current",
-    "published_at": "2026-11-06T07:45:18Z",
-    "source_revision": "dbf5b12cc419268e5dda0d227ab273ba702be53d",
-    "package_sha256": "652ae16c06cc2291495b592bde5a2737e68e483879b4dc684ed4d58a56e1493a"
+    "published_at": "2026-11-13T08:55:06Z",
+    "source_revision": "11d6abacc1ce217b8f1e5521a180c3135628b296",
+    "package_sha256": "8ff3ec16f0eb78281c6718aaf96fd0dc59035a40f0cfe0a3a501a46df9ba1017"
   }
 }
