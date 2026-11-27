@@ -1,7 +1,7 @@
 {
-  "source_records": 10007,
-  "leaf_records": 10162,
-  "included_rows": 10035,
+  "source_records": 10015,
+  "leaf_records": 10197,
+  "included_rows": 10070,
   "excluded_rows": 127,
   "catalogs": {
     "dialogue/main/0000_1999.json": 1997,
@@ -38,7 +38,9 @@
     "patches/special_floor_colosseum.json": 53,
     "patches/pvp_wagering.json": 23,
     "patches/aibou_exchange.json": 1,
-    "patches/greattree_arena.json": 72
+    "patches/greattree_arena.json": 81,
+    "patches/greatlog_arena.json": 22,
+    "patches/hidden_gate.json": 4
   },
   "exclusions": [
     {
@@ -680,13 +682,13 @@
   "source_sha256": {
     "src/translations/dialogue/church.json": "61512d2a963203683f6eb0f08b05198dddba32ca143618b843db6047f8868eaf",
     "src/translations/dialogue/extra.json": "7645378ca3e11dddd6120190bca86cc80eac9837df0a56a652b9b14d6b97ecdc",
-    "src/translations/dialogue/main/0000_1999.json": "e21140327fb9cbbaa5e06d29bebcc3a34a868f44172159f698661e035f459476",
+    "src/translations/dialogue/main/0000_1999.json": "15ca32f62878c12674f8b8a769c2902c1fb0c70910b9cfdf37b3365a34c395be",
     "src/translations/dialogue/main/2000_3999.json": "d42fad86674eba65a48ac73179b4655380f989650f2a279e2de0ddbc46a1a039",
-    "src/translations/dialogue/main/4000_6131.json": "7d6fbe2adfbae8f14b597ca751e50075c32f8a2ee3013a6c2cf257c8311378c2",
+    "src/translations/dialogue/main/4000_6131.json": "4f72edd3602b5643f1283fa820e5459d2453f9f65980fe1df138d3069a51adff",
     "src/translations/dialogue/medal_appraisal.json": "f5df59fcdc9198bb6ed655fddcc3f153f739639d487d4440048ac6d687e1694c",
     "src/translations/dialogue/recruitment.json": "d3795c3552e654ac4e7530182617d763225472d4ca023adab09264dd258e92df",
     "src/translations/dialogue/services.json": "f27720c9c477cb565ee6d1a7b96e5a2731c6d42b5faf2fa7a5a073f271d5e218",
-    "src/translations/menus/general.json": "5dfe3b68c30490a91f9c1de12082c6dbe246c59fc3fbc175bfe710ca1b9745d6",
+    "src/translations/menus/general.json": "732007248184be6733f91ce512f4db45ddd1727d9405608dc082d93c44d32845",
     "src/translations/menus/keyboard.json": "030099fae636fd5bcdec8b4f0df245d55fcecbd37e96490c902f835b582a64fb",
     "src/translations/menus/mobile.json": "97fb1abd78c088d346a5ed7b9b8dea70815cd637a886f6be00298a929df674af",
     "src/translations/patches/aibou_exchange.json": "08892234fe3ca688fc2b4e3a4ffe5f9c800f71d2d2069b3d9dbed02c26bd4bc7",
@@ -694,7 +696,9 @@
     "src/translations/patches/battle_party_tactics.json": "6df2087a41b983722119ceacdea02f7f6b87c9fc5bf4f4273d36af490491bd74",
     "src/translations/patches/boss_names.json": "83bda28a92c383fbeadac3ba353aa7d820e28967ce2c9167dcceb388f885c424",
     "src/translations/patches/gift_names.json": "838b78c27a548e1f51d1f6f00d04f11ce0f2ac3217c0e40b204e483f75b62aac",
-    "src/translations/patches/greattree_arena.json": "93194702ea83b690d59c2fcd9d39047aa41fe8347d0db680473b9a5278103f87",
+    "src/translations/patches/greatlog_arena.json": "e19136cf46494d969fbf50bda23ddf9fc1a33e3f68a1a96ddfb59c09ad698c99",
+    "src/translations/patches/greattree_arena.json": "e6cf250f6193d59022a3417f8fd4e49fac8350c47584a92dfc96ca5362fd6767",
+    "src/translations/patches/hidden_gate.json": "6a348580bf63370c56feeadcff23721ca55824f5c8587e68879f89ff2451e22a",
     "src/translations/patches/hidden_movement.json": "2ec1459d1e7e310f4f990dcf9b22a52d604f7aa163ef0a7fd305c33c78a4ae95",
     "src/translations/patches/hidden_text.json": "33a46bb1d957f86654dc443a99e8cbb0d05ea603becd8f07d30afb7f449e6150",
     "src/translations/patches/information_menu.json": "3ba4c0735212a37a721f0dff92e972d0463b41647148ffa7525a8ec8ffde5f39",
@@ -707,12 +711,12 @@
     "src/translations/patches/shop_menu_layout.json": "9a580882114ff94df57483801d8c1f4a34ff173b4c746ed63a47b9a83c18dee7",
     "src/translations/patches/special_floor_colosseum.json": "ae059d6a45720038e5203b6124e6250f42ced2f09c585bab5c06bd69ab084443",
     "src/translations/patches/starter_name.json": "94be0301bb7842a3f3f533b0e0b4d06a5a7ae8e8792f0cfa16d72f7a39a2059c",
-    "src/translations/text/executable.json": "1e35f4b3347fdac22c41e3e513aa4ce829f2dbde25c08a4d17c005df2d312edd",
+    "src/translations/text/executable.json": "d8fdc40518da727e5a2eb7251fb7bb589055f535b9e5b5229ebedb013984bda5",
     "src/translations/text/location_titles.json": "2e51fbfe9fa604cf1742fa8bb860ab5ce67a21d45e656bbe21cb40fb8b9276e2",
     "src/translations/text/monster_captions.json": "edcd7f3a1eeeb67d3ce6c2e0d1b9da952118b100fa7f3dc6f0ecfd5ac6523087",
     "src/translations/text/static.json": "161793835e36890c6087bb97b1e658099f59a4b2a0b7a087d992f40282e93284",
     "src/translations/text/static_pools.json": "39ec47ec3018f7675ef4af75a97d5d83a7c2d48e14952e7848f8b7db5641ee3e",
-    "src/translations/text/system.json": "8220924338ef1163f0129ec614cfa0b60db67409702c06b53a9aeaa9d310b213"
+    "src/translations/text/system.json": "f51c05188a6a35353d567e305d89436ee2f3372ed9d2211f538b1cdcf933cecd"
   },
   "label_counts": {
     "Dialogue": 6745,
@@ -790,9 +794,9 @@
     "Regular item stacks": 1,
     "Starter nickname": 1,
     "Special floor colosseum": 53,
-    "Project text": 100
+    "Project text": 135
   },
-  "revision": "6b21ce537208849a2022075147bf5c1f83f801b1",
-  "generated_at": "2026-11-14T02:28:38-08:00",
-  "date": "14 November 2026"
+  "revision": "7b58de9ae9595a0517dbc8967e895309abfb2426",
+  "generated_at": "2026-11-26T23:31:09-08:00",
+  "date": "26 November 2026"
 }
